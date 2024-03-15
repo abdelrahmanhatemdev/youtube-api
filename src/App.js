@@ -2,13 +2,8 @@ import { useState } from "react";
 import "./assets/styles/App.css";
 import { SearchBar, VideoDetails, VideoList } from "./components";
 import youtube from "./api/youtube";
+
 let API_KEY= process.env.REACT_APP_API_KEY;
-
-
-
-console.log();
-
-
 
 function App() {
     const [videos, setVideos] = useState([]);
@@ -24,8 +19,8 @@ function App() {
                 q:search
             }
         })
-        setVideos()
-        console.log(serachResponse);
+        setVideos(setVideos(serachResponse.data.items))
+        setVideo(serachResponse.data.items[0])
     }
 
     return (
@@ -35,10 +30,10 @@ function App() {
             </nav>
             <section className="content">
                 <div className="video-details">
-                    <VideoDetails/>
+                    <VideoDetails  video={video}/>
                 </div>
                 <div className="video-list">
-                    <VideoList/>
+                    <VideoList videos={videos}/>
                 </div>
             </section>
         </main>
