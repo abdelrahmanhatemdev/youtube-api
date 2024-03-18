@@ -4,6 +4,8 @@ import categories from "../arrays/categories";
 import {search} from "../api/youtube";
 
 export async function loader(){
+    // const videos = search("javascript");
+    // console.log(videos)
     return {categories};
 }
 

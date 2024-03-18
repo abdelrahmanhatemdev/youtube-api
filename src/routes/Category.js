@@ -5,10 +5,10 @@ import { search } from "../api/youtube";
 
 
 export async function loader({params}) {
-    const category = params.category;
-    const videos = search(category);
-    console.log(videos);
-    return {category}
+    // const category = params.category;
+    
+    // console.log(videos);
+    // return {category}
     
 }
 
