@@ -1,5 +1,5 @@
 function VideoDetails({video}) {
-    if(!video){ return <>Loading...</>}
+    if(!video) <>Loading...</>
 
     const videoSrc = "https://www.youtube.com/embed/" + video.id.videoId
 
