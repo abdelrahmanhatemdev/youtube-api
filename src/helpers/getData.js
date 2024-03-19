@@ -1,5 +1,7 @@
 import { search } from "../api/youtube";
 
+
+
 const items = [
     {
         "kind": "youtube#searchResult",
@@ -1697,4 +1699,35 @@ const items = [
     }
 ];
 
-console.log(JSON.stringify(items));
+
+function getData(searchTerm) {
+    let storeObject={}
+
+    let searchObject = localStorage.getItem("search");
+
+    if (searchObject) {
+        searchObject = JSON.parse(searchObject);
+        let storedTerm = searchObject[searchTerm];
+
+        if (storedTerm) {
+            return storedTerm;
+            
+        }else{
+            searchObject = {...searchObject, [searchTerm]:items}
+            localStorage.setItem("search", JSON.stringify(searchObject))
+        }
+
+    }else{
+
+        storeObject[searchTerm] = items;
+        localStorage.setItem("search", JSON.stringify(storeObject))
+    }
+} 
+
+
+
+
+ 
+
+
+getData("javascript")
