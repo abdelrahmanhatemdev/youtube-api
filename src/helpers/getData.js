@@ -1700,7 +1700,7 @@ const items = [
 ];
 
 
-function getData(searchTerm) {
+export async function getData(searchTerm) {
     let storeObject={}
 
     let searchObject = localStorage.getItem("search");
@@ -1713,21 +1713,33 @@ function getData(searchTerm) {
             return storedTerm;
             
         }else{
-            searchObject = {...searchObject, [searchTerm]:items}
-            localStorage.setItem("search", JSON.stringify(searchObject))
+            await createData(searchTerm, storeObject)
         }
-
     }else{
 
-        storeObject[searchTerm] = items;
-        localStorage.setItem("search", JSON.stringify(storeObject))
+        await createData(searchTerm, storeObject)
     }
 } 
 
 
+async function createData(searchTerm, searchObject, ) {
+    console.log("Fetching from Youtube Quota");
+    await search(searchTerm)
+    .then(res => {
+
+        if (res.data) {
+            const videos = res.data.items;
+            if (videos?.length === 50 ){
+                searchObject = {...searchObject, [searchTerm]:videos}
+            localStorage.setItem("search", JSON.stringify(searchObject))
+            }
+        }
+    })
+    .catch(e => {
+        console.error(e);
+    });
+}
 
 
- 
 
-
-getData("javascript")
+getData("food")

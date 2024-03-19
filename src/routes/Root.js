@@ -1,7 +1,7 @@
 import React from 'react';
 import {useLoaderData, NavLink, Outlet } from "react-router-dom";
 import categories from "../arrays/categories";
-import {search} from "../api/youtube";
+import {getData} from "../helpers/getData";
 
 export async function loader(){
     // const videos = search("javascript");
@@ -17,7 +17,7 @@ export default function Root() {
         <>
         {
             categories.map((cat, i) => {
-                return <NavLink to={"/categories/" + cat} key={i} style={{display: "block"}}>{cat}</NavLink>
+                return <NavLink to={"/categories/" + cat} key={i} style={{display:"inline-block",margin: "1rem"}}>{cat}</NavLink>
             })
         }
         <div className='content'>
