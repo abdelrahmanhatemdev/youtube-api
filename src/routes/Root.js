@@ -1,7 +1,7 @@
 import React from 'react';
 import {useLoaderData, NavLink, Outlet } from "react-router-dom";
 import categories from "../arrays/categories";
-import {getData} from "../helpers/getData";
+import {getData} from "../helpers/data";
 
 export async function loader(){
     // const videos = search("javascript");

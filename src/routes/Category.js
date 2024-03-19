@@ -1,29 +1,40 @@
 import { useLoaderData } from "react-router-dom";
-import { search } from "../api/youtube";
+import { getData } from "../helpers/data";
 
 
 
 
 export async function loader({params}) {
-    // const category = params.category;
+    const category = params.category;
+    const data = await getData(category);
     
-    // console.log(videos);
-    // return {category}
+    console.log(category);
+    console.log(data);
+    return {category, data}
     
 }
 
 export default function Category() {
-    // const {category, videos} = useLoaderData();
+    let {category, data} = useLoaderData();
+    let videos= []
+
+    if (data?.length === 50 ) {
+        data = data.sort(() => (Math.random() > 0.5) ? 1 : -1);
+        videos = data.map((video, i) => {
+            return <div>
+            <img src={video.snippet.thumbnails.default.url} alt={video.snippet.title} key ={i}/>
+             {video.snippet.title}
+        </div>
+        })
+
+    }
 
    
 
     return (
         <>
-        {/* { videos.map((video) => {
-            return <div>
-
-            </div>
-        }) }   */}
+        {category}
+        { videos }  
             
         </>
     )

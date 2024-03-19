@@ -5,7 +5,7 @@ import Root, {loader as rootLoader} from "./routes/Root";
 import Category, {loader as categoryLoader} from "./routes/Category";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
-import  "./helpers/getData";
+import  "./helpers/data";
 
 let router = createBrowserRouter([
     {
@@ -17,7 +17,7 @@ let router = createBrowserRouter([
             {
                 path: "categories/:category", 
                 element: <Category/>, 
-                // loader: categoryLoader
+                loader: categoryLoader
             }
         ]
     }
