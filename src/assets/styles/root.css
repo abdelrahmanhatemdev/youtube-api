@@ -34,15 +34,17 @@ aside{
     width: 2rem;
     padding: 1rem;
 }
-nav{
+nav {
     display: flex;
     padding: 2rem;
     inline-size: 100%;
     box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
 }
-.logo{
+.logo {
     max-block-size: 3rem;
-    inline-size: auto;
+    inline-size: 6rem;
 }
 .logo svg {
     fill: var(--white-1);
@@ -89,9 +91,15 @@ search button svg {
     block-size: 24px;
     display: block;
 }
-nav .profile{
-    width: 50px;
-    height: 50px;
+nav .profile {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--gray-4);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 nav .side-menus svg {
     block-size: 100%;
