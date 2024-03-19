@@ -32,10 +32,10 @@ export default function Category() {
    
 
     return (
-        <>
-        {category}
-        { videos }  
-            
-        </>
+        <section className="category-content"> 
+            {category}
+            { videos }  
+        </section>
+        
     )
 }

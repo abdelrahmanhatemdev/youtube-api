@@ -1,0 +1,21 @@
+.categories {
+    inline-size: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-block: 1.5rem;
+}
+.categories a {
+    display: inline-block;
+    text-decoration: none;
+    color: #8f8d8d;
+    font-weight: 600;
+    background: #373737;
+    padding: .7rem;
+    border-radius: .5rem;
+    font-size: .9rem;
+}
+.categories a.active {
+    background: var(--white-1);
+    color: var(--gray-4);
+}

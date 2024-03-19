@@ -15,8 +15,8 @@
     "Resturant", 
     "Javascript", 
     "Algorithms", 
+    "Football", 
     "Podcast", 
-    "Recently Uploaded", 
     "Watched", 
     "New to you"
 ];
