@@ -4,6 +4,7 @@ import {NotFound } from "./components";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Root, {loader as rootLoader} from "./routes/Root";
 import Category, {loader as categoryLoader} from "./routes/Category";
+import Search, {loader as searchLoader} from "./routes/Search";
 
 let router = createBrowserRouter([
     {
@@ -16,7 +17,12 @@ let router = createBrowserRouter([
                 path: "categories/:category", 
                 element: <Category/>, 
                 loader: categoryLoader
-            }
+            }, 
+            {
+                path: "search/:search", 
+                element: <Search/>, 
+                loader: categoryLoader
+            },
         ]
     }
 ])

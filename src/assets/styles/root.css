@@ -2,6 +2,8 @@
     --gray-1: #181818;
     --gray-2: #212121;
     --gray-3: #272727;
+    --gray-4: #3c3c3c;
+    --white-3: #ddd;
     --white-1: #fff;
 }
 body {
@@ -48,4 +50,51 @@ nav{
     inline-size: 100%;
     block-size: 20px;
 }
-
+search form {
+    display: flex;
+    border: 1px solid #3d3d3d;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+search button{
+    height: 24px;
+    width: 24px
+}
+search input, search button {
+    border: none;
+    outline: none;
+    color: var(--white-1);
+    padding: .5rem 1rem;
+}
+search input {
+    background: transparent;
+    inline-size: 25rem;
+}
+search input::placeholder {
+    font-weight: 700;
+}
+search button {
+    background: var(--gray-4);
+    border: none;
+    outline: none;
+    color: var(--white-1);
+    block-size: 100%;
+    display: flex;
+    inline-size: auto;
+    cursor: pointer;
+}
+search button svg {
+    fill: var(--white-3);
+    inline-size: 24px;
+    block-size: 24px;
+    display: block;
+}
+nav .profile{
+    width: 50px;
+    height: 50px;
+}
+nav .side-menus svg {
+    block-size: 100%;
+    inline-size: 100%;
+    fill: var(--gray-4);
+}

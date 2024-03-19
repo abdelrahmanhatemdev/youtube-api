@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { SearchBar } from "./";
 
 export default function NavBar() {
 
@@ -37,15 +38,17 @@ export default function NavBar() {
                     </g>
                 </svg>
             </div>
-            <search>
-                <form onSubmit={handlesubmit}>
-                    <input type="text" placeholder="Search" value={search} onChange={e => setSearch(e.target.value)}/>
-                    <button type="submit">Sreach</button>
-                </form>
-                
-            </search>
+           <SearchBar/>
             <div className='side-menus'>
+                <div className='profile'>
+                <svg xmlns="http://www.w3.org/2000/svg"   >
 
+                <g >
+                <path d="M2410 4684 c-235 -43 -407 -127 -564 -275 -145 -138 -227 -265 -285 -445 -133 -408 4 -858 343 -1130 96 -77 269 -165 378 -193 259 -66 509 -41 743 74 523 258 733 880 473 1400 -108 216 -304 399 -528 494 -132 57 -210 72 -380 76 -85 2 -166 1 -180 -1z"/>
+                <path d="M1865 2159 c-374 -48 -717 -295 -890 -639 -128 -257 -159 -564 -71 -714 102 -175 442 -292 1016 -352 213 -22 824 -30 1073 -15 595 37 1012 144 1155 295 116 123 142 259 97 502 -75 400 -371 739 -761 870 -172 58 -164 57 -884 60 -366 1 -696 -2 -735 -7z"/>
+                </g>
+                </svg>
+                </div>
             </div>
         </nav>
     )
