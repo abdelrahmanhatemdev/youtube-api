@@ -1739,7 +1739,3 @@ async function createData(searchTerm, searchObject, ) {
         console.error(e);
     });
 }
-
-
-
-getData("food")
