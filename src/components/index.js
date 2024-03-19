@@ -1,4 +1,7 @@
-export {default as Category} from "../routes/Category.js";
+export {default as Aside} from "./Aside.js";
+export {default as Categories} from "./Categories.js";
+export {default as NavBar} from "./NavBar.js";
+
 
 export {default as SearchBar} from "./SearchBar";
 export {default as VideoDetails} from "./Video/VideoDetails";

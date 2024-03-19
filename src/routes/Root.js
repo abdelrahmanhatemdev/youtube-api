@@ -1,31 +1,27 @@
 import React from 'react';
-import {useLoaderData, NavLink, Outlet } from "react-router-dom";
-import categories from "../arrays/categories";
-import {getData} from "../helpers/data";
+import {Outlet} from "react-router-dom";
+import {Aside, NavBar, Categories} from "../components";
+import "../assets/styles/root.css";
+
 
 export async function loader(){
-    // const videos = search("javascript");
-    // console.log(videos)
-    return {categories};
+    return {};
 }
 
 export default function Root() {
 
-    const {categories} = useLoaderData();
-
     return (
         <>
-        {
-            categories.map((cat, i) => {
-                return <NavLink to={"/categories/" + cat} key={i} style={{display:"inline-block",margin: "1rem"}}>{cat}</NavLink>
-            })
-        }
-        <div className='content'>
-        <Outlet/>
-        </div>
-        
-        
-            
+        <aside>
+            <Aside/>
+        </aside>
+        <main>
+            <NavBar/>
+            <Categories/>
+            <div className='content'>
+                <Outlet/>
+            </div>
+        </main>
         </>
     )
 }
