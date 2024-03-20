@@ -3,6 +3,7 @@ import { getData } from "../helpers/data";
 
 export async function loader({params}) {
     const search = params.search;
+    
     const data = await getData(search);
     return {search, data}
 }

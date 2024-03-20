@@ -4,7 +4,7 @@ function SearchBar({getSearch}) {
     const [search, setSearch] = useState("")
 
     function handlesubmit(e){
-        e.preventDefault();
+        // e.preventDefault();
         // getSearch(search)
     }
 
