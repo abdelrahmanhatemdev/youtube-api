@@ -18,8 +18,8 @@ export default function Categories() {
     })
     
     return (
-        <div className='categories'>
+        <section className='categories'>
             {categories}
-        </div>
+        </section>
     )
 }

@@ -18,9 +18,7 @@ export default function Root() {
         <main>
             <NavBar/>
             <Categories/>
-            <div className='content'>
-                <Outlet/>
-            </div>
+            <Outlet/>
         </main>
         </>
     )

@@ -7,10 +7,9 @@
 }
 .categories a {
     display: inline-block;
-    text-decoration: none;
-    color: #8f8d8d;
+    color: var(--gray-5);
     font-weight: 600;
-    background: #373737;
+    background: var(--gray-6);
     padding: .7rem;
     border-radius: .5rem;
     font-size: .9rem;
@@ -18,4 +17,38 @@
 .categories a.active {
     background: var(--white-1);
     color: var(--gray-4);
+}
+.category-content {
+    inline-size: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(5, calc(20% - .875rem));
+}
+.category-content .item .img-holder{
+    height: 57%;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.category-content .item img {
+    inline-size: 100%;
+    margin-block-start: -10%;
+}
+.category-content .item .details{
+    padding-block: .7rem;
+}
+.category-content .item .details > * {
+    display: block;
+}
+.category-content .item .details .title{
+    color: var(--white-1);
+}
+.category-content .item .details .tips {
+    display: flex;
+    flex-direction: column;
+    color: var(--gray-5);
+    padding-block: .5rem;
+    gap: .4rem;
+}
+.category-content .item .details .tips .date{
+    font-size: .9rem;
 }
