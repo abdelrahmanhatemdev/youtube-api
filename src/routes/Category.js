@@ -1,4 +1,4 @@
-import { useLoaderData, Link } from "react-router-dom";
+import { useLoaderData, Link, useNavigation } from "react-router-dom";
 import useTitle from "../hooks/useTitle";
 import { getData } from "../helpers/data";
 import { timeAgo } from "../helpers/date";
@@ -11,6 +11,7 @@ export async function loader({params}) {
 
 export default function Category() {
     let {data, category} = useLoaderData();
+    let navigation = useNavigation();
     let videos= []
 
     useTitle(category)
@@ -37,7 +38,7 @@ export default function Category() {
     }
 
     return (
-        <section className="category-content"> 
+        <section className={"category-content" +( navigation.state === "loading" ? "loading" : "")} > 
             { videos }  
         </section>
     )

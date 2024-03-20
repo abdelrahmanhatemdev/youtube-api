@@ -53,6 +53,12 @@ aside a {
     align-items: center;
     color: var(--gray-5);
     font-size: .8rem;
+    padding: .5rem;
+    border-radius: .5rem;
+}
+aside a.active {
+    color: var(--white-3);
+    background: var(--gray-6);
 }
 aside .toggle{
     justify-content: center;
@@ -157,3 +163,8 @@ nav .side-menus svg {
 .content-list::-webkit-scrollbar{
     display: none;
 }
+.content-list .loading {
+    opacity: 0.1;
+    transition: opacity 200ms;
+    transition-delay: 200ms;
+  }
