@@ -14,8 +14,10 @@ body {
     margin: 0;
     background-color: var(--gray-1);
     display: flex;
-    padding: 2rem;
     font-family: var(--primary-font);
+    align-items: center;
+    justify-content: center;
+    block-size: 100svh;
 }
 a{
     text-decoration: none;
@@ -23,10 +25,13 @@ a{
 #root {
     background: var(--gray-2);
     border-radius: 2.5rem;
-    inline-size: 100%;
+    inline-size: 97%;
     padding: 2rem;
     display: flex;
     gap: 1.5rem;
+    block-size: 94svh;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 #root > * {
     display: flex;
@@ -42,48 +47,63 @@ aside{
     width: 2rem;
     padding: 1rem;
 }
+aside a{
+    margin-block: .5rem;
+}
+aside .icon  svg{
+    block-size: 25px;
+    inline-size: 25px;
+    fill: var(--gray-5);
+}
+aside .separator {
+    display: block;
+    inline-size: 100%;
+    block-size: 1px;
+    background: var(--gray-5);
+    margin-block: .5rem;
+}
 nav {
     display: flex;
-    padding: 2rem;
+    padding: 1.2rem;
     inline-size: 100%;
     box-sizing: border-box;
     align-items: center;
     justify-content: space-between;
 }
-.logo {
+nav .logo {
     max-block-size: 3rem;
     inline-size: 6rem;
 }
-.logo svg {
+nav .logo svg {
     fill: var(--white-1);
     display: block;
     inline-size: 100%;
     block-size: 20px;
 }
-search form {
+nav search form {
     display: flex;
     border: 1px solid #3d3d3d;
     border-radius: 2rem;
     overflow: hidden;
 }
-search button{
+nav search button{
     height: 24px;
     width: 24px
 }
-search input, search button {
+nav search input, search button {
     border: none;
     outline: none;
     color: var(--white-1);
     padding: .5rem 1rem;
 }
-search input {
+nav search input {
     background: transparent;
     inline-size: 25rem;
 }
-search input::placeholder {
+nav search input::placeholder {
     font-weight: 700;
 }
-search button {
+nav search button {
     background: var(--gray-4);
     border: none;
     outline: none;
@@ -93,7 +113,7 @@ search button {
     inline-size: auto;
     cursor: pointer;
 }
-search button svg {
+nav search button svg {
     fill: var(--white-3);
     inline-size: 24px;
     block-size: 24px;
@@ -112,5 +132,11 @@ nav .profile {
 nav .side-menus svg {
     block-size: 100%;
     inline-size: 100%;
-    fill: var(--gray-4);
+    fill: var(--gray-5);
+}
+.content-list{
+    overflow-y: auto;
+}
+.content-list::-webkit-scrollbar{
+    display: none;
 }

@@ -10,9 +10,10 @@
     color: var(--gray-5);
     font-weight: 600;
     background: var(--gray-6);
-    padding: .7rem;
+    padding: .5rem;
     border-radius: .5rem;
-    font-size: .9rem;
+    font-size: .8rem;
+    letter-spacing: .5px;
 }
 .categories a.active {
     background: var(--white-1);
@@ -22,7 +23,7 @@
     inline-size: 100%;
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(5, calc(20% - .875rem));
+    grid-template-columns: repeat(6, calc(16.666% - .7rem));
 }
 .category-content .item .img-holder{
     height: 57%;
