@@ -36,24 +36,40 @@ a{
 #root > * {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
 }
 aside, nav {
     background: var(--gray-3);
     border-radius: 1rem;
 }
 aside{
-    flex-basis: 3rem;
-    width: 2rem;
     padding: 1rem;
+    align-items: start;
+    transition: all ease-in-out .3s;
 }
-aside a{
+aside a {
     margin-block: .5rem;
+    display: flex;
+    align-items: center;
+    color: var(--gray-5);
+    font-size: .8rem;
 }
-aside .icon  svg{
+aside .toggle{
+    justify-content: center;
+}
+aside .icon svg{
     block-size: 25px;
     inline-size: 25px;
-    fill: var(--gray-5);
+    fill: currentColor;
+}
+aside a .title {
+    display: none;
+    inline-size: max-content;
+    margin-inline-start: 0;
+}
+aside .list.open .title{
+    display: block;
+    margin-inline-start: .5rem;
 }
 aside .separator {
     display: block;
@@ -69,6 +85,7 @@ nav {
     box-sizing: border-box;
     align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 nav .logo {
     max-block-size: 3rem;

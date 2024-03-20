@@ -24,7 +24,6 @@ export default function Root() {
             <section className='content-list'>
                 <Outlet/>
             </section>
-            
         </main>
         </>
     )
