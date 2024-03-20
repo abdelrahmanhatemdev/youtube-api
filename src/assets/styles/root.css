@@ -60,6 +60,9 @@ aside a.active {
     color: var(--white-3);
     background: var(--gray-6);
 }
+aside a:hover {
+    color: var(--white-3);
+}
 aside .toggle{
     justify-content: center;
 }
@@ -67,11 +70,13 @@ aside .icon svg{
     block-size: 25px;
     inline-size: 25px;
     fill: currentColor;
+    transition: all ease-in-out .3s;
 }
 aside a .title {
     display: none;
     inline-size: max-content;
     margin-inline-start: 0;
+    transition: all ease-in-out .3s;
 }
 aside .list.open .title{
     display: block;
