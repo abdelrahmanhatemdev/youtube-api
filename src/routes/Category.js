@@ -1,16 +1,19 @@
 import { useLoaderData, Link } from "react-router-dom";
+import useTitle from "../hooks/useTitle";
 import { getData } from "../helpers/data";
 import { timeAgo } from "../helpers/date";
 
 export async function loader({params}) {
     const category = params.category;
     const data = await getData(category);
-    return {data}
+    return {data, category}
 }
 
 export default function Category() {
-    let {data} = useLoaderData();
+    let {data, category} = useLoaderData();
     let videos= []
+
+    useTitle(category)
 
     if (data?.length === 50 ) {
         // data = data.sort(() => (Math.random() > 0.5) ? 1 : -1);
