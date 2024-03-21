@@ -87,7 +87,7 @@ aside .separator {
     inline-size: 100%;
     block-size: 1px;
     background: var(--gray-5);
-    margin-block: .5rem;
+    margin-block: .8rem;
 }
 nav {
     display: flex;

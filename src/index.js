@@ -6,6 +6,10 @@ import Root, {loader as rootLoader} from "./routes/Root";
 import Category, {loader as categoryLoader} from "./routes/Category";
 import Search, {loader as searchLoader} from "./routes/Search";
 
+// import { videoInfo } from "./helpers/data";
+
+// console.log(await videoInfo());
+
 let router = createBrowserRouter([
     {
         path:'/',
