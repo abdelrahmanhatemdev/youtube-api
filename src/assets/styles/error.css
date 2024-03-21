@@ -1,0 +1,79 @@
+.error-page {
+    inline-size: auto;
+    block-size: auto;
+   
+    border: 1px solid var(--gray-3);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.error-page .header{
+    background: var(--gray-1);
+    padding: 1rem ;
+    color: var(--red-1);
+}
+.error-page .header h1{
+    margin: 0;
+}
+.error-page .content {
+    background: var(--gray-3);
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+.error-page .content .details{
+    color: var(--white-1);
+    background: var(--gray-2);
+    padding: 1rem;
+    border-radius: 1rem;
+    color: var(--white-3);
+}
+.error-page .content .details p{
+    margin: 0;
+    padding-block: .2rem;
+    font-weight: 100;
+    letter-spacing: .5px;
+}
+.error-page .content .details .more{
+    margin-block-start: .5rem;
+}
+.error-page .content .details .more > span{
+    color: var(--gray-5);
+    font-size: .8rem;
+    cursor: pointer;
+}
+.error-page .content .details .info{
+    block-size: 0px;
+    opacity: 0;
+    transition: all ease-in-out .3s;
+    overflow: hidden;
+    max-inline-size: 400px;
+}
+.error-page .content .details .info.open{
+    block-size: 200px;
+    opacity: 1;
+}
+.error-page .content .details .info p {
+    padding: .5rem;
+    background: var(--gray-1);
+    border-radius: .5rem;
+    margin-block: .5rem;
+}
+.error-page  .icon {
+     block-size: 10rem;
+}
+.error-page  .icon svg {
+    block-size: 100%;
+    inline-size: 100%;
+}
+.error-page  .icon svg .labtop{
+    fill: var(--gray-5);
+}
+.error-page  .icon svg .contrast{
+    fill: var(--red-1);
+}
+
+@media(max-width: 900px){
+    .error-page .content {
+        flex-direction: column-reverse;
+    }
+}

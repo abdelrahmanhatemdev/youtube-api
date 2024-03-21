@@ -1,7 +1,7 @@
 export {default as Aside} from "./Aside";
 export {default as Categories} from "./Categories";
 export {default as NavBar} from "./NavBar";
-export {default as RequestLimit} from "./RequestLimit";
+export {default as ErrorPage} from "./ErrorPage";
 
 
 export {default as SearchBar} from "./SearchBar";

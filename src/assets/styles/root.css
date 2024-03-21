@@ -7,7 +7,9 @@
     --gray-5: #8f8d8d;
     --gray-6: #373737;
     --white-3: #ddd;
+    --white-2: #eee;
     --white-1: #fff;
+    --red-1: #c55757;
     --primary-font: "Almarai", sans-serif;
 }
 body {
@@ -162,14 +164,19 @@ nav .side-menus svg {
     inline-size: 100%;
     fill: var(--gray-5);
 }
-.content-list{
+main > .content{
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.content-list::-webkit-scrollbar{
+main > .content::-webkit-scrollbar{
     display: none;
 }
-.content-list .loading {
+main > .content .loading {
     opacity: 0.1;
     transition: opacity 200ms;
     transition-delay: 200ms;
-  }
+}
+

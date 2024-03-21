@@ -24,16 +24,15 @@ export function getData(searchTerm) {
 
 function createData(searchTerm, searchObject) {
     // return items.sort(() => (Math.random() > 0.5) ? 1 : -1)
-    console.log("Fetching " + searchTerm + " data from Youtube API");
     const response = search(searchTerm)
     .then(res => {
-        if (res?.data) {
-            const videos = res.data.items;
-            if (videos?.length === 50 ){
+        const {videos} = res;
+
+        if (videos?.length >0) {
                 searchObject = {...searchObject, [searchTerm]:videos}
                 localStorage.setItem("search", JSON.stringify(searchObject))
                 return videos;
-            }
+           
         }else{
             const check = checkQuota(res);
             if(!check){

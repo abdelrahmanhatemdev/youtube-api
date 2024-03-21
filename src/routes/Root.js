@@ -21,7 +21,7 @@ export default function Root() {
         <main>
             <NavBar/>
             <Categories/>
-            <section className='content-list'>
+            <section className='content'>
                 <Outlet/>
             </section>
         </main>
