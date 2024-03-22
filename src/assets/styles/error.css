@@ -33,6 +33,12 @@
     font-weight: 100;
     letter-spacing: .5px;
 }
+.error-page .content .details strong{
+    color: var(--red-1);
+}
+.error-page .content .details .success{
+    color: var(--white-1);
+}
 .error-page .content .details .more{
     margin-block-start: .5rem;
 }

@@ -15,7 +15,7 @@ export default function ErrorPage({type}) {
             <div class="content">
                 <div className='details'>
                     <p>You exceeded your Daily Request <strong> Quota Limit</strong> !</p>
-                    <p>Give it another try <strong>tomorrow</strong> !</p>
+                    <p>Give it another try <strong className='success'>tomorrow</strong> !</p>
                     <div className='more'>
                         <span onClick={() => setInfoShow(!infoShow)}>More</span>
                         <div className={'info ' + (infoShow ? "open" : "")}>
