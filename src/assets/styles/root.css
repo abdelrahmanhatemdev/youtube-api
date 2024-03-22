@@ -48,6 +48,7 @@ aside{
     padding: 1rem;
     align-items: start;
     transition: all ease-in-out .3s;
+    overflow: hidden;
 }
 aside a {
     margin-block: .5rem;
