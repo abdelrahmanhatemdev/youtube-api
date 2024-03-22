@@ -1,6 +1,6 @@
 import { search } from "../api/youtube";
 
-export function getData(searchTerm) {
+export async function getData(searchTerm) {
     let searchObject = localStorage.getItem("search");
 
     if (searchObject) {
@@ -22,23 +22,28 @@ export function getData(searchTerm) {
     }
 } 
 
-function createData(searchTerm, searchObject) {
+async function createData(searchTerm, searchObject) {
     // return items.sort(() => (Math.random() > 0.5) ? 1 : -1)
+    console.log("Fetching data from Youtube API");
     const response = search(searchTerm)
+    .then(res =>res)
     .then(res => {
+        console.log(res);
         const {videos} = res;
+        console.log(videos?.length);
 
-        if (videos?.length >0) {
+        if (videos?.length > 0) {
                 searchObject = {...searchObject, [searchTerm]:videos}
                 localStorage.setItem("search", JSON.stringify(searchObject))
                 return videos;
-           
+        
         }else{
             const check = checkQuota(res);
             if(!check){
                 return "Request Limit";
             }
         }
+
     })
     .catch(e => {
         console.error(e);

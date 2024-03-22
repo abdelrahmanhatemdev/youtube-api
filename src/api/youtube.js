@@ -13,16 +13,14 @@ export async function search(term){
             q:term
         }
     })
-    .then(res => {
+    .then(async res => {
         if (res?.data) {
             const items = res.data.items;
             if (items?.length === 50 ){
-                const videos = [];
-
-                return new Promise((resolve, reject) => {
-                    items.map(async item => {
-                        let more =  await videoInfo( item?.id.videoId)
-                        // console.log(more);
+                const videos = await Promise.all(
+                    items.map( item => {
+                        return videoInfo( item?.id.videoId).then(vidRes => {
+                        const more  = vidRes;
                         if (more?.data) {
                             const video = {
                                 id: item?.id.videoId, 
@@ -37,22 +35,16 @@ export async function search(term){
                                 likeCount: more.data?.items[0]?.statistics?.likeCount, 
                                 commentCount: more.data?.items[0]?.statistics?.commentCount
                             }
-                           
-                            videos.push(video)
-                        }
+                            return video;
+                        }  
+                        
+                        }) 
                     })
-    
-                   
-                    resolve({res, videos}) ;
-
-                })
-                
+                );
+                return {res, videos};
             }
         }
-        
-        
-        
-    })
+    }).then(res => res)
     .catch(e => e)
 
     return response;
