@@ -79,11 +79,13 @@ export function checkLocalStorage() {
 export function getVideo(id) {
 
     let searchObject = localStorage.getItem("search");
+    
 
     
 
     if (searchObject) {
         searchObject = JSON.parse(searchObject);
+        
         for (const key in searchObject) {
             for (const video of searchObject[key]) {
                  
@@ -92,6 +94,8 @@ export function getVideo(id) {
                 }
             }
         }
+
+        
     }else{
 
         
