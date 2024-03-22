@@ -28,9 +28,7 @@ async function createData(searchTerm, searchObject) {
     const response = search(searchTerm)
     .then(res =>res)
     .then(res => {
-        console.log(res);
         const {videos} = res;
-        console.log(videos?.length);
 
         if (videos?.length > 0) {
                 searchObject = {...searchObject, [searchTerm]:videos}
@@ -75,5 +73,32 @@ export function checkLocalStorage() {
         lsTotal += value;
         console.log(item.substr(0, 50) + " = " + (value / 1024).toFixed(2) + " KB")
     };
+    
+}
+
+export function getVideo(id) {
+
+    let searchObject = localStorage.getItem("search");
+
+    
+
+    if (searchObject) {
+        searchObject = JSON.parse(searchObject);
+        for (const key in searchObject) {
+            for (const video of searchObject[key]) {
+                 
+                if (id === video?.id) {
+                    return video;
+                }
+            }
+        }
+    }else{
+
+        
+
+        // return createData(searchTerm, searchObject)
+    }
+
+  return id
     
 }

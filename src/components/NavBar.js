@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import { SearchBar } from "./";
 
 export default function NavBar() {
@@ -13,7 +14,7 @@ export default function NavBar() {
 
     return (
         <nav className='navbar'>
-            <div className='logo'>
+            <Link to="/" className='logo'>
                 <svg>
                     <g>
                         <path
@@ -37,7 +38,7 @@ export default function NavBar() {
                         </g>
                     </g>
                 </svg>
-            </div>
+            </Link>
            <SearchBar/>
             <div className='side-menus'>
                 <div className='profile'>

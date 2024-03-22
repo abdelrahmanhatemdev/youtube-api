@@ -5,7 +5,7 @@ import { timeAgo } from "../helpers/date";
 
 export default function VideoItem({video, index}) {
     return (
-        <Link to={"/v/" + video?.id} className="item" key ={index}>
+        <Link to={"/v/" + video?.id} className="item" key ={index} state={{video: video}}>
             <div className="img-holder">
                 <img src={video?.thumbnails} alt={video?.title} />
             </div>
