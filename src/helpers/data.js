@@ -35,6 +35,7 @@ async function createData(searchTerm, searchObject) {
         if (videos?.length > 0) {
                 searchObject = {...searchObject, [searchTerm]:videos}
                 localStorage.setItem("search", JSON.stringify(searchObject))
+                checkLocalStorage()
                 return videos;
         
         }else{
@@ -59,4 +60,20 @@ export function checkQuota(res) {
         return false;
     }
     return true;
+}
+
+
+
+export function checkLocalStorage() {
+
+    let lsTotal = 0, item, value;
+    for (item in localStorage) {
+        if (!localStorage.hasOwnProperty(item)) {
+            continue;
+        }
+        value = ((localStorage[item].length + item.length) * 2);
+        lsTotal += value;
+        console.log(item.substr(0, 50) + " = " + (value / 1024).toFixed(2) + " KB")
+    };
+    
 }
