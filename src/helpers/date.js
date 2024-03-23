@@ -36,7 +36,7 @@ export function timeAgo(time){
     }else{
         let monthDiffernce = nowMonth-oldMonth;
         // console.log(nowMonth,oldMonth);
-        console.log(monthDiffernce);
+        // console.log(monthDiffernce);
         monthDiffernce = monthDiffernce > 0 ? monthDiffernce : 12+ monthDiffernce
         difference += monthDiffernce + (monthDiffernce > 1 ? " months" : " month")
     }
