@@ -1,9 +1,10 @@
 
 
-export function timeAgo(time){
+export function dateFormat(time){
     const old = new Date(time);
-    let difference = "";
-    const [oldYear, oldMonth, oldDay, oldHour, oldMinute, oldSecond] = 
+    let dateFormat = "";
+
+    const oldDate = 
     [
         old.getFullYear(),
         (old.getMonth()+1), 
@@ -13,10 +14,8 @@ export function timeAgo(time){
         old.getSeconds()
     ]
 
-    
-
     const now = new Date();
-    const [nowYear, nowMonth, nowDay, nowHour, nowMinute, nowSecond] = 
+    const nowDate = 
     [
         now.getFullYear(),
         (now.getMonth()+1), 
@@ -26,30 +25,67 @@ export function timeAgo(time){
         now.getSeconds()
     ];
 
-    // console.log(nowMonth-oldMonth);
-    // console.log(old);
+    let difference = nowDate.map((value, index) => value - oldDate[index]);
 
-    const yearDifference = nowYear - oldYear;
+    console.log(nowDate, oldDate);
+    console.log(difference);
 
-    if (yearDifference > 0) {
-        difference += yearDifference + (yearDifference > 1 ? " years" : " year");
-    }else{
-        let monthDiffernce = nowMonth-oldMonth;
-        // console.log(nowMonth,oldMonth);
-        // console.log(monthDiffernce);
-        monthDiffernce = monthDiffernce > 0 ? monthDiffernce : 12+ monthDiffernce
-        difference += monthDiffernce + (monthDiffernce > 1 ? " months" : " month")
-    }
-
-
-
+    let differenceYears = difference[0];
+    let differenceMonths = difference[1];
+    let differenceDays = difference[2];
+    let differenceHours = difference[3];
+    let differenceMintues = difference[4];
+    let differenceSeconds = difference[5];
     
 
 
+    if (differenceYears > 0) {
+        let months = (differenceYears* 12) +  differenceMonths;
+        const years = Math.floor(months/12)
+        if (years > 0 ) {
+            dateFormat += years + (years> 1 ? " years" : " year");
+        }else{
+            dateFormat += Math.abs(differenceMonths) + (Math.abs(differenceMonths)> 1 ? " Months" : " Month");
+        }
+    }else if(differenceMonths > 0){
+        let days = (differenceMonths* 30) +  differenceDays;
+        const months = Math.floor(days/30)
+        if (months > 0 ) {
+            dateFormat += months + (months> 1 ? " Months" : " Month");
+        }else{
+            dateFormat += Math.abs(differenceDays) + (Math.abs(differenceDays)> 1 ? " Days" : " Day");
+        }
+    }else if(differenceDays > 0){
+        let hours = (differenceDays* 24) +  differenceHours;
+        const days = Math.floor(hours/24)
+        if (days > 0 ) {
+            dateFormat += days + (days> 1 ? " Days" : " Day");
+        }else{
+            dateFormat += Math.abs(differenceHours) + (Math.abs(differenceHours)> 1 ? " Hours" : " Hour");
+        }
+    }else if(differenceHours > 0){
+        let minutes = (differenceHours* 60) +  differenceMintues;
+        const hours = Math.floor(minutes/60)
+        if (hours > 0 ) {
+            dateFormat += hours + (hours> 1 ? " Hours" : " Hour");
+        }else{
+            dateFormat += Math.abs(differenceMintues) + (Math.abs(differenceMintues)> 1 ? " Minutes" : " Minute");
+        }
+    }else if(differenceMintues > 0){
+        let seconds = (differenceMintues* 60) +  differenceSeconds;
+        const minutes = Math.floor(seconds/60)
+        if (minutes > 0 ) {
+            dateFormat += minutes + (minutes> 1 ? " Minutes" : " Minute");
+        }else{
+            dateFormat += Math.abs(differenceSeconds) + (Math.abs(differenceSeconds)> 1 ? " Seconds" : " Second");
+        }
+    }else{
+        dateFormat += differenceSeconds + (differenceSeconds> 1 ? " Seconds" : " Second");
+    }
 
-    difference += " ago"
+    dateFormat += " ago"
 
-    return difference;
+    return dateFormat
 }
 
 export function durationFormat(resDuration){
@@ -102,8 +138,6 @@ export function viewsFormat(views){
     }else{
         viewFormat = views
     }
-    
 
     return parseFloat(viewFormat.toFixed(1)) + unit + " views"
-
 }
