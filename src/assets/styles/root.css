@@ -175,5 +175,7 @@ nav .side-menus svg {
 main > .content::-webkit-scrollbar{
     display: none;
 }
-
+.loading{
+    opacity: .1;
+}
 

@@ -16,11 +16,11 @@ export default function Category() {
 
     useTitle(category)
 
-    if (data?.length === 50 ) {
+    if (data?.length > 0 ) {
         // data = data.sort(() => (Math.random() > 0.5) ? 1 : -1);
         content = <>
         
-        <section className={"category-content" +( navigation.state === "loading" ? "loading" : "")} > 
+        <section className={"category-content " +( navigation.state === "loading" ? "loading" : "")} > 
             {
             data.map((video, i) => {
                 return video && <VideoItem video={video} index={i}/>;
