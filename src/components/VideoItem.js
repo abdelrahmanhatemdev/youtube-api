@@ -27,16 +27,14 @@ export default function VideoItem({video, index}) {
             break;
         }
        
-        hours = duration[0];
-        hours = hours < 10 ? "0" + hours : hours;
+        hours = duration[0] > 0? duration[0]  + ":" : "";
 
-        minutes = duration[1];
-        minutes = minutes < 10 ? "0" + minutes : minutes;
+        minutes = duration[1] > 0? duration[1]  : "0";
 
         seconds = duration[2];
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        duration = hours  + ":" + minutes +":"+ seconds
+        duration = hours  + minutes + ":" + seconds
     }else{
         duration = <span className="live">Live</span>
     }
@@ -45,13 +43,14 @@ export default function VideoItem({video, index}) {
         <Link to={"/v/" + video?.id} className="item" key ={index} state={{video: video}}>
             <div className="img-holder">
                 <img src={video?.thumbnails} alt={video?.title} />
+                <span className="duration">{duration}</span>
             </div>
             <div className="details">
                 <span className="title">{video?.title}</span>
                 <div className="tips">
                     <span className="channel">{video?.channelTitle}</span>
                     <span className="date">{timeAgo(video?.publishedAt)}</span>
-                    <span className="duration">{duration}</span>
+                    
                 </div>
             </div>
         </Link>
