@@ -5,6 +5,7 @@ import {Categories, VideoItem, ErrorPage} from "../components";
 
 export async function loader({params}) {
     const category = params.category;
+    category && category.replace("/", "_");
     const data = await getData(category);
     return {data, category}
 }
