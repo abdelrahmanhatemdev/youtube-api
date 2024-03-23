@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import {NotFound } from "./components";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import Root, {loader as rootLoader} from "./routes/Root";
-import Category, {loader as categoryLoader} from "./routes/Category";
-import Search, {loader as searchLoader} from "./routes/Search";
-import Video, {loader as videoLoader} from "./routes/Video";
+import Root, {loader as rootLoader} from "./components/Root";
+import Category, {loader as categoryLoader} from "./components/Category";
+import Search, {loader as searchLoader} from "./components/Search";
+import Video, {loader as videoLoader} from "./components/Videos";
 
 
 let router = createBrowserRouter([
@@ -28,7 +28,7 @@ let router = createBrowserRouter([
             {
                 path: "menu/:menu", 
                 element: <Search/>, 
-                loader: categoryLoader
+                loader: searchLoader
             },
             {
                 path: "v/:videoId", 

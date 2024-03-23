@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLoaderData, useLocation} from "react-router-dom";
-import { VideoDetails } from "../components";
-import { getVideo } from "../helpers/data";
+import { VideoDetails } from "..";
+import { getVideo } from "../../helpers/data";
 
 export async function loader({params}) {
     const id  = params.videoId;

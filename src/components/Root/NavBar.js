@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import { SearchBar } from "./";
+import { SearchBar } from "..";
 
 export default function NavBar() {
 
-    const [search, setSearch] = useState("")
+    // const [search, setSearch] = useState("")
 
 
-    function handlesubmit(e){
-        e.preventDefault();
-        // getSearch(search)
-    }
+    // function handlesubmit(e){
+    //     e.preventDefault();
+    //     // getSearch(search)
+    // }
 
     return (
         <nav className='navbar'>

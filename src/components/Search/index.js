@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import { getData } from "../helpers/data";
+import { getData } from "../../helpers/data";
 
 export async function loader({params}) {
     const search = params.search;

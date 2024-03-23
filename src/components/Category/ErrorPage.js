@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import "../assets/styles/error.css";
+import "./error.css";
 
 export default function ErrorPage({type}) {
     const [infoShow, setInfoShow] = useState(false);

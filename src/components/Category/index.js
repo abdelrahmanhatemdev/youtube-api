@@ -1,7 +1,7 @@
-import { useLoaderData, Link, useNavigation } from "react-router-dom";
-import useTitle from "../hooks/useTitle";
-import { getData } from "../helpers/data";
-import {Categories, VideoItem, ErrorPage} from "../components";
+import { useLoaderData, useNavigation } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
+import { getData } from "../../helpers/data";
+import {Categories, VideoItem, ErrorPage} from "..";
 
 export async function loader({params}) {
     const category = params.category;

@@ -1,6 +1,6 @@
 
 import {Link} from "react-router-dom";
-import { dateFormat, durationFormat, viewsFormat } from "../helpers/formats";
+import { dateFormat, durationFormat, viewsFormat } from "../../helpers/formats";
 
 
 export default function VideoItem({video, index}) {
