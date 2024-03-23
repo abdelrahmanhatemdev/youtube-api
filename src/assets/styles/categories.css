@@ -31,13 +31,28 @@
     display: none;
 }
 .category-content .item .img-holder{
-    height: 57%;
+    height: 45%;
     border-radius: 1rem;
     overflow: hidden;
+    position: relative;
+}
+.category-content .item .img-holder .duration{
+    position: absolute;
+    inset-block-end: .5rem;
+    inset-inline-end: .6rem;
+    background-color: rgb(0 0 0 /50%);
+    border-radius: .3rem;
+    font-size: .9rem;
+    color: var(--white-2);
+    padding: .2rem;
+}
+.category-content .item .img-holder .duration .live{
+    color: var(--red-2)
 }
 .category-content .item img {
     inline-size: 100%;
     margin-block-start: -10%;
+    scale: 1 1.1;
 }
 .category-content .item .details{
     padding-block: .7rem;
