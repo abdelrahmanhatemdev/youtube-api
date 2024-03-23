@@ -6,33 +6,34 @@ import {Categories, VideoItem, ErrorPage} from "..";
 export async function loader({params}) {
     const category = params.category;
     category && category.replace("/", "_");
-    const data = await getData(category);
-    return {data, category}
+    const videos = await getData(category);
+    return {videos, category}
 }
 
 export default function Category() {
-    let {data, category} = useLoaderData();
+    let {videos, category} = useLoaderData();
     let navigation = useNavigation();
     let content;
 
+   
+
     useTitle(category)
 
-    if (data?.length > 0 ) {
+    if (videos?.length > 0 ) {
         // data = data.sort(() => (Math.random() > 0.5) ? 1 : -1);
         content = <>
         
         <section className={"category-content " +( navigation.state === "loading" ? "loading" : "")} > 
             {
-            data.map((video, i) => {
-                return video && <VideoItem video={video} index={i}/>;
+            videos.map((video, i) => {
+                return video && <VideoItem video={video} index={i} videos={videos}/>;
             })
             }
         </section>
         </>
        
     }else{
-        if (data?.includes("Request Limit")) {
-           
+        if (videos?.includes("Request Limit")) {
             content = <ErrorPage type="requestLimit"/>
         }
     }

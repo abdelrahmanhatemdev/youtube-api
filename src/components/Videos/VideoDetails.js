@@ -1,5 +1,7 @@
+import RelatedVideos from "./RelatedVideos";
+
 import "./videoDetails.css";
-function VideoDetails({video, id}) {
+function VideoDetails({video, id, videos}) {
     const videoSrc = "https://www.youtube.com/embed/" + id;
     return (
         <section className="video-page">
@@ -32,7 +34,7 @@ function VideoDetails({video, id}) {
                 </div>
             </div>
             <div className="related">
-
+                <RelatedVideos videos={videos}/>
             </div>
         </section>
     )

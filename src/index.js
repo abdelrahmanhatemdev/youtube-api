@@ -16,7 +16,7 @@ let router = createBrowserRouter([
         loader:rootLoader, 
         children: [
             {
-                path: "categories/:category", 
+                path: "category/:category", 
                 element: <Category/>, 
                 loader: categoryLoader
             }, 

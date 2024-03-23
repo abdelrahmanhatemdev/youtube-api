@@ -10,17 +10,18 @@ export async function loader({params}) {
 
 export default function Video() {
     const {id} = useLoaderData();
-    let video;
+    let video, videos;
 
     const location = useLocation();
     const state = location.state;
 
     if (state) {
-        video = state.video;
+        video = state?.video;
+        videos = state?.videos;
     }else{
         video = getVideo(id)
     }
     
 
-    return <VideoDetails video={video} id={id}/>
+    return <VideoDetails video={video} id={id} videos={videos}/>
 }

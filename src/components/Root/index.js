@@ -21,7 +21,6 @@ export default function Root() {
         <main>
             <NavBar/>
             <Outlet/>
-         
         </main>
         </>
     )
