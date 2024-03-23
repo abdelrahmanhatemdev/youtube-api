@@ -30,6 +30,7 @@ a{
     inline-size: 97%;
     padding: 2rem;
     display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
     block-size: 94svh;
     box-sizing: border-box;
@@ -38,7 +39,6 @@ a{
 #root > * {
     display: flex;
     flex-direction: column;
-    
 }
 aside, nav {
     background: var(--gray-3);
@@ -49,6 +49,7 @@ aside{
     align-items: start;
     transition: all ease-in-out .3s;
     overflow: hidden;
+    flex: 0 0 auto;
 }
 aside a {
     margin-block: .5rem;
@@ -91,6 +92,10 @@ aside .separator {
     block-size: 1px;
     background: var(--gray-5);
     margin-block: .8rem;
+}
+main {
+    flex: 1 0 min-content;
+    block-size: 100%;
 }
 nav {
     display: flex;
@@ -165,18 +170,9 @@ nav .side-menus svg {
     inline-size: 100%;
     fill: var(--gray-5);
 }
-main > .content{
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 main > .content::-webkit-scrollbar{
     display: none;
 }
-main > .content .loading {
-    opacity: 0.1;
-    transition: opacity 200ms;
-    transition-delay: 200ms;
-}
+
 

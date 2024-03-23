@@ -1,7 +1,14 @@
 .error-page {
+    inline-size: 100%;
+    block-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+.panel{
     inline-size: auto;
     block-size: auto;
-   
     border: 1px solid var(--gray-3);
     border-radius: 1rem;
     overflow: hidden;

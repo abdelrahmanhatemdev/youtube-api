@@ -7,7 +7,7 @@ export default function ErrorPage({type}) {
     let error;
     if (type==="requestLimit") {
         error = 
-        <div>
+        <div className='panel'>
 
             <div className='header'>
                 <h1>Youtube API Quota</h1>

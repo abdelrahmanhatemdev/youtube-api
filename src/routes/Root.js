@@ -20,10 +20,8 @@ export default function Root() {
         </aside>
         <main>
             <NavBar/>
-            <Categories/>
-            <section className='content'>
-                <Outlet/>
-            </section>
+            <Outlet/>
+         
         </main>
         </>
     )

@@ -1,9 +1,7 @@
 import { useLoaderData, Link, useNavigation } from "react-router-dom";
 import useTitle from "../hooks/useTitle";
 import { getData } from "../helpers/data";
-
-import {ErrorPage}  from "../components";
-import {VideoItem}  from "../components";
+import {Categories, VideoItem, ErrorPage} from "../components";
 
 export async function loader({params}) {
     const category = params.category;
@@ -20,7 +18,8 @@ export default function Category() {
 
     if (data?.length === 50 ) {
         // data = data.sort(() => (Math.random() > 0.5) ? 1 : -1);
-        content = 
+        content = <>
+        
         <section className={"category-content" +( navigation.state === "loading" ? "loading" : "")} > 
             {
             data.map((video, i) => {
@@ -28,6 +27,8 @@ export default function Category() {
             })
             }
         </section>
+        </>
+       
     }else{
         if (data?.includes("Request Limit")) {
            
@@ -35,5 +36,10 @@ export default function Category() {
         }
     }
 
-    return content;
+    return (
+        <>
+            <Categories/>
+            {content}
+        </>
+        );
 }
