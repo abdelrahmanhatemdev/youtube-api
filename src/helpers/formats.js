@@ -27,9 +27,6 @@ export function dateFormat(time){
 
     let difference = nowDate.map((value, index) => value - oldDate[index]);
 
-    console.log(nowDate, oldDate);
-    console.log(difference);
-
     let differenceYears = difference[0];
     let differenceMonths = difference[1];
     let differenceDays = difference[2];
@@ -138,6 +135,6 @@ export function viewsFormat(views){
     }else{
         viewFormat = views
     }
-
-    return parseFloat(viewFormat.toFixed(1)) + unit + " views"
+    
+    return parseFloat(Number(viewFormat)?.toFixed(1)) + unit + " views"
 }
