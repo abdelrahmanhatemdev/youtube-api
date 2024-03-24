@@ -89,31 +89,35 @@ export function durationFormat(resDuration){
     if(resDuration!== ("P0D") ){
         let [hours, minutes, seconds] = ["","",""];
         let duration = resDuration;
-        duration = duration.replace("PT", "");
 
-        duration = duration.split("H").join(",").split("M").join(",").split("S").join("").split(",");
+        if (duration) {
+            duration = duration.replace("PT", "");
 
-        switch (duration.length) {
-            case 2:
-                duration.unshift(0)
+            duration = duration.split("H").join(",").split("M").join(",").split("S").join("").split(",");
+    
+            switch (duration.length) {
+                case 2:
+                    duration.unshift(0)
+                    break;
+    
+                case 1:
+                    duration.unshift(0, 0)
+                    break;
+            
+                default:
                 break;
-
-            case 1:
-                duration.unshift(0, 0)
-                break;
-        
-            default:
-            break;
+            }
+           
+            hours = duration[0] > 0? duration[0]  + ":" : "";
+    
+            minutes = duration[1] > 0? duration[1]  : "0";
+    
+            seconds = duration[2];
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+    
+            return hours  + minutes + ":" + seconds
         }
-       
-        hours = duration[0] > 0? duration[0]  + ":" : "";
-
-        minutes = duration[1] > 0? duration[1]  : "0";
-
-        seconds = duration[2];
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        return hours  + minutes + ":" + seconds
+      
     }else{
         return <span className="live">Live</span>
     }
