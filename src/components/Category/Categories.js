@@ -8,7 +8,7 @@ export default function Categories() {
 
     const categories = categoryArray.map((cat, i) => {
         return <NavLink 
-        to={"/categories/" + cat.replace("/", "_")} 
+        to={"/category/" + cat.replace("/", "_")} 
         key={i}
         className={({isActive, isPending}) => {
             return isActive ? "active" : isPending ? "pending" : "";
