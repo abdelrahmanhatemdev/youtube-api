@@ -39,9 +39,9 @@ export default function Category() {
     }
 
     return (
-        <>
+        <section className="category-page">
             <Categories/>
             {content}
-        </>
+        </section>
         );
 }

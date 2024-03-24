@@ -172,7 +172,10 @@ nav .side-menus svg {
     inline-size: 100%;
     fill: var(--gray-5);
 }
-
+main > .content {
+    overflow-y:auto;
+    block-size: 90%;
+}
 main > .content::-webkit-scrollbar{
     display: none;
 }

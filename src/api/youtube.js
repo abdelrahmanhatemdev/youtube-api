@@ -65,3 +65,35 @@ export async function videoInfo(id){
 
     return response;
 }
+
+export async function channelInfo(id){
+
+    const response = await axios.get(`${baseURL}/channels`, {
+        params:{
+            part: "snippet,statistics", 
+            maxResults:50,
+            key: API_KEY,
+            id:id
+        }
+    })
+    .then(async res => {
+        const items = res.data.items;
+        
+        if (items.length > 0 ) {
+            return {id: items[0].id, 
+                title: items[0].snippet.title, 
+                description: items[0].snippet.description, 
+                thumbnails: items[0].snippet.thumbnails.high.url, 
+                subscriberCount: items[0].statistics.subscriberCount,
+                videoCount: items[0].statistics.videoCount, 
+                viewCount: items[0].statistics.viewCount
+            }
+                
+        }else{
+            console.log("No Quota");
+        }
+    })
+    .catch(e => e)
+
+    return response;
+}

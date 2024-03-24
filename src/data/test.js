@@ -1,85 +1,39 @@
-
 {
-    "data": {
-        "kind": "youtube#videoListResponse",
-        "etag": "r76quznSANa26T2uBILq6DymCkc",
-        "items": [
-            {
-                "kind": "youtube#video",
-                "etag": "m84zJTMYywpkCGbdX3QJilpM5Sg",
-                "id": "hlWiI4xVXKY",
-                "contentDetails": {
-                    "duration": "PT3H3M39S",
-                    "dimension": "2d",
-                    "definition": "hd",
-                    "caption": "false",
-                    "licensedContent": true,
-                    "contentRating": {},
-                    "projection": "rectangular"
-                },
-                "statistics": {
-                    "viewCount": "248801417",
-                    "likeCount": "1640420",
-                    "favoriteCount": "0",
-                    "commentCount": "51510"
-                },
-                "topicDetails": {
-                    "topicCategories": [
-                        "https://en.wikipedia.org/wiki/Jazz",
-                        "https://en.wikipedia.org/wiki/Music"
-                    ]
-                }
+    "kind": "youtube#channel",
+    "etag": "sBfndMdwMmJuo57N5tZTZq8KdPg",
+    "id": "UCxE5jEls-T0QtlTHT8lI1lw",
+    "snippet": {
+        "title": "OliviaRodrigoVEVO",
+        "description": "",
+        "customUrl": "@oliviarodrigovevo",
+        "publishedAt": "2016-10-31T21:35:38Z",
+        "thumbnails": {
+            "default": {
+                "url": "https://yt3.ggpht.com/BXdOiG16ffzn4VICe5fqzorNN2D9BapjgunaiZwLsZNeb4H9zflSSpvElpP_u6ZJ7jROheRI=s88-c-k-c0x00ffffff-no-nd-rj",
+                "width": 88,
+                "height": 88
+            },
+            "medium": {
+                "url": "https://yt3.ggpht.com/BXdOiG16ffzn4VICe5fqzorNN2D9BapjgunaiZwLsZNeb4H9zflSSpvElpP_u6ZJ7jROheRI=s240-c-k-c0x00ffffff-no-nd-rj",
+                "width": 240,
+                "height": 240
+            },
+            "high": {
+                "url": "https://yt3.ggpht.com/BXdOiG16ffzn4VICe5fqzorNN2D9BapjgunaiZwLsZNeb4H9zflSSpvElpP_u6ZJ7jROheRI=s800-c-k-c0x00ffffff-no-nd-rj",
+                "width": 800,
+                "height": 800
             }
-        ],
-        "pageInfo": {
-            "totalResults": 1,
-            "resultsPerPage": 1
+        },
+        "defaultLanguage": "en",
+        "localized": {
+            "title": "OliviaRodrigoVEVO",
+            "description": ""
         }
     },
-    "status": 200,
-    "statusText": "",
-    "headers": {
-        "cache-control": "private",
-        "content-encoding": "gzip",
-        "content-length": "437",
-        "content-type": "application/json; charset=UTF-8",
-        "date": "Wed, 20 Mar 2024 18:29:00 GMT",
-        "server": "scaffolding on HTTPServer2",
-        "vary": "Origin, X-Origin, Referer"
-    },
-    "config": {
-        "transitional": {
-            "silentJSONParsing": true,
-            "forcedJSONParsing": true,
-            "clarifyTimeoutError": false
-        },
-        "adapter": [
-            "xhr",
-            "http"
-        ],
-        "transformRequest": [
-            null
-        ],
-        "transformResponse": [
-            null
-        ],
-        "timeout": 0,
-        "xsrfCookieName": "XSRF-TOKEN",
-        "xsrfHeaderName": "X-XSRF-TOKEN",
-        "maxContentLength": -1,
-        "maxBodyLength": -1,
-        "env": {},
-        "headers": {
-            "Accept": "application/json, text/plain, */*"
-        },
-        "params": {
-            "part": "contentDetails,statistics,topicDetails",
-            "maxResults": 50,
-            "key": "AIzaSyAFoMGCmYTz32RQxZ6DECC-VCeKi_Txpjs",
-            "id": "hlWiI4xVXKY"
-        },
-        "method": "get",
-        "url": "https://www.googleapis.com/youtube/v3/videos"
-    },
-    "request": {}
+    "statistics": {
+        "viewCount": "2772814155",
+        "subscriberCount": "210000",
+        "hiddenSubscriberCount": false,
+        "videoCount": "74"
+    }
 }

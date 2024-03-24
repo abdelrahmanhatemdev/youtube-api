@@ -1,4 +1,5 @@
-import { search } from "../api/youtube";
+import { search, channelInfo } from "../api/youtube";
+
 
 export async function getData(searchTerm) {
     let searchObject = localStorage.getItem("search");
@@ -106,3 +107,34 @@ export function getVideo(id) {
   return id
     
 }
+
+export  function getChannel(id) {
+    let channelsObject = localStorage.getItem("channels");
+    if (channelsObject) {
+        channelsObject = JSON.parse(channelsObject);
+
+        for (const channel of channelsObject) {
+            if (id === channel.id) {
+                return channel;
+            }
+        }
+
+        channelInfo(id)
+        .then(channel=> {
+                 localStorage.setItem("channels", JSON.stringify([...channelsObject, channel]))
+                    return channel;
+            });
+
+    }else{
+        channelInfo(id)
+        .then(channel=> {
+                 localStorage.setItem("channels", JSON.stringify([channel]))
+                    return channel;
+            });
+    }
+    
+}
+
+ 
+
+
