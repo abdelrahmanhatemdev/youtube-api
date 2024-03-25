@@ -5,8 +5,8 @@ import "./videoDetails.css";
 function VideoDetails({video, id, videos}) {
     const videoSrc = "https://www.youtube.com/embed/" + id;
 
-    let channel = getChannel(video.channelID) ? getChannel(video.channelID) :"";
-    console.log(channel);
+    let channel = getChannel(video.channelID);
+
     return (
         <section className="video-page">
             <div className="video-details">
@@ -21,12 +21,16 @@ function VideoDetails({video, id, videos}) {
                     <div className="channel">
                     <a href={"https://www.youtube.com/channel/"+video.channelTitle} target="_blink" rel="noopenner noreferrer">
                         <img src={channel.thumbnails} alt={video.title}/>
-                        {video.channelTitle}</a>
+                        <div>
+                            <span className="title">{channel.title}</span>
+                            <span className="title">{channel.subscriberCount} subscribers</span>
+                        </div>
+                    </a>
                 </div>}
                     
                     <div className="actions">
                         <div className="likes">
-                            <span className="like">{video.likeCount}</span>
+                            <span className="like">{video.likeCount} Likes</span>
                             <span className="dislike"></span>
                         </div>
                     </div>

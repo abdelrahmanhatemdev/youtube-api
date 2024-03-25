@@ -1,4 +1,4 @@
-import { search, channelInfo } from "../api/youtube";
+import { search, channelInfo, comments } from "../api/youtube";
 
 
 export async function getData(searchTerm) {

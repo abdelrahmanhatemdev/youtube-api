@@ -110,7 +110,12 @@ export function durationFormat(resDuration){
            
             hours = duration[0] > 0? duration[0]  + ":" : "";
     
-            minutes = duration[1] > 0? duration[1]  : "0";
+            minutes = duration[1] > 0? duration[1]  : "00";
+
+            if (duration[0]  > 0 ) {
+                minutes = minutes > 9 ? minutes : "0"+ minutes; 
+            }
+            
     
             seconds = duration[2];
             seconds = seconds < 10 ? "0" + seconds : seconds;
