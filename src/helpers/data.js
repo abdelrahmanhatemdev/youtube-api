@@ -1,4 +1,4 @@
-import { search, channelInfo, comments } from "../api/youtube";
+import { search, channelInfo } from "../api/youtube";
 
 
 export async function getData(searchTerm) {
@@ -73,6 +73,7 @@ export function checkLocalStorage() {
         value = ((localStorage[item].length + item.length) * 2);
         lsTotal += value;
         console.log(item.substr(0, 50) + " = " + (value / 1024).toFixed(2) + " KB")
+        console.log("Total = " +  lsTotal + " KB")
     };
     
 }

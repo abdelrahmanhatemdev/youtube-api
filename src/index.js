@@ -5,7 +5,8 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Root, {loader as rootLoader} from "./components/Root";
 import Category, {loader as categoryLoader} from "./components/Category";
 import Search, {loader as searchLoader} from "./components/Search";
-import Video, {loader as videoLoader} from "./components/Videos";
+import Video, {loader as videoLoader} from "./components/Video";
+import Menu from "./components/Menu";
 
 
 let router = createBrowserRouter([
@@ -27,7 +28,7 @@ let router = createBrowserRouter([
             },
             {
                 path: "menu/:menu", 
-                element: <Search/>, 
+                element: <Menu/>, 
                 loader: searchLoader
             },
             {

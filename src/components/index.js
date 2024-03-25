@@ -8,7 +8,7 @@ export {default as SearchBar} from "./Root/SearchBar";
 export {default as ErrorPage} from "./Category/ErrorPage";
 export {default as NotFound} from "./Root/NotFound";
 
-export {default as VideoDetails} from "./Videos/VideoDetails";
+export {default as VideoDetails} from "./Video/VideoDetails";
 
 export {default as VideoItem} from "./Category/VideoItem";
 
