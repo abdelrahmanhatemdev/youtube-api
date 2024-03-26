@@ -25,7 +25,7 @@ function VideoDetails({video, id, videos}) {
                         <img src={channel.thumbnails} alt={video.title}/>
                         <div className="data">
                             <span className="title">{channel.title}</span>
-                            <span className="subscribers">{channel.subscriberCount} subscribers</span>
+                            <span className="subscribers">{numberFormat(channel.subscriberCount)} subscribers</span>
                         </div>
                     </a>
                 </div>}
