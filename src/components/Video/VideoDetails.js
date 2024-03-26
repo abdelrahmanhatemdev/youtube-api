@@ -57,7 +57,7 @@ function VideoDetails({video, id, videos}) {
                 </div>
             </div>
             <div className="related">
-                <RelatedVideos videos={videos}/>
+                <RelatedVideos videos={videos.filter(v => v.id !== video.id)}/>
             </div>
         </section>
     )

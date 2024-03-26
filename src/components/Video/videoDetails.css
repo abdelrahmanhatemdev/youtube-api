@@ -81,7 +81,7 @@
     rotate: 0 0 1 180deg;
 }
 .video-details .description{
-    margin-block: .5rem;
+    margin-block: 1rem;
     background: var(--gray-3);
     color: var(--white-3);
     padding: .8rem;
