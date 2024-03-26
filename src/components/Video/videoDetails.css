@@ -6,11 +6,38 @@
     flex-basis: 80%;
 }
 .video-details .player iframe{
-    border: 3px solid var(--gray-3);
+    border: none;
     border-radius: 1.5rem;
 }
-.video-details .title {
+.video-details .video-title {
     font-size: 1.5rem;
     margin-block: .5rem;
     color: var(--white-2);
+}
+.video-details .info {
+    display: flex;
+    gap: .7rem;
+    justify-content: space-between;
+}
+.video-details .channel a {
+    display: flex;
+    gap: .5rem;
+    color: var(--white-2);
+}
+.video-details .channel img {
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    border-radius: 50%;
+}
+.video-details .data {
+    display: flex;
+    flex-direction: column;
+}
+.video-details .channel .title {
+    font-weight: 600;
+}
+.video-details .channel .subscribers {
+    font-size: .8rem;
+    color: var(--gray-5);
+    font-weight: 200;
 }

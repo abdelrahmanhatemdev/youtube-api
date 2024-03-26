@@ -15,15 +15,15 @@ function VideoDetails({video, id, videos}) {
                     // allow="accelerometer; autoplay *; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen"
                     ></iframe>
                 </div>
-                <h1 className="title">{video.title}</h1>
+                <h1 className="video-title">{video.title}</h1>
                 <div className="info">
                     {channel && 
                     <div className="channel">
                     <a href={"https://www.youtube.com/channel/"+video.channelTitle} target="_blink" rel="noopenner noreferrer">
                         <img src={channel.thumbnails} alt={video.title}/>
-                        <div>
+                        <div className="data">
                             <span className="title">{channel.title}</span>
-                            <span className="title">{channel.subscriberCount} subscribers</span>
+                            <span className="subscribers">{channel.subscriberCount} subscribers</span>
                         </div>
                     </a>
                 </div>}
