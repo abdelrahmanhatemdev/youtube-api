@@ -1,10 +1,27 @@
-.item .img-holder{
-    height: 56%;
+.related {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 30%;
+    background: var(--gray-3);
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+}
+.related .item {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-basis: 100%;
+    gap: .5rem;
+    align-items: center;
+}
+.related .item .img-holder {
+    height: 88%;
+    flex-basis: 33%;
     border-radius: 1rem;
     overflow: hidden;
     position: relative;
+    flex-shrink: 0;
 }
-.item .img-holder .duration{
+.related .item .img-holder .duration{
     position: absolute;
     inset-block-end: .5rem;
     inset-inline-end: .6rem;
@@ -14,25 +31,25 @@
     color: var(--white-2);
     padding: .2rem;
 }
-.item .img-holder .duration .live{
+.related .item .img-holder .duration .live{
     color: var(--red-2)
 }
-.item img {
+.related .item img {
     inline-size: 100%;
     margin-block-start: -6.7%;
     scale: 1 1.1;
     transition: all ease-in-out .3s;
 }
-.item img:hover {
+.related .item img:hover {
     scale: 1.1 1.25;
 }
-.item .details{
+.related .item .details{
     padding-block: .7rem;
 }
-.item .details > * {
+.related .item .details > * {
     display: block;
 }
-.item .details .title {
+.related .item .details .title {
     color: var(--white-1);
     text-overflow: ellipsis;
     overflow: hidden;
@@ -40,13 +57,13 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
-.item .details .tips {
+.related .item .details .tips {
     display: flex;
     flex-direction: column;
     color: var(--gray-5);
     padding-block: .5rem;
     gap: .4rem;
 }
-.item .details .tips .date{
+.related .item .details .tips .date{
     font-size: .9rem;
 }
