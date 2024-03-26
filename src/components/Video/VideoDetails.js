@@ -1,5 +1,5 @@
 import { getChannel } from "../../helpers/data";
-import { numberFormat } from "../../helpers/formats";
+import { numberFormat, dateFormat } from "../../helpers/formats";
 import likeIcon from "../../assets/icons/like.png";
 import RelatedVideos from "./RelatedVideos";
 
@@ -47,9 +47,9 @@ function VideoDetails({video, id, videos}) {
                     </div>
                 </div>
                 <div className="description">
-                    <div>
+                    <div className="stats">
                         <span>{video.viewCount} views</span>
-                        <span>{video.publishedAt}</span>
+                        <span>{dateFormat(video.publishedAt)}</span>
                     </div>
                     <div>
                         <span> {video.description}</span>

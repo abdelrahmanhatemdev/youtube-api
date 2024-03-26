@@ -18,6 +18,7 @@
     display: flex;
     gap: .7rem;
     justify-content: space-between;
+    margin-block: .5rem;
 }
 .video-details .channel a {
     display: flex;
@@ -42,10 +43,7 @@
     font-weight: 200;
 }
 .video-details .likes {
-
     color: var(--white-2);
-
-   
     display: flex;
 }
 .video-details .likes > * {
@@ -81,4 +79,20 @@
 }
 .video-details .likes .dislike .icon{
     rotate: 0 0 1 180deg;
+}
+.video-details .description{
+    margin-block: .5rem;
+    background: var(--gray-3);
+    color: var(--white-3);
+    padding: .8rem;
+    border-radius: 1rem;
+}
+.video-details .description .stats {
+    margin-block-end: .5rem;
+    font-size: .85rem;
+    font-weight: 600;
+    display: flex;
+    gap: .5rem;
+    color: var(--white-2);
+    letter-spacing: .05rem;
 }
