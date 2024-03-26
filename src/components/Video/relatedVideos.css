@@ -4,7 +4,8 @@
     flex-basis: 30%;
     background: var(--gray-3);
     border-radius: 1rem;
-    padding: .5rem 1rem;
+    padding: 1rem;
+    gap: .5rem;
 }
 .related .item {
     display: flex;
@@ -12,6 +13,16 @@
     flex-basis: 100%;
     gap: .5rem;
     align-items: center;
+    background: var(--gray-3);
+    border-radius: 1rem;
+    padding: 0 .5rem;
+    transition: all ease-in-out .5s;
+}
+.related .item:hover {
+    background: var(--gray-4);
+}
+.related .item:hover img{
+    scale: 1.1 1.25;
 }
 .related .item .img-holder {
     height: 88%;
@@ -39,9 +50,6 @@
     margin-block-start: -6.7%;
     scale: 1 1.1;
     transition: all ease-in-out .3s;
-}
-.related .item img:hover {
-    scale: 1.1 1.25;
 }
 .related .item .details{
     padding-block: .7rem;
