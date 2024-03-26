@@ -128,22 +128,22 @@ export function durationFormat(resDuration){
     }
 }
 
-export function viewsFormat(views){
+export function numberFormat(number){
     let viewFormat=0.00;
     let unit=""
     let billion = 1000000000
-    if (views > billion) {
-        viewFormat = views / billion
+    if (number > billion) {
+        viewFormat = number / billion
         unit = "B";
-    }else if (views > billion/1000){
-        viewFormat = views / (billion/1000) 
+    }else if (number > billion/1000){
+        viewFormat = number / (billion/1000) 
         unit = "M"
-    }else if (views > billion/1000000){
-        viewFormat = views / (billion/1000000) 
+    }else if (number > billion/1000000){
+        viewFormat = number / (billion/1000000) 
         unit = "K"
     }else{
-        viewFormat = views
+        viewFormat = number
     }
     
-    return parseFloat(Number(viewFormat)?.toFixed(1)) + unit + " views"
+    return parseFloat(Number(viewFormat)?.toFixed(1)) + unit 
 }

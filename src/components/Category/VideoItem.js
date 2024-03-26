@@ -1,6 +1,6 @@
 
 import {Link} from "react-router-dom";
-import { dateFormat, durationFormat, viewsFormat } from "../../helpers/formats";
+import { dateFormat, durationFormat, numberFormat } from "../../helpers/formats";
 
 
 export default function VideoItem({video, index, videos}) {
@@ -21,7 +21,7 @@ export default function VideoItem({video, index, videos}) {
             <div className="tips">
                 <span className="channel">{video.channelTitle}</span>
                 <span className="date">
-                    {viewsFormat(video.viewCount)} • {dateFormat(video.publishedAt)}</span>
+                    {numberFormat(video.viewCount)} views • {dateFormat(video.publishedAt)}</span>
                 
             </div>
         </div>

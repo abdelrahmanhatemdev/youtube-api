@@ -79,6 +79,7 @@ export async function channelInfo(id){
     .then(async res => {
         const items = res.data.items;
         
+        
         if (items.length > 0 ) {
             return {id: items[0].id, 
                 title: items[0].snippet.title, 

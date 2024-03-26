@@ -1,4 +1,6 @@
 import { getChannel } from "../../helpers/data";
+import { numberFormat } from "../../helpers/formats";
+import likeIcon from "../../assets/icons/like.png";
 import RelatedVideos from "./RelatedVideos";
 
 import "./videoDetails.css";
@@ -30,8 +32,17 @@ function VideoDetails({video, id, videos}) {
                     
                     <div className="actions">
                         <div className="likes">
-                            <span className="like">{video.likeCount} Likes</span>
-                            <span className="dislike"></span>
+                            <span className="like">
+                                <span className="icon">
+                                    <img src={likeIcon} alt="Like Icon"/>
+                                </span>
+                                <span className="count">{numberFormat(video.likeCount)}</span>
+                            </span>
+                            <span className="dislike">
+                            <span className="icon">
+                                    <img src={likeIcon} alt="Like Icon"/>
+                                </span>
+                            </span>
                         </div>
                     </div>
                 </div>

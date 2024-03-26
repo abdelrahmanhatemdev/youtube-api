@@ -41,3 +41,44 @@
     color: var(--gray-5);
     font-weight: 200;
 }
+.video-details .likes {
+
+    color: var(--white-2);
+
+   
+    display: flex;
+}
+.video-details .likes > * {
+    padding: 0.2rem .5rem;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: .9rem;
+    gap: .3rem;
+    cursor: pointer;
+    background: var(--gray-6);
+    transition: all ease-in-out .3s;
+}
+.video-details .likes > *:hover {
+   background-color: var(--gray-7);
+}
+.video-details .likes .like{
+    border-radius: 2rem 0 0 2rem;
+    padding-inline-end: 0;
+}
+.video-details .likes .like .count{
+    border-inline-end: 1px solid var(--gray-5);
+    padding-inline-end: .8rem;
+}
+.video-details .likes .dislike{
+    border-radius: 0 2rem 2rem 0;
+}
+.video-details .likes .icon{
+    block-size: 25px;
+}
+.video-details .likes .icon img{
+    block-size: 100%;
+}
+.video-details .likes .dislike .icon{
+    rotate: 0 0 1 180deg;
+}
