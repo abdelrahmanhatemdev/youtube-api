@@ -9,7 +9,7 @@ export async function getData(searchTerm) {
         let storedTerm = searchObject[searchTerm];
 
         if (storedTerm) {
-            return storedTerm;
+            return storedTerm.filter(v => v);
             
         }else{
             
@@ -35,7 +35,7 @@ async function createData(searchTerm, searchObject) {
                 searchObject = {...searchObject, [searchTerm]:videos}
                 localStorage.setItem("search", JSON.stringify(searchObject))
                 checkLocalStorage()
-                return videos;
+                return videos.filter(v => v);
         
         }else{
             const check = checkQuota(res);

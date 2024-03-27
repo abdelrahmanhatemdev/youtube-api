@@ -51,8 +51,6 @@ export default function SearchResults({search, videos}) {
                                         </span>
                                 }
                             </div>
-                            
-                            
                         </div>
                     </div>
                 </Link>
@@ -61,9 +59,5 @@ export default function SearchResults({search, videos}) {
     })
     
 
-    return (
-        <section className='results'>
-       {content}
-        </section>
-    )
+    return content;
 }

@@ -20,9 +20,9 @@
 .results .item:hover .img-holder img {
     scale: 1 1.2;
 }
-.results .item .img-holder{
-    block-size: 200px;
-    inline-size: 300px;
+.results .item .img-holder {
+    block-size: 12rem;
+    inline-size: 20rem;
     border-radius: 1rem;
     overflow: hidden;
     position: relative;
@@ -42,10 +42,11 @@
     color: var(--red-2)
 }
 .results .item .img-holder img {
-    block-size: 100%;
+    block-size: 124%;
     inline-size: 100%;
     scale: 1 1.1;
     transition: all ease-in-out .3s;
+    margin-block-start: -7%;
 }
 .results .item .details{
     padding-block: .7rem;
