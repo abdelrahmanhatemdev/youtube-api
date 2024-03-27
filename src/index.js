@@ -24,7 +24,7 @@ let router = createBrowserRouter([
             {
                 path: "search/:search", 
                 element: <Search/>, 
-                loader: categoryLoader
+                loader: searchLoader
             },
             {
                 path: "menu/:menu", 

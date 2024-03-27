@@ -12,4 +12,4 @@ export {default as VideoDetails} from "./Video/VideoDetails";
 
 export {default as VideoItem} from "./Category/VideoItem";
 
-export {default as Search} from "./Search/Search";
+export {default as SearchResults} from "./Search/SearchResults";

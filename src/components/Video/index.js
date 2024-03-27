@@ -3,7 +3,7 @@ import { useLoaderData, useLocation} from "react-router-dom";
 import { VideoDetails } from "..";
 import { getVideo } from "../../helpers/data";
 
-export async function loader({params}) {
+export function loader({params}) {
     const id  = params.videoId;
     return {id}
 }
@@ -16,12 +16,15 @@ export default function Video() {
     const state = location.state;
 
     if (state) {
-        video = state?.video;
-        videos = state?.videos;
+        video = state.video;
+        videos = state.videos;
     }else{
-        video = getVideo(id)
+        // video = getVideo(id)
+        video = "";
+        // console.log("video 1 => ", video);
+        
     }
     
-
+    
     return <VideoDetails video={video} id={id} videos={videos}/>
 }

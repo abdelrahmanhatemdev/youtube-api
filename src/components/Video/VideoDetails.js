@@ -6,60 +6,64 @@ import RelatedVideos from "./RelatedVideos";
 import "./videoDetails.css";
 function VideoDetails({video, id, videos}) {
     const videoSrc = "https://www.youtube.com/embed/" + id;
+  
+
+    // console.log("video 2=> ", video);
 
     let channel = getChannel(video.channelID);
 
-    return (
-        <section className="video-page">
-            <div className="video-details">
-                <div className="player">
-                    <iframe width="100%" height="500px" src={videoSrc+ "?autoplay=1&enable_js=1"} title="Video Player" autoplay={1}
-                    // allow="accelerometer; autoplay *; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen"
-                    ></iframe>
-                </div>
-                <h1 className="video-title">{video.title}</h1>
-                <div className="info">
-                    {channel && 
-                    <div className="channel">
-                    <a href={"https://www.youtube.com/channel/"+video.channelTitle} target="_blink" rel="noopenner noreferrer">
-                        <img src={channel.thumbnails} alt={video.title}/>
-                        <div className="data">
-                            <span className="title">{channel.title}</span>
-                            <span className="subscribers">{numberFormat(channel.subscriberCount)} subscribers</span>
-                        </div>
-                    </a>
-                </div>}
-                    
-                    <div className="actions">
-                        <div className="likes">
-                            <span className="like">
-                                <span className="icon">
-                                    <img src={likeIcon} alt="Like Icon"/>
-                                </span>
-                                <span className="count">{numberFormat(video.likeCount)}</span>
-                            </span>
-                            <span className="dislike">
+    return video &&  <section className="video-page">
+        <div className="video-details">
+            <div className="player">
+                <iframe width="100%" height="500px" src={videoSrc+ "?autoplay=1&enable_js=1"} title="Video Player" autoplay={1}
+                // allow="accelerometer; autoplay *; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen"
+                ></iframe>
+            </div>
+            <h1 className="video-title">{video.title}</h1>
+            <div className="info">
+                {channel && 
+                <div className="channel">
+                <a href={"https://www.youtube.com/channel/"+video.channelTitle} target="_blink" rel="noopenner noreferrer">
+                    <img src={channel.thumbnails} alt={video.title}/>
+                    <div className="data">
+                        <span className="title">{channel.title}</span>
+                        <span className="subscribers">{numberFormat(channel.subscriberCount)} subscribers</span>
+                    </div>
+                </a>
+            </div>}
+                
+                <div className="actions">
+                    <div className="likes">
+                        <span className="like">
                             <span className="icon">
-                                    <img src={likeIcon} alt="Like Icon"/>
-                                </span>
+                                <img src={likeIcon} alt="Like Icon"/>
                             </span>
-                        </div>
-                    </div>
-                </div>
-                <div className="description">
-                    <div className="stats">
-                        <span>{video.viewCount} views</span>
-                        <span>{dateFormat(video.publishedAt)}</span>
-                    </div>
-                    <div>
-                        <span> {video.description}</span>
+                            <span className="count">{numberFormat(video.likeCount)}</span>
+                        </span>
+                        <span className="dislike">
+                        <span className="icon">
+                                <img src={likeIcon} alt="Like Icon"/>
+                            </span>
+                        </span>
                     </div>
                 </div>
             </div>
-            <div className="related">
-                <RelatedVideos videos={videos.filter(v => v.id !== video.id)}/>
+            <div className="description">
+                <div className="stats">
+                    <span>{video.viewCount} views</span>
+                    <span>{dateFormat(video.publishedAt)}</span>
+                </div>
+                <div>
+                    <span> {video.description}</span>
+                </div>
             </div>
-        </section>
-    )
+        </div>
+        
+        {videos && <RelatedVideos videos={videos.filter(v => v ? v.id !== id : "")}/>}
+        
+    </section>
 }
+       
+    
+
 export default VideoDetails;

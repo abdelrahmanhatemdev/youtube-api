@@ -14,33 +14,13 @@ export async function search(term){
         }
     })
     .then(async res => {
-        if (res?.data) {
+        if (res.data) {
             const items = res.data.items;
-            if (items?.length === 50 ){
+            if (items.length === 50 ){
                 const videos = await Promise.all(
                     items.map( item => {
-                        return videoInfo( item?.id.videoId).then(vidRes => {
-                        const more  = vidRes;
-                        if (more?.data) {
-                            const video = {
-                                id: item?.id.videoId, 
-                                title: item?.snippet.title,
-                                channelID : item?.snippet.channelId, 
-                                channelTitle : item?.snippet.channelTitle, 
-                                description: item?.snippet.description, 
-                                publishedAt :item?.snippet.publishedAt, 
-                                thumbnails: item?.snippet.thumbnails?.high?.url, 
-                                duration: more.data?.items[0]?.contentDetails?.duration, 
-                                viewCount: more.data?.items[0]?.statistics?.viewCount, 
-                                likeCount: more.data?.items[0]?.statistics?.likeCount, 
-                                commentCount: more.data?.items[0]?.statistics?.commentCount
-                            }
-                            return video;
-                        }  
-                        
-                        }) 
-                    })
-                );
+                        return videoInfo( item.id.videoId).then(res => res);
+                    }));
                 return {res, videos};
             }
         }
@@ -54,14 +34,36 @@ export async function videoInfo(id){
 
     const response = await axios.get(`${baseURL}/videos`, {
         params:{
-            part: "contentDetails,statistics", 
+            part: "snippet,contentDetails,statistics", 
             maxResults:50,
             key: API_KEY,
             id:id
         }
     })
-    .then(res => res)
-    .catch(e => e)
+    .then(res => {
+        let more = res.data.items[0];
+        
+        if (more) {
+            const video = {
+                id: more.id, 
+                title: more.snippet.title,
+                channelID : more.snippet.channelId, 
+                channelTitle : more.snippet.channelTitle, 
+                description: more.snippet.description, 
+                publishedAt :more.snippet.publishedAt, 
+                thumbnails: more.snippet.thumbnails.high.url, 
+                duration: more.contentDetails.duration, 
+                viewCount: more.statistics.viewCount, 
+                likeCount: more.statistics.likeCount, 
+                commentCount: more.statistics.commentCount
+            }
+            console.log("youtube =>", video);
+
+            return video;
+        }  
+        
+    })
+    .catch(e => console.log(e))
 
     return response;
 }

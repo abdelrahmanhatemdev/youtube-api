@@ -10,5 +10,10 @@ export default function RelatedVideos({videos}) {
         })
     }
 
-    return content;
+    return (
+        <div className={videos && "related"}>
+            {content}
+        </div>
+    )
+
 }

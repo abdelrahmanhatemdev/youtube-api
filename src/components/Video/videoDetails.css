@@ -4,6 +4,7 @@
 }
 .video-details{
     flex-grow: 1;
+    max-inline-size: 70%;
 }
 .video-details .player iframe{
     border: none;
