@@ -1,5 +1,5 @@
 export function isNew(date) {
-    console.log(date);
+
     if (date.includes("Second")) {
         return true
     }else if (date.includes("Minute")){
@@ -14,6 +14,12 @@ export function isShort(duration) {
     if (duration) {
         const durationArray = duration.split(":");
         console.log(durationArray);
+        if (durationArray.length <3) {
+            if (durationArray[0] === "00" ) {
+                return true
+            } 
+        }
+      
     }
-    return true
+  
 }

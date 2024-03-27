@@ -1,9 +1,12 @@
 import React from 'react';
 import { getChannel } from "../../helpers/data";
 import { Link } from "react-router-dom";
-import "./SearchResults.css";
 import { dateFormat, durationFormat, numberFormat } from "../../helpers/formats";
-import { isNew} from "../../helpers/check";
+import { isNew, isShort} from "../../helpers/check";
+import "./SearchResults.css";
+import shortIcon from "../../assets/icons/short.png";
+import newIcon from "../../assets/icons/fire.png";
+
 export default function SearchResults({search, videos}) {
 
     const content = videos.map((video, index) => {
@@ -20,19 +23,35 @@ export default function SearchResults({search, videos}) {
                         <div className="tips">
                         {channel && 
                             <div className="channel">
-                                <a href={"https://www.youtube.com/channel/"+video.channelTitle} target="_blink" rel="noopenner noreferrer">
-                                    <img src={channel.thumbnails} alt={video.title}/>
-                                    <div className="data">
-                                        <span className="title">{channel.title}</span>
-                                        <span className="subscribers">{numberFormat(channel.subscriberCount)} subscribers</span>
-                                    </div>
-                                </a>
+                                <img src={channel.thumbnails} alt={video.title}/>
+                                <div className="data">
+                                    <span className="title">{channel.title}</span>
+                                    <span className="subscribers">{numberFormat(channel.subscriberCount)} subscribers</span>
+                                </div>
                             </div>
                             }
                             <span className='description'>{video.description}</span>
-                            {
-                                isNew(dateFormat(video.publishedAt)) && <span className='new'>New</span>
-                            }
+                            <div className='badges'>
+                                {
+                                    isNew(dateFormat(video.publishedAt)) && 
+                                        <span className='badge'>
+                                            <span className='icon'>
+                                                <img src={newIcon} alt='New'/>
+                                            </span>
+                                            New
+                                        </span>
+                                }
+                                 {
+                                    isShort(durationFormat(video.duration)) && 
+                                        <span className='badge'>
+                                            <span className='icon'>
+                                                <img src={shortIcon} alt='Short'/>
+                                            </span>
+                                            Short
+                                        </span>
+                                }
+                            </div>
+                            
                             
                         </div>
                     </div>

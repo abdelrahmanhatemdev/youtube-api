@@ -60,6 +60,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    font-weight: 600;
 }
 .results .item .details .tips {
     display: flex;
@@ -68,21 +69,20 @@
     padding-block: .5rem;
     gap: .4rem;
 }
-.results .item .date{
+.results .item .date {
     font-size: .9rem;
     color: var(--gray-5);
-    padding-block: .5rem;
+    padding-block: .1rem;
 }
 .results .channel {
-    margin-block-end: .5rem;
-}
-.results .channel a {
+    margin-block: .5rem;
     display: flex;
     gap: .5rem;
 }
 .results .item .channel .title{
     font-size: .9rem;
     color: var(--gray-5);
+    font-weight: 400;
 }
 .results .channel img {
     inline-size: 2rem;
@@ -100,12 +100,26 @@
     white-space: nowrap;
     inline-size: 650px;
 }
-.results .item .new{
+.results .item .badges{
+    display: flex;
+    gap: .5rem;
+}
+.results .item .badge {
     background: var(--gray-6);
     inline-size: fit-content;
-    padding: .2rem;
+    padding: .2rem .3rem;
     border-radius: .3rem;
-    font-size: .9rem;
+    font-size: .8rem;
     font-weight: 600;
     margin-block-start: .5rem;
+    display: flex;
+    gap: .2rem;
+    align-items: center;
+}
+.results .item .badge .icon{
+    block-size: 15px;
+    display: inline-block;
+}
+.results .item .badge .icon img{
+    block-size: 100%;
 }
