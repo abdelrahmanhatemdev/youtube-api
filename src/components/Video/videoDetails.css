@@ -81,12 +81,12 @@
 .video-details .likes .dislike .icon{
     rotate: 0 0 1 180deg;
 }
-.video-details .description{
+.video-details .description {
     margin-block: 1rem;
     background: var(--gray-3);
     color: var(--white-3);
     padding: .8rem;
-    border-radius: 1rem;
+    line-height: 1.5rem;
 }
 .video-details .description .stats {
     margin-block-end: .5rem;
