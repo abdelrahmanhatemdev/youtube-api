@@ -1,32 +1,21 @@
 import { useLoaderData } from "react-router-dom";
 import { getData } from "../../helpers/data";
 import SearchResults from "./SearchResults";
+import { Categories } from "../";
 
 export async function loader({params, request}) {
-    const search = params;
-
-    console.log("search", search);
-    console.log("request", request);
-    const data = await getData(search);
-    return {search, data}
+    const search = params.search;
+    const videos = await getData(search);
+    return {search, videos}
 }
 
 export default function Search() {
-    let {search, data} = useLoaderData();
-    let videos= []
-
-    // if (data?.length === 50 ) {
-    //     videos = data.map((video, i) => {
-    //         return <div>
-    //         <img src={video.snippet.thumbnails.default.url} alt={video.snippet.title} key ={i}/>
-    //          {video.snippet.title}
-    //     </div>
-    //     })
-    // }
+    let {search, videos} = useLoaderData();
 
     return (
-        <div>
-            <SearchResults/>
-        </div>
+        <>
+            <Categories/>
+            <SearchResults search={search} videos={videos} key={search}/>
+        </>
     )
 }

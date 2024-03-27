@@ -11,7 +11,6 @@ function SearchBar({getSearch}) {
     function onSubmit(e) {
         e.preventDefault()
         const url = "/search/" + search;
-
         navigate(url)
     }
 
