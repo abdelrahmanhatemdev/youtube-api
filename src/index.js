@@ -8,7 +8,7 @@ import Category, {loader as categoryLoader} from "./components/Category";
 import Search, {loader as searchLoader} from "./components/Search";
 import Video, {loader as videoLoader} from "./components/Video";
 import Menu, {loader as menuLoader} from "./components/Menu";
-
+import History, {loader as historyLoader} from "./components/History";
 
 let router = createBrowserRouter([
     {
@@ -44,8 +44,8 @@ let router = createBrowserRouter([
             },
             {
                 path: "history", 
-                element: <Menu/>, 
-                loader: menuLoader
+                element: <History/>, 
+                loader: historyLoader
             },
             {
                 path: "later", 

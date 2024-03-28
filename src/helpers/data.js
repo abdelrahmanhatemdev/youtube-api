@@ -113,6 +113,7 @@ export function getVideo(id) {
         
         for (const key in searchObject) {
             for (const video of searchObject[key]) {
+                
                 if (video) {
                      if (id === video.id) {
                         return video;
@@ -127,7 +128,7 @@ export function getVideo(id) {
             return video
         });
 
-        return ""
+        
         
     }else{
 
@@ -224,11 +225,35 @@ export function isRequestLimit(response) {
     }
 }
 
+export function getHistory() {
+    let historyObject = localStorage.getItem("history");
+    console.log(historyObject);
+    if (historyObject) {
+        let historyArray= JSON.parse(localStorage.getItem("history"));
+          let videos =  historyArray.map(id => {
+                return getVideo(id)
+            })
+            videos = videos.sort().reverse()
+            return [...videos]
+    }
+
+      
+}
 
 export function addHistory(id) {
-  let historyObject = localStorage.getItem("history");
-  if (historyObject) {
-    localStorage.setItem("history", JSON.stringify([...historyObject, id]))
+  let historyArray= localStorage.getItem("history");
+
+// searchObject = {...searchObject, [keyword]:videos}
+// localStorage.setItem("search", JSON.stringify(searchObject))
+// checkLocalStorage()
+// videos = videos.filter(v => v)
+// return videos
+  
+  console.log(historyArray);
+  if (historyArray) {
+    historyArray = JSON.parse(historyArray);
+    historyArray =[...historyArray, id];
+    localStorage.setItem("history", JSON.stringify(historyArray))
   }else{
     localStorage.setItem("history", JSON.stringify([id]))
   }

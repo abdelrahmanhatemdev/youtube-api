@@ -35,13 +35,9 @@ export default function ErrorPage({type}) {
                 
                     </div>
                 </div>;
-        
     }else{
-        
         header = <h1>Not Found</h1>;
-        details= <p> <strong>Error: </strong>{error.replace("Error:", "")} !</p>
-
-                
+        details= <p> <strong>Error: </strong>{error ? error.replace("Error:", "") : <span>Something went <strong className='bold'>wrong</strong>!</span>}</p>
     }
 
     return (
@@ -58,7 +54,7 @@ export default function ErrorPage({type}) {
                         <div className='header'>
                             {header}
                         </div>
-                        <div class="content">
+                        <div className="content">
                             <div className='details'>
                                 {details}
                                 {more}
