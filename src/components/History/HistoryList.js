@@ -3,7 +3,6 @@ import { getChannel } from "../../helpers/data";
 import { Link } from "react-router-dom";
 import { dateFormat, durationFormat, numberFormat } from "../../helpers/format";
 import { isNew, isShort} from "../../helpers/check";
-import "./SearchResults.css";
 import shortIcon from "../../assets/icons/short.png";
 import newIcon from "../../assets/icons/fire.png";
 
@@ -12,10 +11,12 @@ export default function HistoryList({search, videos}) {
     let content;
 
     if (videos) {
-        content = videos.map((video, index) => {
-            if (video) {
-                let channel = getChannel(video.channelID);
-              return <Link to={"/v/" + video.id} className="item" key ={index} state={{video: video, videos:videos}}>
+        content = videos.map((data, index) => {
+            if (data) {
+                const video = data.video
+                if (video) {
+                    let channel = getChannel(video.channelID);
+                    return <Link to={"/v/" + video.id} className="item" key ={index} state={{video: video, videos:videos}}>
                         <div className="img-holder">
                             <img src={video.thumbnails} alt={video.title} />
                             <span className="duration">{durationFormat(video.duration)}</span>
@@ -57,6 +58,8 @@ export default function HistoryList({search, videos}) {
                             </div>
                         </div>
                     </Link>
+                }
+                
             }
     
         })
@@ -65,5 +68,5 @@ export default function HistoryList({search, videos}) {
     
     
 
-    return content;
+    return <div className='list'>{content}</div>;
 }

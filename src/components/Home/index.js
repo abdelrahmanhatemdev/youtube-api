@@ -1,8 +1,6 @@
 import { useLoaderData, useNavigation } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
 import { getIntialData, isRequestLimit } from "../../helpers/data";
-import { durationFormat } from "../../helpers/format";
-import { isShort } from "../../helpers/check";
 import {Categories, VideoItem} from "../";
 import "./home.css";
 

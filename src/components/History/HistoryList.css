@@ -1,0 +1,19 @@
+.history {
+    max-inline-size: 100%;
+    display: flex;
+    margin-block: 1rem;
+}
+.results {
+    flex: 0 1 75%;
+    margin: 0;
+    max-inline-size: 100%;
+}
+.history > .options {
+    flex: 1 0 25%;
+    background-color: var(--gray-3);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.results .item{
+    background: transparent;
+}

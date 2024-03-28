@@ -156,13 +156,13 @@ export  function getChannel(id) {
                  if (channel) {
                     
                  }else{
-                    console.log("channel", channel);
+                    // console.log("channel", channel);
                  }
                 
                     return channel;
             });
 
-            console.log("response", reponse);
+            // console.log("response", reponse);
 
     }else{
         channelInfo(id)
@@ -227,32 +227,50 @@ export function isRequestLimit(response) {
 
 export function getHistory() {
     let historyObject = localStorage.getItem("history");
-    console.log(historyObject);
     if (historyObject) {
         let historyArray= JSON.parse(localStorage.getItem("history"));
-          let videos =  historyArray.map(id => {
-                return getVideo(id)
+          let videos =  historyArray.map(v => {
+            for (const key in v) {
+                if (Object.hasOwnProperty.call(v, key)) {
+                    const historyVideo = v[key];
+                    const video = getVideo(historyVideo.id)
+                    const date = historyVideo.date
+                    return {video, date}
+                }
+            }
+
+            
+                
             })
             videos = videos.sort().reverse()
             return [...videos]
-    }
-
-      
+    }   
 }
 
 export function addHistory(id) {
   let historyArray= localStorage.getItem("history");
+
+  let now = new Date();
+  let localeDate = now.toLocaleString( "default", {weekday: "long", month: "long"}).split(" ");
+  let date = [now.getFullYear(), localeDate[0], now.getDate(), localeDate[1], now.getHours(), now.getMinutes(), now.getSeconds()].join("_");
   
-  console.log(historyArray);
   if (historyArray) {
     historyArray = JSON.parse(historyArray);
-    if (!historyArray.includes(id)) {
-        historyArray =[...historyArray, id];
-        localStorage.setItem("history", JSON.stringify(historyArray))
-    }
-    
+
+    historyArray = historyArray.filter((v) => {
+       for (const key in v) {
+        if (v[key].id !== id) {
+            return v;
+        }
+       }
+         
+    })
+    historyArray =[...historyArray, {[date.split("_").slice(0, 3).join("_")]:{id:id, date:date}}];
+    localStorage.setItem("history", JSON.stringify(historyArray))
+
   }else{
-    localStorage.setItem("history", JSON.stringify([id]))
+    historyArray =[{[date.split("_").slice(0, 3).join("_")]:{id:id, date:date}}];
+    localStorage.setItem("history", JSON.stringify(historyArray))
   }
 }
 
