@@ -7,7 +7,7 @@ import Home, {loader as homeLoader} from "./components/Home";
 import Category, {loader as categoryLoader} from "./components/Category";
 import Search, {loader as searchLoader} from "./components/Search";
 import Video, {loader as videoLoader} from "./components/Video";
-import Menu from "./components/Menu";
+import Menu, {loader as menuLoader} from "./components/Menu";
 
 
 let router = createBrowserRouter([
@@ -33,15 +33,26 @@ let router = createBrowserRouter([
                 loader: searchLoader
             },
             {
-                path: "menu/:menu", 
-                element: <Menu/>, 
-                loader: searchLoader
-            },
-            {
                 path: "v/:videoId", 
                 element: <Video/>, 
                 loader: videoLoader
             },
+            {
+                path: "shorts", 
+                element: <Menu/>, 
+                loader: menuLoader
+            },
+            {
+                path: "history", 
+                element: <Menu/>, 
+                loader: menuLoader
+            },
+            {
+                path: "later", 
+                element: <Menu/>, 
+                loader: menuLoader
+            },
+           
         ]
     }
 ])

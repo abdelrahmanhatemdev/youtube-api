@@ -9,7 +9,7 @@ export async function getData(searchTerm) {
         let storedTerm = searchObject[searchTerm];
 
         if (storedTerm) {
-            return storedTerm.filter(v => v);
+            return filterVideos(storedTerm)
             
         }else{
             return createData([searchTerm], searchObject)
@@ -53,6 +53,8 @@ async function createData(keywords, searchObject) {
     // console.log("data", data);
     return data;
 }
+
+
 
 export  async function getIntialData() {
 
@@ -98,8 +100,9 @@ export  async function getIntialData() {
         
         return response;
     }
-    return data;
+    return filterVideos(data);
 } 
+
 
 export function getVideo(id) {
 
@@ -200,6 +203,11 @@ export function checkLocalStorage() {
     
 }
 
+function filterVideos(array) {
+    const oldLiveImg = "/hqdefault_live.jpg";
+    return array.filter(v => !v.thumbnails.includes(oldLiveImg));
+}
+
 
 export function isRequestLimit(response) {
     const requestLimit = response.includes("requestLimit");
@@ -208,6 +216,15 @@ export function isRequestLimit(response) {
     }
 }
 
+
+export function addHistory(id) {
+  let historyObject = localStorage.getItem("history");
+  if (historyObject) {
+    localStorage.setItem("history", JSON.stringify([...historyObject, id]))
+  }else{
+    localStorage.setItem("history", JSON.stringify([id]))
+  }
+}
 
  
 

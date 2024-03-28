@@ -1,7 +1,7 @@
 import React from 'react';
 import { getChannel } from "../../helpers/data";
 import { Link } from "react-router-dom";
-import { dateFormat, durationFormat, numberFormat } from "../../helpers/formats";
+import { dateFormat, durationFormat, numberFormat } from "../../helpers/format";
 import { isNew, isShort} from "../../helpers/check";
 import "./SearchResults.css";
 import shortIcon from "../../assets/icons/short.png";

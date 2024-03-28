@@ -1,10 +1,11 @@
 import React from 'react';
 import { useLoaderData, useLocation} from "react-router-dom";
 import { VideoDetails } from "..";
-import { getVideo } from "../../helpers/data";
+import { getVideo, addHistory } from "../../helpers/data";
 
 export function loader({params}) {
     const id  = params.videoId;
+    addHistory(id)
     return {id}
 }
 
