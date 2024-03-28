@@ -9,6 +9,7 @@ export async function loader({params}) {
     category && category.replace("/", "_");
     const videos = await getData(category);
     isRequestLimit(videos)
+    console.log(videos);
 
     return {videos, category}
 }

@@ -7,7 +7,7 @@ export {default as Categories} from "./Category/Categories";
 export {default as NavBar} from "./Root/NavBar";
 export {default as SearchBar} from "./Root/SearchBar";
 
-export {default as ErrorPage} from "./Root/ErrorPage";
+export {default as ErrorPage} from "./Error/ErrorPage";
 
 export {default as VideoDetails} from "./Video/VideoDetails";
 

@@ -27,7 +27,7 @@
     display: flex;
     gap: 1rem;
 }
-.error-page .content .details{
+.error-page .content .details {
     color: var(--white-1);
     background: var(--gray-2);
     padding: 1rem;
@@ -43,7 +43,7 @@
 .error-page .content .details strong{
     color: var(--red-1);
 }
-.error-page .content .details .success{
+.error-page .content .details .bold{
     color: var(--white-1);
 }
 .error-page .content .details .more{

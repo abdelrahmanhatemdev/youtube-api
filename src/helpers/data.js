@@ -7,7 +7,6 @@ export async function getData(searchTerm) {
     if (searchObject) {
         searchObject = JSON.parse(searchObject);
         let storedTerm = searchObject[searchTerm];
-
         if (storedTerm) {
             return filterVideos(storedTerm)
             
@@ -205,7 +204,16 @@ export function checkLocalStorage() {
 
 function filterVideos(array) {
     const oldLiveImg = "/hqdefault_live.jpg";
-    return array.filter(v => !v.thumbnails.includes(oldLiveImg));
+    const filtered = array.filter(video => {
+        if(video){
+            
+            if( !video.thumbnails.includes(oldLiveImg)){
+                return video;
+            }
+        }
+    })
+
+    return filtered;
 }
 
 

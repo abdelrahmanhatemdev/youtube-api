@@ -1,51 +1,10 @@
-import { useState } from 'react';
-import { useRouteError } from "react-router-dom";
-import {Aside, NavBar} from "..";
-import Categories from "../Category/Categories";
-import "./ErrorPage.css";
+import React from 'react'
 
-export default function ErrorPage({type}) {
-    let error = useRouteError();
+export default function ErrorIcon() {
     
-    if (error) {
-        error = error.data;
-    }
-    let content;
-    const [infoShow, setInfoShow] = useState(false);
 
-    console.log(error);
-
-    if (error==="requestLimit") {
-        content = 
-        <div className='panel'>
-
-            <div className='header'>
-                <h1>Youtube API Quota</h1>
-            </div>
-            <div class="content">
-                <div className='details'>
-                    <p>You exceeded your Daily Request <strong> Quota Limit</strong> !</p>
-                    <p>Give it another try <strong className='success'>tomorrow</strong> !</p>
-                    <div className='more'>
-                        <span onClick={() => setInfoShow(!infoShow)}>More</span>
-                        <div className={'info ' + (infoShow ? "open" : "")}>
-                            <p>
-                                The YouTube Data API uses a quota system to ensure that developers use the service as intended and do not create API clients that unfairly reduce service quality or limit access for others.
-                            </p>
-                            <p>
-                                Projects that enable the YouTube Data API have a default quota allocation of 10,000 units per day, an amount sufficient for the majority of our API users. You can see your quota usage on the Quotas page in the API Console.
-                            </p>
-                    
-                        </div>
-                    </div>
-                        
-                    
-                       
-                    
-                   
-                </div>
-                <div className='icon'>
-                    <svg
+    return (
+        <svg
                         xmlns="http://www.w3.org/2000/svg"
                         xmlnsXlink="http://www.w3.org/1999/xlink"
                         width="949.85"
@@ -191,29 +150,5 @@ export default function ErrorPage({type}) {
                             strokeWidth={0}
                         />
                     </svg>
-                </div>
-            </div>
-        </div>
-        
-    }else{
-        content = JSON.stringify(error)
-    }
-
-    return (
-        <>
-        <aside>
-            <Aside/>
-        </aside>
-        <main>
-            <NavBar/>
-            <section className='content'>
-                <Categories/>
-                <div className='error-page'>
-                    {content}
-                </div>
-            </section>
-        </main>
-        </>
-        
     )
 }
