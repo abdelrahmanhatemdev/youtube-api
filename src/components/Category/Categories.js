@@ -1,8 +1,6 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 import categoryArray from "../../arrays/categories";
-import "./category.css"
-
 
 export default function Categories() {
 
