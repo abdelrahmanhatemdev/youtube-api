@@ -182,6 +182,6 @@ main > .content::-webkit-scrollbar{
     display: none;
 }
 .loading{
-    opacity: .1;
+    opacity: .2;
 }
 

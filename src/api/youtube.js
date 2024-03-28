@@ -19,7 +19,8 @@ export async function search(term){
             if (items.length === 50 ){
                 const videos = await Promise.all(
                     items.map( item => {
-                        return videoInfo( item.id.videoId).then(res => res);
+                        const itemDetails = videoInfo( item.id.videoId).then(res => res);
+                        return itemDetails;
                     }));
                 return {res, videos};
             }
@@ -57,7 +58,6 @@ export async function videoInfo(id){
                 likeCount: more.statistics.likeCount, 
                 commentCount: more.statistics.commentCount
             }
-            console.log("youtube =>", video);
 
             return video;
         }  

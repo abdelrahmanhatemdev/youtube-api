@@ -11,7 +11,7 @@
     "self help", 
     "Coding", 
     "Chat GPT", 
-    "Junk Food", 
+    "Food", 
     "Resturant", 
     "Javascript", 
     "Algorithms", 

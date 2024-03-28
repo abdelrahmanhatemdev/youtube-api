@@ -1,10 +1,10 @@
-.results{
+.results {
     max-inline-size: 1000px;
     margin: auto;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    
+    margin-block: 1rem;
 }
 .results .item {
     display: flex;

@@ -13,51 +13,93 @@ export async function getData(searchTerm) {
             
         }else{
             
-            return createData(searchTerm, searchObject)
+            return createData([searchTerm], searchObject)
         }
     }else{
-
-        
-
-        return createData(searchTerm, searchObject)
+        return createData([searchTerm], searchObject)
     }
 } 
 
-async function createData(searchTerm, searchObject) {
+async function createData(keywords, searchObject) {
     // return items.sort(() => (Math.random() > 0.5) ? 1 : -1)
     console.log("Fetching data from Youtube API");
-    const response = search(searchTerm)
-    .then(res =>res)
-    .then(res => {
-        const {videos} = res;
+    let data = [];
+    let response = keywords.forEach( async keyword => {
+        await search(keyword)
+        .then(res =>res)
+        .then(res => {
+            let {videos} = res;
+           
+    
+            if (videos?.length > 0) {
+                    searchObject = {...searchObject, [keyword]:videos}
+                    localStorage.setItem("search", JSON.stringify(searchObject))
+                    checkLocalStorage()
+                    videos = videos.filter(v => v)
+                    data = [...data, ...videos ]
+                    return data
+            
+            }else{
 
-        if (videos?.length > 0) {
-                searchObject = {...searchObject, [searchTerm]:videos}
-                localStorage.setItem("search", JSON.stringify(searchObject))
-                checkLocalStorage()
-                return videos.filter(v => v);
-        
-        }else{
-            const check = checkQuota(res);
-            if(!check){
-                return "Request Limit";
+                const check = checkQuota(res);
+                if(!check){
+                    console.log("Checked");
+                    return  new Error("No Quota");
+                }
             }
-        }
-
-    })
-    .catch(e => {
-        console.error(e);
+        })
+        .catch(e => e);
+        
     });
 
     return response;
 }
 
-export function getVideo(id) {
-
-   
+export  async function getIntialData() {
 
     let searchObject = localStorage.getItem("search");
+    let keywords = ["Food", "Music", "React"];
+    let data =[];
 
+    if (searchObject) {
+        // searchObject = JSON.parse(searchObject);
+        // let storedTerm = searchObject[searchTerm];
+
+        // if (storedTerm) {
+        //     return storedTerm.filter(v => v);
+            
+        // }else{
+            
+        //     return createData(searchTerm, searchObject)
+        // }
+    }else{
+       
+       
+            let response = await createData(keywords, searchObject);
+            
+        // }).then(() => {
+        //     // keywords.forEach(async keyword => {
+        //     //     let keywordResults = await getData(keyword);
+        //     //     data.push(keywordResults)
+    
+        //     //    })
+        //        console.log("data", data);
+        //        return data
+               
+        // })
+           
+           
+
+          
+
+        
+        return response;
+    }
+} 
+
+export function getVideo(id) {
+
+    let searchObject = localStorage.getItem("search");
     if (searchObject) {
         searchObject = JSON.parse(searchObject);
 
@@ -80,18 +122,8 @@ export function getVideo(id) {
         });
 
         return ""
-       
-        
-         
-
-         
-
-
-
         
     }else{
-
-        
 
     }
 
@@ -131,6 +163,7 @@ export  function getChannel(id) {
 
 
 export function checkQuota(res) {
+    
     const error = res?.response?.data?.error.message;
     if (error?.includes("The request cannot be completed because you have exceeded your")) {
         return false;
@@ -142,19 +175,18 @@ export function checkQuota(res) {
 
 export function checkLocalStorage() {
 
-    let lsTotal = 0, item, value;
-    for (item in localStorage) {
-        if (!localStorage.hasOwnProperty(item)) {
-            continue;
-        }
-        value = ((localStorage[item].length + item.length) * 2);
-        lsTotal += value;
-        console.log(item.substr(0, 50) + " = " + (value / 1024).toFixed(2) + " KB")
-        console.log("Total = " +  lsTotal + " KB")
-    };
+    // let lsTotal = 0, item, value;
+    // for (item in localStorage) {
+    //     if (!localStorage.hasOwnProperty(item)) {
+    //         continue;
+    //     }
+    //     // value = ((localStorage[item].length + item.length) * 2);
+    //     // lsTotal += value;
+    //     // console.log(item.substr(0, 50) + " = " + (value / 1024).toFixed(2) + " KB")
+    //     // console.log("Total = " +  lsTotal + " KB")
+    // };
     
 }
-
 
 
 

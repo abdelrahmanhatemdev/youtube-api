@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import {NotFound } from "./components";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Root, {loader as rootLoader} from "./components/Root";
+import Home, {loader as homeLoader} from "./components/Root/Home";
 import Category, {loader as categoryLoader} from "./components/Category";
 import Search, {loader as searchLoader} from "./components/Search";
 import Video, {loader as videoLoader} from "./components/Video";
@@ -16,6 +17,11 @@ let router = createBrowserRouter([
         errorElement: <NotFound/>, 
         loader:rootLoader, 
         children: [
+            {
+                path: "/", 
+                element: <Home/>, 
+                loader: homeLoader
+            },
             {
                 path: "category/:category", 
                 element: <Category/>, 
