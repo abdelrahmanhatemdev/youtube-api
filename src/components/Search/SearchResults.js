@@ -6,8 +6,11 @@ import { isNew, isShort} from "../../helpers/check";
 import "./SearchResults.css";
 import shortIcon from "../../assets/icons/short.png";
 import newIcon from "../../assets/icons/fire.png";
+import useTitle from "../../hooks/useTitle";
 
 export default function SearchResults({search, videos}) {
+
+    useTitle(search)
 
     let content;
 

@@ -242,18 +242,15 @@ export function getHistory() {
 
 export function addHistory(id) {
   let historyArray= localStorage.getItem("history");
-
-// searchObject = {...searchObject, [keyword]:videos}
-// localStorage.setItem("search", JSON.stringify(searchObject))
-// checkLocalStorage()
-// videos = videos.filter(v => v)
-// return videos
   
   console.log(historyArray);
   if (historyArray) {
     historyArray = JSON.parse(historyArray);
-    historyArray =[...historyArray, id];
-    localStorage.setItem("history", JSON.stringify(historyArray))
+    if (!historyArray.includes(id)) {
+        historyArray =[...historyArray, id];
+        localStorage.setItem("history", JSON.stringify(historyArray))
+    }
+    
   }else{
     localStorage.setItem("history", JSON.stringify([id]))
   }

@@ -3,6 +3,7 @@ import { useLoaderData, useLocation} from "react-router-dom";
 import { VideoDetails } from "..";
 import { getVideo, addHistory } from "../../helpers/data";
 
+
 export function loader({params}) {
     const id  = params.videoId;
     addHistory(id)
@@ -19,6 +20,10 @@ export default function Video() {
     if (state) {
         video = state.video;
         videos = state.videos;
+        if (video) {
+           
+        }
+        
     }else{
         // video = getVideo(id)
         video = "";

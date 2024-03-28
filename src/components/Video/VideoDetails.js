@@ -2,10 +2,13 @@ import { getChannel } from "../../helpers/data";
 import { numberFormat, dateFormat } from "../../helpers/format";
 import likeIcon from "../../assets/icons/like.png";
 import RelatedVideos from "./RelatedVideos";
+import useTitle from "../../hooks/useTitle";
 
 import "./videoDetails.css";
 function VideoDetails({video, id, videos}) {
     const videoSrc = "https://www.youtube.com/embed/" + id;
+
+    useTitle(video.title)
   
 
     // console.log("video 2=> ", video);
