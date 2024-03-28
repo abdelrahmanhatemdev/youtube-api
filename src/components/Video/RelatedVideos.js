@@ -6,7 +6,7 @@ export default function RelatedVideos({videos}) {
 
     if (videos) {
         content= videos.map((video, index) => {
-            return  video && <VideoItem video={video} index={index}/>;
+            return  video && <VideoItem video={video} index={index} key={index}/>;
         })
     }
 

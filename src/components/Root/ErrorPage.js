@@ -1,12 +1,22 @@
 import { useState } from 'react';
-import "./error.css";
+import { useRouteError } from "react-router-dom";
+import {Aside, NavBar} from "..";
+import Categories from "../Category/Categories";
+import "./ErrorPage.css";
 
 export default function ErrorPage({type}) {
+    let error = useRouteError();
+    
+    if (error) {
+        error = error.data;
+    }
+    let content;
     const [infoShow, setInfoShow] = useState(false);
 
-    let error;
-    if (type==="requestLimit") {
-        error = 
+    console.log(error);
+
+    if (error==="requestLimit") {
+        content = 
         <div className='panel'>
 
             <div className='header'>
@@ -185,14 +195,25 @@ export default function ErrorPage({type}) {
             </div>
         </div>
         
+    }else{
+        content = JSON.stringify(error)
     }
 
-    
-    
-
     return (
-        <div className='error-page'>
-            {error}
-        </div>
+        <>
+        <aside>
+            <Aside/>
+        </aside>
+        <main>
+            <NavBar/>
+            <section className='content'>
+                <Categories/>
+                <div className='error-page'>
+                    {content}
+                </div>
+            </section>
+        </main>
+        </>
+        
     )
 }

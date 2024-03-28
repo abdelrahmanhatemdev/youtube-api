@@ -1,13 +1,13 @@
 export {default as Aside} from "./Root/Aside";
 
-export {default as Home} from "./Root/Home";
+export {default as Home} from "./Home";
 
 export {default as Categories} from "./Category/Categories";
 
 export {default as NavBar} from "./Root/NavBar";
 export {default as SearchBar} from "./Root/SearchBar";
 
-export {default as ErrorPage} from "./Category/ErrorPage";
+export {default as ErrorPage} from "./Root/ErrorPage";
 export {default as NotFound} from "./Root/NotFound";
 
 export {default as VideoDetails} from "./Video/VideoDetails";

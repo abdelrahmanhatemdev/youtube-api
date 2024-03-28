@@ -1,28 +1,25 @@
 import { useLoaderData, useNavigation } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
-import { getData, isRequestLimit} from "../../helpers/data";
+import { getIntialData, isRequestLimit } from "../../helpers/data";
 import {Categories, VideoItem} from "..";
 
 export async function loader({params}) {
-    const category = params.category;
-    category && category.replace("/", "_");
-    const videos = await getData(category);
+    const videos = await getIntialData();
     isRequestLimit(videos)
-
-    return {videos, category}
+     return {videos}
+    
 }
 
-export default function Category() {
-    let {videos, category} = useLoaderData();
+export default function Home(props) {
+    let {videos} = useLoaderData();
     let navigation = useNavigation();
     let content;
-
-   
-
-    useTitle(category)
+    useTitle("Home")
 
     if (videos.length > 0) {
+        console.log();
         // data = data.sort(() => (Math.random() > 0.5) ? 1 : -1);
+       
         content = <>
         
         <section className={"category-content " +( navigation.state === "loading" ? "loading" : "")} > 
@@ -36,9 +33,10 @@ export default function Category() {
        
     }
     return (
-        <section className="category-page">
+        <section className="home-page">
             <Categories/>
             {content}
         </section>
         );
+
 }

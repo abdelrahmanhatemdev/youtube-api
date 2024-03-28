@@ -61,16 +61,20 @@ export  async function getIntialData() {
     let data =[];
 
     if (searchObject) {
-        // searchObject = JSON.parse(searchObject);
-        // let storedTerm = searchObject[searchTerm];
+        searchObject = JSON.parse(searchObject);
 
-        // if (storedTerm) {
-        //     return storedTerm.filter(v => v);
-            
-        // }else{
-            
-        //     return createData(searchTerm, searchObject)
-        // }
+        keywords.map(keyword => {
+            let storedTerm = searchObject[keyword];
+
+            if (storedTerm) {
+                data.push(...storedTerm.filter(v => v));
+                
+            }else{
+                
+                // return createData(searchTerm, searchObject)
+            }
+        })
+        
     }else{
        
        
@@ -94,6 +98,7 @@ export  async function getIntialData() {
         
         return response;
     }
+    return data;
 } 
 
 export function getVideo(id) {
@@ -142,11 +147,19 @@ export  function getChannel(id) {
             }
         }
 
-        channelInfo(id)
+        const reponse = channelInfo(id)
         .then(channel=> {
                  localStorage.setItem("channels", JSON.stringify([...channelsObject, channel]))
+                 if (channel) {
+                    
+                 }else{
+                    console.log("channel", channel);
+                 }
+                
                     return channel;
             });
+
+            console.log("response", reponse);
 
     }else{
         channelInfo(id)
@@ -187,6 +200,13 @@ export function checkLocalStorage() {
     
 }
 
+
+export function isRequestLimit(response) {
+    const requestLimit = response.includes("requestLimit");
+    if (requestLimit) {
+        throw new Response("requestLimit")
+    }
+}
 
 
  

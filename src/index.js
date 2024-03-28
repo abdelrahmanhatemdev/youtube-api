@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {NotFound } from "./components";
+import {ErrorPage } from "./components";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Root, {loader as rootLoader} from "./components/Root";
-import Home, {loader as homeLoader} from "./components/Root/Home";
+import Home, {loader as homeLoader} from "./components/Home";
 import Category, {loader as categoryLoader} from "./components/Category";
 import Search, {loader as searchLoader} from "./components/Search";
 import Video, {loader as videoLoader} from "./components/Video";
@@ -14,7 +14,7 @@ let router = createBrowserRouter([
     {
         path:'/',
         element: <Root/>, 
-        errorElement: <NotFound/>, 
+        errorElement: <ErrorPage/>, 
         loader:rootLoader, 
         children: [
             {

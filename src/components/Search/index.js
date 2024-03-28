@@ -1,16 +1,12 @@
 import { useLoaderData, useNavigation } from "react-router-dom";
-import { getData } from "../../helpers/data";
+import { getData, isRequestLimit } from "../../helpers/data";
 import SearchResults from "./SearchResults";
 import { Categories } from "../";
 
 export async function loader({params, request}) {
     const search = params.search;
     const videos = await getData(search);
-    const requestLimit = videos.includes("requestLimit");
-    if (requestLimit) {
-        throw new Error(requestLimit)
-    }
-    console.log("requestLimit", requestLimit);
+    isRequestLimit(videos)
     return {search, videos}
 }
 
