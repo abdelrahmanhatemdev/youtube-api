@@ -6,6 +6,11 @@ import { Categories } from "../";
 export async function loader({params, request}) {
     const search = params.search;
     const videos = await getData(search);
+    const requestLimit = videos.includes("requestLimit");
+    if (requestLimit) {
+        throw new Error(requestLimit)
+    }
+    console.log("requestLimit", requestLimit);
     return {search, videos}
 }
 

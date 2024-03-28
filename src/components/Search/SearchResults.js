@@ -11,7 +11,7 @@ export default function SearchResults({search, videos}) {
 
     let content;
 
-    if (videos.length > 0) {
+    if (videos) {
         content = videos.map((video, index) => {
             if (video) {
                 let channel = getChannel(video.channelID);

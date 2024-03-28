@@ -11,7 +11,7 @@ export function isNew(date) {
 }
 
 export function isShort(duration) {
-    if (duration) {
+    if (typeof duration === "string") {
         const durationArray = duration.split(":");
         if (durationArray.length <3) {
             if (durationArray[0] === "00" ) {

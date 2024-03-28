@@ -5,7 +5,7 @@ import {Categories, VideoItem, ErrorPage} from "..";
 
 export async function loader({params}) {
     const videos = await getIntialData();
-    console.log("home", videos);
+    // console.log("home", videos);
 
     return "home"
     
