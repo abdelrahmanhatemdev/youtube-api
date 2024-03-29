@@ -48,8 +48,9 @@
     transition: all ease-in-out .3s;
     margin-block-start: -7%;
 }
-.results .item .details{
-    padding-block: .7rem;
+.history .item .details {
+    position: relative;
+    flex: 0;
 }
 .results .item .details > * {
     display: block;
