@@ -268,6 +268,19 @@ export function addHistory(id) {
   }
 }
 
+export function deleteHistory(id) {
+    let historyArray= localStorage.getItem("history");
+
+    if (historyArray) {
+      historyArray = JSON.parse(historyArray);
+  
+      historyArray = historyArray.filter(v => v.id !== id)
+      historyArray =[...historyArray];
+      localStorage.setItem("history", JSON.stringify(historyArray))
+  
+    }
+  }
+
  
 
 

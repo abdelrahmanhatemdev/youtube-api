@@ -176,7 +176,6 @@ export function historyDateFormat(date) {
             let dayDifference = nowDay - day;
             let totalNowMonthDays = new Date(nowYear, nowMonth +1, 0).getDate();
             dayDifference = dayDifference < 0 ? (totalNowMonthDays-day) : dayDifference;
-            console.log("dayDifference", dayDifference);
 
             if (dayDifference < 7) {
                 month = "";

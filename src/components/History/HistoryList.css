@@ -17,8 +17,14 @@
 .results .item{
     background: transparent;
 }
+.history .item:hover .close{
+    opacity: 1;
+}
 .history .item .details{
     position: relative;
+}
+.history .item .details .title {
+    inline-size: calc(100% - 3rem);
 }
 .history .item .history-date{
     position: absolute;
@@ -33,4 +39,25 @@
 .history .item .history-date strong{
     font-weight: 600;
     font-size: .9rem;
+}
+.history .item .close {
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    position: absolute;
+    inset-inline-end: .5rem;
+    inset-block-start: 0;
+    transition: all ease-in-out .5s;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+.history .close:hover {
+    background-color: var(--gray-6);
+}
+.history .close svg{
+    fill: var(--white-3);
+    inline-size: 70%;
+    block-size: 70%;
 }
