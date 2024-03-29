@@ -1,5 +1,4 @@
 import React from 'react';
-import { getChannel } from "../../helpers/data";
 import { Link } from "react-router-dom";
 import { dateFormat, durationFormat, numberFormat } from "../../helpers/format";
 import { isNew, isShort} from "../../helpers/check";
@@ -15,7 +14,6 @@ export default function HistoryList({search, videos}) {
             if (data) {
                 const video = data.video
                 if (video) {
-                    let channel = getChannel(video.channelID);
                     return <Link to={"/v/" + video.id} className="item" key ={index} state={{video: video, videos:videos}}>
                         <div className="img-holder">
                             <img src={video.thumbnails} alt={video.title} />
@@ -25,15 +23,6 @@ export default function HistoryList({search, videos}) {
                             <span className="title">{video.title}</span>
                             <span className="date">{numberFormat(video.viewCount)} views • {dateFormat(video.publishedAt)}</span>
                             <div className="tips">
-                            {channel && 
-                                <div className="channel">
-                                    <img src={channel.thumbnails} alt={video.title}/>
-                                    <div className="data">
-                                        <span className="title">{channel.title}</span>
-                                        <span className="subscribers">{numberFormat(channel.subscriberCount)} subscribers</span>
-                                    </div>
-                                </div>
-                                }
                                 <span className='description'>{video.description}</span>
                                 <div className='badges'>
                                     {
