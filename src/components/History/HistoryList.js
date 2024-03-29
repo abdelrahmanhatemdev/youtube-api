@@ -74,5 +74,10 @@ export default function HistoryList({search, videos, deleteHistoryVideo}) {
     
     
 
-    return <div className='list'>{content}</div>;
+    return <div>
+                <h className="page-title">Watch History</h>
+                <div className='list'>{content}</div>;
+            </div>
+    
+   
 }

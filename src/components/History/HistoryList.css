@@ -8,6 +8,12 @@
     margin: 0;
     max-inline-size: 100%;
 }
+.page-title{
+    color: var(--white-1);
+    font-size: 1.7rem;
+    font-weight: 700;
+    padding: 1rem;
+}
 .history > .options {
     flex: 1 0 25%;
     background-color: var(--gray-3);
@@ -60,4 +66,44 @@
     fill: var(--white-3);
     inline-size: 70%;
     block-size: 70%;
+}
+.history .options .option {
+    display: flex;
+    padding-block: .7rem;
+    gap: .5rem;
+    align-items: center;
+    color: var(--white-2);
+}
+.history .options .option.search{
+    border-block-end: solid 1px var(--white-1);
+    transition: all ease-in-out .3s;
+}
+.history .options .option.search.active{
+    border-block-end: solid 1px var(--white-1);
+}
+.history .options .option input{
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--white-2);
+}
+.history .options .option input{
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--white-2);
+    caret-color: var(--white-2);
+}
+.history .options .option .icon {
+    block-size: 1.5rem;
+    inline-size: 1.5rem;
+    display: block;
+}
+.history .options .option .icon svg{
+    block-size: 100%;
+    inline-size: 100%;
+    fill: var(--white-2);
+}
+.history .options .option.search .icon svg{
+    fill: var(--gray-5);
 }
