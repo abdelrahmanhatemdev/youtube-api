@@ -165,10 +165,10 @@ export function historyDateFormat(date) {
         let hour = time[0];
         timePeriod = " am";
         if (hour > 12) {
-            hour = 12 -hour;
+            hour = hour - 12;
             timePeriod = " pm";
         }
-        time = time[0] + ":" + time[1] + ":"+ time[2] + timePeriod;
+        time = hour + ":" + time[1] + ":"+ time[2] + timePeriod;
 
         if (year === nowYear && month === nowMonth) {
             year = "";
