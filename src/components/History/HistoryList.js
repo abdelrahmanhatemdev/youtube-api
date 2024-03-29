@@ -8,11 +8,15 @@ import newIcon from "../../assets/icons/fire.png";
 export default function HistoryList({search, videos}) {
 
     let content;
+    const now = new Date();
 
     if (videos) {
         content = videos.map((data, index) => {
             if (data) {
                 const video = data.video
+                const date = data.date;
+                
+
                 if (video) {
                     return <Link to={"/v/" + video.id} className="item" key ={index} state={{video: video, videos:videos}}>
                         <div className="img-holder">
@@ -45,6 +49,7 @@ export default function HistoryList({search, videos}) {
                                     }
                                 </div>
                             </div>
+                            <span className='history-date'>{ date ? date.replaceAll("_", " ") : ""}</span>
                         </div>
                     </Link>
                 }

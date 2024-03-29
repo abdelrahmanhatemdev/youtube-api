@@ -252,7 +252,7 @@ export function addHistory(id) {
 
   let now = new Date();
   let localeDate = now.toLocaleString( "default", {weekday: "long", month: "long"}).split(" ");
-  let date = [now.getFullYear(), localeDate[0], now.getDate(), localeDate[1], now.getHours(), now.getMinutes(), now.getSeconds()].join("_");
+  let date = [now.getFullYear(), localeDate[0], now.getDate(), localeDate[1], `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`].join("_");
   
   if (historyArray) {
     historyArray = JSON.parse(historyArray);

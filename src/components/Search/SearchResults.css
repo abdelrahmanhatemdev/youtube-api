@@ -18,7 +18,7 @@
     background: var(--gray-4);
 }
 .results .item:hover .img-holder img {
-    scale: 1 1.2;
+    scale: 1.1005 1.1005;
 }
 .results .item .img-holder {
     block-size: 12rem;

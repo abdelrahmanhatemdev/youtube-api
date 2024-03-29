@@ -17,3 +17,16 @@
 .results .item{
     background: transparent;
 }
+.history .item .details{
+    position: relative;
+}
+.history .item .history-date{
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-end: 0;
+    color: var(--gray-5);
+    background-color: var(--gray-3);
+    border-radius: 1rem;
+    padding: .5rem;
+    font-size: .8rem;
+}
