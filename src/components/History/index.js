@@ -1,14 +1,11 @@
 import { useLoaderData, useNavigation } from "react-router-dom";
-import { getHistory, isRequestLimit } from "../../helpers/data";
+import { getHistory } from "../../helpers/data";
 import HistoryList from "./HistoryList";
 import { Categories } from "..";
 import "./HistoryList.css";
 
 export async function loader({params, request}) {
     const videos = await getHistory();
-
-    console.log("videos",videos);
-
     return {videos}
 }
 

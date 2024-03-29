@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { dateFormat, durationFormat, numberFormat } from "../../helpers/format";
+import { dateFormat, durationFormat, numberFormat, historyDateFormat } from "../../helpers/format";
 import { isNew, isShort} from "../../helpers/check";
 import shortIcon from "../../assets/icons/short.png";
 import newIcon from "../../assets/icons/fire.png";
@@ -8,14 +8,15 @@ import newIcon from "../../assets/icons/fire.png";
 export default function HistoryList({search, videos}) {
 
     let content;
-    const now = new Date();
+    
 
     if (videos) {
         content = videos.map((data, index) => {
             if (data) {
+               
                 const video = data.video
                 const date = data.date;
-                
+           
 
                 if (video) {
                     return <Link to={"/v/" + video.id} className="item" key ={index} state={{video: video, videos:videos}}>
@@ -49,7 +50,8 @@ export default function HistoryList({search, videos}) {
                                     }
                                 </div>
                             </div>
-                            <span className='history-date'>{ date ? date.replaceAll("_", " ") : ""}</span>
+                            { date &&  <span style={{"color":"#fff"}}>{date}</span>}
+                            { date &&  historyDateFormat(date)}
                         </div>
                     </Link>
                 }

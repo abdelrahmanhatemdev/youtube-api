@@ -147,3 +147,61 @@ export function numberFormat(number){
     
     return parseFloat(Number(viewFormat)?.toFixed(1)) + unit 
 }
+
+export function historyDateFormat(date) {
+    const now = new Date();
+    const nowYear = now.getFullYear()
+    const nowMonth = now.getMonth()
+    const nowDay = now.getDate()
+    let dateArray, year, month, monthName, day, weekday, time, timePeriod;
+    dateArray = date ? date.split("_") : "";
+    if (dateArray) {
+        year = +dateArray[0];
+        month = +dateArray[1];
+        monthName = dateArray[2];
+        day = +dateArray[3];
+        weekday = dateArray[4];
+        time = dateArray[5].split(":");
+        let hour = time[0];
+        timePeriod = " am";
+        if (hour > 12) {
+            hour = 12 -hour;
+            timePeriod = " pm";
+        }
+        time = time[0] + ":" + time[1] + ":"+ time[2] + timePeriod;
+
+        if (year === nowYear && month === nowMonth) {
+            year = "";
+
+            let dayDifference = nowDay - day;
+            let totalNowMonthDays = new Date(nowYear, nowMonth +1, 0).getDate();
+            dayDifference = dayDifference < 0 ? (totalNowMonthDays-day) : dayDifference;
+            console.log("dayDifference", dayDifference);
+
+            if (dayDifference < 7) {
+                month = "";
+                switch (dayDifference) {
+                    case 0:
+                        day = "Today"
+                        break;
+                    case 1:
+                        day = "Yesterday"
+                        break;
+                
+                    default:
+                        day = weekday
+                        break;
+                }
+                
+            }else{
+                month = monthName;
+            }
+        }else{
+            month = monthName
+        }
+
+        
+    }
+
+    return date && <span className='history-date'><strong>{year} {month} {day}</strong> {time}</span>
+}

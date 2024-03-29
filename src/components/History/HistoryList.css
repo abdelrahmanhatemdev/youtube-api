@@ -24,9 +24,13 @@
     position: absolute;
     inset-block-end: 0;
     inset-inline-end: 0;
-    color: var(--gray-5);
+    color: var(--white-3);
     background-color: var(--gray-3);
     border-radius: 1rem;
     padding: .5rem;
-    font-size: .8rem;
+    font-size: .75rem;
+}
+.history .item .history-date strong{
+    font-weight: 600;
+    font-size: .9rem;
 }

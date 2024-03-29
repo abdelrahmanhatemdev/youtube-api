@@ -230,16 +230,10 @@ export function getHistory() {
     if (historyObject) {
         let historyArray= JSON.parse(localStorage.getItem("history"));
           let videos =  historyArray.map(v => {
-            for (const key in v) {
-                if (Object.hasOwnProperty.call(v, key)) {
-                    const historyVideo = v[key];
+                    const historyVideo = v;
                     const video = getVideo(historyVideo.id)
                     const date = historyVideo.date
                     return {video, date}
-                }
-            }
-
-            
                 
             })
             videos = videos.sort().reverse()
@@ -252,24 +246,24 @@ export function addHistory(id) {
 
   let now = new Date();
   let localeDate = now.toLocaleString( "default", {weekday: "long", month: "long"}).split(" ");
-  let date = [now.getFullYear(), localeDate[0], now.getDate(), localeDate[1], `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`].join("_");
+  let date = [now.getFullYear(), now.getMonth(), localeDate[0], now.getDate(), localeDate[1], `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`].join("_");
   
   if (historyArray) {
     historyArray = JSON.parse(historyArray);
 
     historyArray = historyArray.filter((v) => {
        for (const key in v) {
-        if (v[key].id !== id) {
+        if (v.id !== id) {
             return v;
         }
        }
          
     })
-    historyArray =[...historyArray, {[date.split("_").slice(0, 3).join("_")]:{id:id, date:date}}];
+    historyArray =[...historyArray, {id:id, date:date}];
     localStorage.setItem("history", JSON.stringify(historyArray))
 
   }else{
-    historyArray =[{[date.split("_").slice(0, 3).join("_")]:{id:id, date:date}}];
+    historyArray =[{id:id, date:date}];
     localStorage.setItem("history", JSON.stringify(historyArray))
   }
 }
