@@ -1,4 +1,5 @@
 
+import { memo } from 'react'
 import { Link } from "react-router-dom";
 import { dateFormat, durationFormat, numberFormat, historyDateFormat } from "../../helpers/format";
 import { deleteHistory } from "../../helpers/data";
@@ -6,7 +7,7 @@ import { isNew, isShort} from "../../helpers/check";
 import shortIcon from "../../assets/icons/short.png";
 import newIcon from "../../assets/icons/fire.png";
 
-export default function HistoryList({search, videos, deleteHistoryVideo}) {
+const HistoryList = memo(function HistoryList({search, videos, deleteHistoryVideo}) {
 
     let content;
     
@@ -51,7 +52,6 @@ export default function HistoryList({search, videos, deleteHistoryVideo}) {
                                     }
                                 </div>
                             </div>
-                            { date &&  <span style={{"color":"#fff"}}>{date}</span>}
                             { date &&  historyDateFormat(date)}
                             <span className='close' title="Remove From History List" onClick={e =>{
                                 e.preventDefault()
@@ -71,13 +71,12 @@ export default function HistoryList({search, videos, deleteHistoryVideo}) {
         })
     }
 
-    
-    
-
     return <div>
                 <h className="page-title">Watch History</h>
                 <div className='list'>{content}</div>;
             </div>
     
    
-}
+})
+
+export default HistoryList;

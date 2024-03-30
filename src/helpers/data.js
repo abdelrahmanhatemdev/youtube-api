@@ -279,8 +279,17 @@ export function deleteHistory(id) {
       localStorage.setItem("history", JSON.stringify(historyArray))
   
     }
-  }
+}
 
- 
+export function searchHistory(term) {
+    let historyArray = getHistory();
+    if (historyArray) {
+        if (term) {
+            const filtered = historyArray.filter(data => data.video.title.toLowerCase().includes(term))
+            return filtered;
+        }
+        return historyArray;
+    }
+}
 
 
