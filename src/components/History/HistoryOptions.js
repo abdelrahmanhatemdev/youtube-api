@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react'
-import { searchHistory, clearHistory, getHistory } from "../../helpers/data";
+import { searchHistory, clearHistory, getHistory } from "../../data/historyData";
 import Modal from "../Root/Modal";
 
 export default function HistoryOptions({setVideos}) {
@@ -44,7 +44,7 @@ export default function HistoryOptions({setVideos}) {
                             <h4 className='title'>Clear all watch history?</h4>
                         </div>
                         <div className='body'>
-                            <p>Your YouTube watch history will be cleared, are you sure?</p>
+                            <p>Your YouTube watch history will be cleared, <strong className='active'>are you sure?</strong></p>
                         </div>
                         <div className='footer'>
                             <button onClick={() => setShowModal(false)}>Cancel</button>

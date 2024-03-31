@@ -2,7 +2,7 @@
 import { memo } from 'react'
 import { Link } from "react-router-dom";
 import { dateFormat, durationFormat, numberFormat, historyDateFormat } from "../../helpers/format";
-import { deleteHistory } from "../../helpers/data";
+import { deleteHistory } from "../../data/historyData";
 import { isNew, isShort} from "../../helpers/check";
 import shortIcon from "../../assets/icons/short.png";
 import newIcon from "../../assets/icons/fire.png";

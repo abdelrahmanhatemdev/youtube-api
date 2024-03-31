@@ -1,5 +1,6 @@
 import { useLoaderData, useNavigation } from "react-router-dom";
-import { getData, isRequestLimit } from "../../helpers/data";
+import { getData } from "../../data/apiData";
+import { isRequestLimit } from "../../data/apiData";
 import SearchResults from "./SearchResults";
 import { Categories } from "../";
 

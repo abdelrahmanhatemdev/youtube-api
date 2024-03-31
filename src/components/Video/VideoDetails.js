@@ -1,4 +1,4 @@
-import { getChannel } from "../../helpers/data";
+import { getChannel } from "../../data/videoData";
 import { numberFormat, dateFormat } from "../../helpers/format";
 import likeIcon from "../../assets/icons/like.png";
 import RelatedVideos from "./RelatedVideos";

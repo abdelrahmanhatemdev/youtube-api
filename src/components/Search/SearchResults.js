@@ -1,5 +1,5 @@
 import React from 'react';
-import { getChannel } from "../../helpers/data";
+import { getChannel } from "../../data/videoData";
 import { Link } from "react-router-dom";
 import { dateFormat, durationFormat, numberFormat } from "../../helpers/format";
 import { isNew, isShort} from "../../helpers/check";
@@ -61,6 +61,7 @@ export default function SearchResults({search, videos}) {
                         </div>
                     </Link>
             }
+            return "";
     
         })
     }

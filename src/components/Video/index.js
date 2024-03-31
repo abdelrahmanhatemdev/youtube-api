@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLoaderData, useLocation} from "react-router-dom";
 import { VideoDetails } from "..";
-import { getVideo, addHistory } from "../../helpers/data";
+import { addHistory } from "../../data/historyData";
 
 
 export function loader({params}) {

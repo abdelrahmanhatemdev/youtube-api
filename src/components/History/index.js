@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { useLoaderData, useNavigation } from "react-router-dom";
-import { getHistory } from "../../helpers/data";
+import { getHistory } from "../../data/historyData";
 import HistoryList from "./HistoryList";
 import HistoryOptions from "./HistoryOptions";
 import "./HistoryList.css";
+import useTitle from "../../hooks/useTitle";
 import NoData from "../partials/NoData";
 
 
@@ -16,6 +17,8 @@ export default function History() {
     let {dataVideos} = useLoaderData();   
     const[videos, setVideos] = useState(dataVideos);
     const navigation = useNavigation();
+
+    useTitle("History")
     
 
     function deleteHistoryVideo(id) {
