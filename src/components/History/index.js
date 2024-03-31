@@ -7,7 +7,6 @@ import "./HistoryList.css";
 
 export async function loader({params, request}) {
     const dataVideos = await getHistory();
-
     return {dataVideos}
 }
 

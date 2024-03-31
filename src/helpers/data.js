@@ -281,6 +281,11 @@ export function deleteHistory(id) {
     }
 }
 
+export function clearHistory() {
+    let historyArray= localStorage.getItem("history");
+    historyArray && localStorage.setItem("history", [])
+}
+
 export function searchHistory(term) {
     let historyArray = getHistory();
     if (historyArray) {
