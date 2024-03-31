@@ -54,7 +54,7 @@ export default function ErrorPage({type}) {
                         <div className='header'>
                             {header}
                         </div>
-                        <div className="content">
+                        <div className="body">
                             <div className='details'>
                                 {details}
                                 {more}

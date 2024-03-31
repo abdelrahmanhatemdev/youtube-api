@@ -21,51 +21,51 @@
 .error-page .header h1{
     margin: 0;
 }
-.error-page .content {
+.error-page .body {
     background: var(--gray-3);
     padding: 1rem;
     display: flex;
     gap: 1rem;
 }
-.error-page .content .details {
+.error-page .body .details {
     color: var(--white-1);
     background: var(--gray-2);
     padding: 1rem;
     border-radius: 1rem;
     color: var(--white-3);
 }
-.error-page .content .details p{
+.error-page .body .details p{
     margin: 0;
     padding-block: .2rem;
     font-weight: 100;
     letter-spacing: .5px;
 }
-.error-page .content .details strong{
+.error-page .body .details strong{
     color: var(--red-1);
 }
-.error-page .content .details .bold{
+.error-page .body .details .bold{
     color: var(--white-1);
 }
-.error-page .content .details .more{
+.error-page .body .details .more{
     margin-block-start: .5rem;
 }
-.error-page .content .details .more > span{
+.error-page .body .details .more > span{
     color: var(--gray-5);
     font-size: .8rem;
     cursor: pointer;
 }
-.error-page .content .details .info{
+.error-page .body .details .info{
     block-size: 0px;
     opacity: 0;
     transition: all ease-in-out .3s;
     overflow: hidden;
     max-inline-size: 400px;
 }
-.error-page .content .details .info.open{
+.error-page .body .details .info.open{
     block-size: 200px;
     opacity: 1;
 }
-.error-page .content .details .info p {
+.error-page .body .details .info p {
     padding: .5rem;
     background: var(--gray-1);
     border-radius: .5rem;
@@ -86,7 +86,7 @@
 }
 
 @media(max-width: 900px){
-    .error-page .content {
+    .error-page .body {
         flex-direction: column-reverse;
     }
 }

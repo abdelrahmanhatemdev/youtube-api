@@ -30,7 +30,6 @@ export default function History() {
                 </div>
                 <HistoryOptions setVideos={setVideos}/>
             </section>
-           
         </>
     )
 }
