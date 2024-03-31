@@ -1,9 +1,13 @@
 .history {
+    inline-size: 100%;
+    block-size: 100%;
+}
+.history > .content {
     display: flex;
     margin-block: 0;
     position: static;
     inline-size: 100%;
-    block-size: 100%;
+    block-size: calc(100% - 3rem);
     overflow-y: hidden;
     justify-content: space-between;
 }
@@ -16,13 +20,15 @@
     overflow-y: auto;
     block-size: 100%;
 }
-.page-title{
+.history .page-title {
     color: var(--white-1);
     font-size: 1.7rem;
     font-weight: 700;
-    padding: 1rem;
+    padding-inline: 1rem;
+    margin-block: .5rem;
+    line-height: 2rem;
 }
-.history > .options {
+.history >  .content > .options {
     flex: 0 0 20%;
     background-color: var(--gray-3);
     border-radius: 1rem;

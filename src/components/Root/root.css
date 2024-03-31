@@ -182,9 +182,11 @@ nav .side-menus svg {
     fill: var(--gray-5);
 }
 main > .content {
-    overflow-y:auto;
+    overflow-y: auto;
     block-size: 90%;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 ::-webkit-scrollbar{
     display: none;
@@ -192,4 +194,25 @@ main > .content {
 .loading{
     opacity: .2;
 }
-
+.no-data{
+    display: flex;
+    flex-direction: column;
+    inline-size: 100%;
+    align-items: center;
+    flex: 1 0 100%;
+}
+.no-data .details{
+    text-align: center;
+    color: var(--white-3);
+}
+.no-data .details .title{
+    margin-block: .5rem;
+}
+.no-data .details p{
+    margin-block: .5rem;
+}
+.no-data .details .active {
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--red-1);
+}

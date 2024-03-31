@@ -4,6 +4,8 @@ import { getHistory } from "../../helpers/data";
 import HistoryList from "./HistoryList";
 import HistoryOptions from "./HistoryOptions";
 import "./HistoryList.css";
+import NoData from "../partials/NoData";
+
 
 export async function loader({params, request}) {
     const dataVideos = await getHistory();
@@ -24,10 +26,15 @@ export default function History() {
     return (
         <>
             <section className="history">
-                <div className="results">
-                    <HistoryList videos={videos} deleteHistoryVideo={deleteHistoryVideo} className={navigation.state === "loading" ? "loading": ""}/>
+                <h1 className="page-title">Watch History</h1>
+                <div className='content'>
+                    {!videos && 
+                    <NoData title="No History List Found!" details={<><strong className='active'>Watch Videos</strong> to see history watch List!</>}/>}
+                    <div className="results">
+                        <HistoryList videos={videos} deleteHistoryVideo={deleteHistoryVideo} className={navigation.state === "loading" ? "loading": ""}/>
+                    </div>
+                    <HistoryOptions setVideos={setVideos}/>
                 </div>
-                <HistoryOptions setVideos={setVideos}/>
             </section>
         </>
     )

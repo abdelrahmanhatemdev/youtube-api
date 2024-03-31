@@ -14,6 +14,7 @@ const HistoryList = memo(function HistoryList({search, videos, deleteHistoryVide
 
     if (videos) {
         content = videos.map((data, index) => {
+            let link;
             if (data) {
                
                 const video = data.video
@@ -21,7 +22,7 @@ const HistoryList = memo(function HistoryList({search, videos, deleteHistoryVide
            
 
                 if (video) {
-                    return <Link to={"/v/" + video.id} className="item" key ={index} state={{video: video, videos:videos}}>
+                    link = <Link to={"/v/" + video.id} className="item" key ={index} state={{video: video, videos:videos}}>
                         <div className="img-holder">
                             <img src={video.thumbnails} alt={video.title} />
                             <span className="duration">{durationFormat(video.duration)}</span>
@@ -67,13 +68,16 @@ const HistoryList = memo(function HistoryList({search, videos, deleteHistoryVide
                 }
                 
             }
+            return link;
     
         })
     }
 
     return <>
-                <h1 className="page-title">Watch History</h1>
-                <div className='list'>{content}</div>;
+               
+                <div className='list'>
+                    {content}
+                </div>;
             </>
     
    
