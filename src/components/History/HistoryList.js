@@ -71,10 +71,10 @@ const HistoryList = memo(function HistoryList({search, videos, deleteHistoryVide
         })
     }
 
-    return <div>
+    return <>
                 <h className="page-title">Watch History</h>
                 <div className='list'>{content}</div>;
-            </div>
+            </>
     
    
 })

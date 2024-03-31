@@ -175,8 +175,9 @@ nav .side-menus svg {
 main > .content {
     overflow-y:auto;
     block-size: 90%;
+    position: relative;
 }
-main > .content::-webkit-scrollbar{
+::-webkit-scrollbar{
     display: none;
 }
 .loading{
