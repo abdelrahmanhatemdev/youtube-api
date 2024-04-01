@@ -27,21 +27,6 @@ export  async function getIntialData() {
        
        
             let response = await createData(keywords, searchObject);
-            
-        // }).then(() => {
-        //     // keywords.forEach(async keyword => {
-        //     //     let keywordResults = await getData(keyword);
-        //     //     data.push(keywordResults)
-    
-        //     //    })
-        //        console.log("data", data);
-        //        return data
-               
-        // })
-           
-           
-
-          
 
         
         return response;

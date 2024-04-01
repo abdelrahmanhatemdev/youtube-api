@@ -1,23 +1,18 @@
 import { getChannel } from "../../data/videoData";
 import { numberFormat, dateFormat } from "../../helpers/format";
 import likeIcon from "../../assets/icons/like.png";
-import RelatedVideos from "./RelatedVideos";
 import useTitle from "../../hooks/useTitle";
 
-import "./videoDetails.css";
-function VideoDetails({video, id, videos}) {
-    const videoSrc = "https://www.youtube.com/embed/" + id;
+export default function ShortDetails({video}) {
 
-    useTitle(video.title)
-  
-
-    // console.log("video 2=> ", video);
+    const videoSrc = "https://www.youtube.com/embed/" + video.id;
 
     const channel = getChannel(video.channelID);
+    
 
-    return video &&  <section className="video-page">
-        <div className="video-details">
-            <div className="player">
+    return (
+        <div className="short">
+             <div className="player">
                 <iframe width="100%" height="500px" src={videoSrc+ "?autoplay=1&enable_js=1"} title="Video Player" autoplay={1}
                 // allow="accelerometer; autoplay *; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen"
                 ></iframe>
@@ -61,12 +56,5 @@ function VideoDetails({video, id, videos}) {
                 </div>
             </div>
         </div>
-        
-        {videos && <RelatedVideos videos={videos.filter(v => v ? v.id !== id : "")}/>}
-        
-    </section>
+    )
 }
-       
-    
-
-export default VideoDetails;

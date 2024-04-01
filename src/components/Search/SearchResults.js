@@ -48,7 +48,7 @@ export default function SearchResults({search, videos}) {
                                             </span>
                                     }
                                      {
-                                        isShort(durationFormat(video.duration)) && 
+                                        isShort(video) && 
                                             <span className='badge'>
                                                 <span className='icon'>
                                                     <img src={shortIcon} alt='Short'/>

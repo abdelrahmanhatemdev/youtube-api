@@ -1,3 +1,4 @@
+import { durationFormat} from "./format";
 export function isNew(date) {
 
     if (date.includes("Second")) {
@@ -10,15 +11,22 @@ export function isNew(date) {
     return false
 }
 
-export function isShort(duration) {
-    if (typeof duration === "string") {
-        const durationArray = duration.split(":");
-        if (durationArray.length <3) {
-            if (durationArray[0] === "00" ) {
-                return true
-            } 
+export function isShort(video) {
+    if (video) {
+        const vDuration = video.duration;
+        if (vDuration) {
+            const duration = durationFormat(vDuration);
+            if (typeof duration === "string") {
+                const durationArray = duration.split(":");
+                if (durationArray.length <3) {
+                    if (durationArray[0] === "00" ) {
+                        return true
+                    } 
+                }
+            }
         }
-      
+        
     }
+   
 }
 

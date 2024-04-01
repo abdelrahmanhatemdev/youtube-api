@@ -8,7 +8,7 @@ import "./home.css";
 export async function loader({params}) {
     const data = await getIntialData();
     isRequestLimit(data)
-     return {data}
+    return {data}
     
 }
 
