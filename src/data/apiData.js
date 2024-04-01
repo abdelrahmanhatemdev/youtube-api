@@ -22,6 +22,7 @@ export async function createData(keywords, searchObject) {
     console.log("Fetching data from Youtube API");
     let data = await Promise.all(
         keywords.map(async keyword => {
+           
             return search(keyword)
             .then(res =>res)
             .then(res => {
@@ -45,7 +46,8 @@ export async function createData(keywords, searchObject) {
             .catch(e => e);
         })
     );
-    data = [...data]
+    data = data.flat();
+   
     return data;
 }
 
