@@ -42,31 +42,36 @@ export default function ErrorPage({type}) {
 
     return (
         <>
-        <aside>
-            <Aside/>
-        </aside>
-        <main>
-            <NavBar/>
-            <section className='content'>
-                <Categories/>
-                <div className='error-page'>
-                    <div className='panel'>
-                        <div className='header'>
-                            {header}
-                        </div>
-                        <div className="body">
-                            <div className='details'>
-                                {details}
-                                {more}
+         <div className='root'>
+            <div className='container'>
+            <aside>
+                    <Aside/>
+                </aside>
+                <main>
+                    <NavBar/>
+                    <section className='content'>
+                        <Categories/>
+                        <div className='error-page'>
+                            <div className='panel'>
+                                <div className='header'>
+                                    {header}
+                                </div>
+                                <div className="body">
+                                    <div className='details'>
+                                        {details}
+                                        {more}
+                                    </div>
+                                    <div className='icon'>
+                                        <ErrorIcon/>
+                                    </div>
+                                </div>
                             </div>
-                            <div className='icon'>
-                                <ErrorIcon/>
-                            </div>
                         </div>
-                    </div>
-                </div>
-            </section>
-        </main>
+                    </section>
+                </main>
+            </div>
+        </div>
+        
         </>
         
     )
