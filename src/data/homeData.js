@@ -15,20 +15,12 @@ export  async function getIntialData() {
 
             if (storedTerm) {
                 data.push(...storedTerm.filter(v => v));
-                
-            }else{
-                
-                // return createData(searchTerm, searchObject)
             }
             return "";
         })
         
     }else{
-       
-       
             let response = await createData(keywords, searchObject);
-
-        
         return response;
     }
     return filterVideos(data);
