@@ -59,9 +59,11 @@ export async function videoInfo(id){
                 commentCount: more.statistics.commentCount
             }
 
+           
             return video;
         }  
         
+
     })
     .catch(e => console.log(e))
 
@@ -101,3 +103,17 @@ export async function channelInfo(id){
     return response;
 }
 
+export async function iframeApi(){
+
+    const response = await axios.get(`https://www.youtube.com/iframe_api`)
+    .then( res => {
+        console.log("res", res);
+        return res
+        
+    })
+    .catch(e => e)
+
+    console.log("response", response);
+
+    // return response;
+}

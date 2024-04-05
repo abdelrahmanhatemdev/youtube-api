@@ -1,34 +1,30 @@
 import React from 'react';
 import { useLoaderData, useLocation} from "react-router-dom";
 import { VideoDetails } from "..";
+import { getVideo } from "../../data/videoData";
 import { addHistory } from "../../data/historyData";
 
 
-export function loader({params}) {
+export async function loader({params}) {
     const id  = params.videoId;
+    const videoData = await getVideo(id);
     addHistory(id)
-    return {id}
+    return {id, videoData}
 }
 
 export default function Video() {
-    const {id} = useLoaderData();
+    const {id, videoData} = useLoaderData();
     let video, videos;
 
     const location = useLocation();
     const state = location.state;
+    
 
     if (state) {
         video = state.video;
         videos = state.videos;
-        if (video) {
-           
-        }
-        
     }else{
-        // video = getVideo(id)
-        video = "";
-        // console.log("video 1 => ", video);
-        
+        video = videoData
     }
     
     

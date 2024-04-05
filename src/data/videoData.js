@@ -8,28 +8,18 @@ export async function getVideo(id) {
 
         for (const key in searchObject) {
             for (const video of searchObject[key]) {
-                
                 if (video) {
                      if (id === video.id) {
                         return video;
                     }
                 }
-               
             }
         }
-
-        await videoInfo(id).then(video =>{
-            // console.log("data ", video);
-            return video
-        });
-
-        
-        
     }else{
 
     }
 
-//   return id
+    return await videoInfo(id).then(video =>video);
     
 }
 

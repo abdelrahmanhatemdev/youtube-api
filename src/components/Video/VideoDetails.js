@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react';
+// import { iframeApi } from "../../api/youtube";
 import { getChannel } from "../../data/videoData";
 import { numberFormat, dateFormat } from "../../helpers/format";
 import likeIcon from "../../assets/icons/like.png";
@@ -10,18 +11,24 @@ function VideoDetails({video, id, videos}) {
     const detailsRef = useRef();
     const videoSrc = "https://www.youtube.com/embed/" + id;
 
+    useTitle(video.title)
+
     useEffect(() => {
-        detailsRef.current.scrollIntoView()
+        
+        detailsRef.current && detailsRef.current.scrollIntoView()
     }, [])
 
-    useTitle(video.title)
+    // console.log("title", video.title);
+
+
   
 
-    // console.log("video 2=> ", video);
+    // console.log("id=> ", id);
+    
 
     const channel = getChannel(video.channelID);
 
-    console.log("channel", channel);
+   
 
     return video &&  <section className="video-page">
         <div className="video-details" ref={detailsRef}>
