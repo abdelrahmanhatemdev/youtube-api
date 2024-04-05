@@ -82,7 +82,6 @@ export function filterVideos(array) {
         }
         return "";
     })
-
     return filtered;
 }
 

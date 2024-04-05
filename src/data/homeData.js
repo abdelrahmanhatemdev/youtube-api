@@ -20,8 +20,7 @@ export  async function getIntialData() {
         })
         
     }else{
-            let response = await createData(keywords, searchObject);
-        return response;
+        return await createData(keywords, searchObject)
     }
     return filterVideos(data);
 } 
