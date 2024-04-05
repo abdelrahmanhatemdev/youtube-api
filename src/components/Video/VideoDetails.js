@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { getChannel } from "../../data/videoData";
 import { numberFormat, dateFormat } from "../../helpers/format";
 import likeIcon from "../../assets/icons/like.png";
@@ -6,7 +7,12 @@ import useTitle from "../../hooks/useTitle";
 
 import "./videoDetails.css";
 function VideoDetails({video, id, videos}) {
+    const detailsRef = useRef();
     const videoSrc = "https://www.youtube.com/embed/" + id;
+
+    useEffect(() => {
+        detailsRef.current.scrollIntoView()
+    }, [])
 
     useTitle(video.title)
   
@@ -15,8 +21,10 @@ function VideoDetails({video, id, videos}) {
 
     const channel = getChannel(video.channelID);
 
+    console.log("channel", channel);
+
     return video &&  <section className="video-page">
-        <div className="video-details">
+        <div className="video-details" ref={detailsRef}>
             <div className="player">
                 <iframe width="100%" height="500px" src={videoSrc+ "?autoplay=1&enable_js=1"} title="Video Player" autoplay={1}
                 // allow="accelerometer; autoplay *; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen"

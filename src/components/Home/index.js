@@ -25,7 +25,7 @@ export default function Home(props) {
                         <section className={"category-content " +( navigation.state === "loading" ? "loading" : "")} > 
                             {
                             videos.map((video, i) => {
-                                return video && <VideoItem video={video} index={i} videos={videos} key={i}/>;
+                                return video && <VideoItem video={video} index={i} videos={videos.slice(0,50)} key={i}/>;
                             })
                             }
                         </section>

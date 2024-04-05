@@ -27,7 +27,6 @@ export async function createData(keywords, searchObject) {
             .then(res =>res)
             .then(res => {
                 let {videos} = res;
-               
         
                 if (videos) {
                         searchObject = {...searchObject, [keyword]:videos}
@@ -36,7 +35,6 @@ export async function createData(keywords, searchObject) {
                         return videos
                 
                 }else{
-    
                     const check = checkQuota(res);
                     if(!check){
                         return  "requestLimit";
@@ -52,7 +50,6 @@ export async function createData(keywords, searchObject) {
 }
 
 export function checkQuota(res) {
-    
     const error = res?.response?.data?.error.message;
     if (error?.includes("The request cannot be completed because you have exceeded your")) {
         return false;

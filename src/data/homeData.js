@@ -18,7 +18,6 @@ export  async function getIntialData() {
             }
             return "";
         })
-        
     }else{
         return await createData(keywords, searchObject)
     }

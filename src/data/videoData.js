@@ -1,13 +1,11 @@
 
 import { videoInfo, channelInfo } from "../api/youtube";
-export function getVideo(id) {
 
+export async function getVideo(id) {
     let searchObject = localStorage.getItem("search");
     if (searchObject) {
         searchObject = JSON.parse(searchObject);
 
-        
-        
         for (const key in searchObject) {
             for (const video of searchObject[key]) {
                 
@@ -20,7 +18,7 @@ export function getVideo(id) {
             }
         }
 
-        videoInfo(id).then(video =>{
+        await videoInfo(id).then(video =>{
             // console.log("data ", video);
             return video
         });

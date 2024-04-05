@@ -9,7 +9,6 @@ export function getHistory() {
                     const video = getVideo(historyVideo.id)
                     const date = historyVideo.date
                     return {video, date}
-                
             })
             videos = videos.sort().reverse()
             return [...videos]
