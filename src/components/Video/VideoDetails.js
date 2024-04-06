@@ -33,7 +33,7 @@ function VideoDetails({video, id, videos}) {
                 </div>
                 }
                 <iframe width="100%" height="500px" src={videoSrc+ "?autoplay=1&enable_js=1"} title="Video Player" autoplay={1} onLoad = {() => setIsLoading(false)}
-                // allow="accelerometer; autoplay *; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen"
+                allow="accelerometer; autoplay *; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen"
                 ></iframe>
                 
             </div>
