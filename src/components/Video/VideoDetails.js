@@ -10,27 +10,21 @@ import "./videoDetails.css";
 function VideoDetails({video, id, videos}) {
     const detailsRef = useRef();
     const videoSrc = "https://www.youtube.com/embed/" + id;
-    const title = video.title ? video.title : ""
-
+    let channel;
+    const title = video ? video.title : "";
 
     useTitle(title)
-
-    
 
     useEffect(() => {
         
         detailsRef.current && detailsRef.current.scrollIntoView()
     }, [])
 
-    // console.log("title", video.title);
-
-
-  
-
-    // console.log("id=> ", id);
+    console.log("id=> ", id);
     
-
-    const channel = getChannel(video.channelID);
+    if (video) {
+        channel = getChannel(video.channelID);
+    }
 
    
 

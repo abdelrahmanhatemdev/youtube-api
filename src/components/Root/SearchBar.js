@@ -12,7 +12,6 @@ function SearchBar({getSearch}) {
         e.preventDefault()
         const searchFormat =search.replaceAll("/", "%2F")
         console.log(searchFormat);
-         
         const url = "/search/" + searchFormat;
         navigate(url)
     }

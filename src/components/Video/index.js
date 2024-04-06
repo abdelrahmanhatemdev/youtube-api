@@ -8,7 +8,7 @@ import { addHistory } from "../../data/historyData";
 export async function loader({params}) {
     const id  = params.videoId;
     const videoData = await getVideo(id);
-    addHistory(id)
+    addHistory(id);
     return {id, videoData}
 }
 

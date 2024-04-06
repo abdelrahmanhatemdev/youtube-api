@@ -15,12 +15,18 @@ export async function getVideo(id) {
                 }
             }
         }
-    }else{
-
+        const videoObj = await videoInfo(id).then(video =>video);
+        const unknown = searchObject.unknown ? searchObject.unknown : "";
+        
+        searchObject = {...searchObject, unknown:[...unknown, videoObj]}
+        localStorage.setItem("search", JSON.stringify(searchObject))
+        return videoObj
     }
+    const videoObj = await videoInfo(id).then(video =>video);
+        searchObject = {unknown:[videoObj]}
+        localStorage.setItem("search", JSON.stringify(searchObject));
+        return videoObj
 
-    // return await videoInfo(id).then(video =>video);
-    
 }
 
 
