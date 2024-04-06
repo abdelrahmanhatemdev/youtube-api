@@ -19,7 +19,7 @@ export default function Home(props) {
     useTitle("Home")
 
     if (data.length > 0) {
-        let videos = data.sort(() => (Math.random() > 0.5) ? 1 : -1);
+        let videos = data;
 
         content =   <>
                         <section className={"category-content " +( navigation.state === "loading" ? "loading" : "")} > 

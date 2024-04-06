@@ -26,6 +26,8 @@ function VideoDetails({video, id, videos}) {
         channel = getChannel(video.channelID);
     }
 
+    console.log("videos", videos);
+
    
 
     return video &&  <section className="video-page">

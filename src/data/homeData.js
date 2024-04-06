@@ -21,5 +21,14 @@ export  async function getIntialData() {
     }else{
         return await createData(keywords, searchObject)
     }
+    data = data.sort(() => (Math.random() > 0.5) ? 1 : -1);
     return filterVideos(data);
+} 
+
+export  async function getRandomLimited() {
+    let data = await getIntialData();
+    
+    if (data) {
+        return data.slice(0,50)   
+    }
 } 
