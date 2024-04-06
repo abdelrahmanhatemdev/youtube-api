@@ -3,10 +3,13 @@ import { searchHistory, clearHistory, getHistory } from "../../data/historyData"
 import Modal from "../Root/Modal";
 
 export default function HistoryOptions({setVideos}) {
-    const [search, setSearch] = useState();  
+    const [search, setSearch] = useState("");  
     const [showModal, setShowModal] = useState(false);   
-    const handleSearch = useCallback(() => searchHistory(search) ,[search])
-    const videos = getHistory();
+    const videos = getHistory("");
+
+    async function handleSearch(term) {
+        return await searchHistory(term)
+    }
    
 
     return (
@@ -18,10 +21,12 @@ export default function HistoryOptions({setVideos}) {
                         <path d="M400 208A192 192 0 1 0 16 208a192 192 0 1 0 384 0zM349.3 360.6C312.2 395 262.6 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 54.6-21 104.2-55.4 141.3l149 149c3.1 3.1 3.1 8.2 0 11.3s-8.2 3.1-11.3 0l-149-149z"/>
                     </svg>
                     </span>
-                    <input name="search" type="text" placeholder="Search watch history" value={search} onChange={(e) => {
+                    <input name="search" type="text" placeholder="Search watch history" value={search} onChange={async (e) => {
                         setSearch(e.target.value)
                         
-                        const searchVideos = handleSearch(e.target.value);
+                        const searchVideos = await handleSearch(e.target.value);
+
+                        console.log(searchVideos);
                         setVideos(searchVideos)
                     }}/>
                         

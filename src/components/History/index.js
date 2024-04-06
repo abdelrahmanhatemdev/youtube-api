@@ -22,7 +22,6 @@ export default function History() {
     
 
     function deleteHistoryVideo(id) {
-        console.log(id);
         let historyArray = videos.filter(data => {
             if (data.video) {
                 if (data.video.id !== id) {
@@ -33,6 +32,7 @@ export default function History() {
         });
         setVideos(historyArray)
     }
+
     return (
         <>
             <section className="history">
