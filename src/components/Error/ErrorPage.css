@@ -33,12 +33,15 @@
     padding: 1rem;
     border-radius: 1rem;
     color: var(--white-3);
+    flex: 0 0 75%;
+    max-width: 500px;
 }
-.error-page .body .details p{
+.error-page .body .details p {
     margin: 0;
     padding-block: .2rem;
     font-weight: 100;
     letter-spacing: .5px;
+    word-break: break-word;
 }
 .error-page .body .details strong{
     color: var(--red-1);

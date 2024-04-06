@@ -19,7 +19,7 @@ export async function getVideo(id) {
 
     }
 
-    return await videoInfo(id).then(video =>video);
+    // return await videoInfo(id).then(video =>video);
     
 }
 

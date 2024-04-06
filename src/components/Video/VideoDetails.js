@@ -10,8 +10,12 @@ import "./videoDetails.css";
 function VideoDetails({video, id, videos}) {
     const detailsRef = useRef();
     const videoSrc = "https://www.youtube.com/embed/" + id;
+    const title = video.title ? video.title : ""
 
-    useTitle(video.title)
+
+    useTitle(title)
+
+    
 
     useEffect(() => {
         
