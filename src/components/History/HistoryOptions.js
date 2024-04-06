@@ -23,10 +23,7 @@ export default function HistoryOptions({setVideos}) {
                     </span>
                     <input name="search" type="text" placeholder="Search watch history" value={search} onChange={async (e) => {
                         setSearch(e.target.value)
-                        
                         const searchVideos = await handleSearch(e.target.value);
-
-                        console.log(searchVideos);
                         setVideos(searchVideos)
                     }}/>
                         

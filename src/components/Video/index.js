@@ -29,8 +29,6 @@ export default function Video() {
     }else{
         video = videoData
         videos= videosData;
-
-        console.log("videos videos", videos);
     }
     
     return <VideoDetails video={video} id={id} videos={videos}/>

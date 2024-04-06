@@ -10,8 +10,6 @@ import newIcon from "../../assets/icons/fire.png";
 const HistoryList = memo(function HistoryList({search, videos, deleteHistoryVideo}) {
 
     let content;
-    
-
     if (videos) {
         content = videos.map((data, index) => {
             let link;
@@ -22,7 +20,7 @@ const HistoryList = memo(function HistoryList({search, videos, deleteHistoryVide
            
 
                 if (video) {
-                    link = <Link to={"/v/" + video.id} className="item" key ={index} state={{video: video, videos:videos}}>
+                    link = <Link to={"/v/" + video.id} className="item" key ={index}>
                         <div className="img-holder">
                             <img src={video.thumbnails} alt={video.title} />
                             <span className="duration">{durationFormat(video.duration)}</span>
