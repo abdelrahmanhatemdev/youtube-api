@@ -17,14 +17,20 @@
     position: absolute;
     inline-size: 100%;
     background: var(--gray-3);
-    z-index: 1;
+    z-index: 0;
     border-radius: 1.5rem;
+    opacity: 0;
     overflow: hidden;
+    transition: all ease-in-out .3s;
+}
+.video-details .player-skelton.active {
+    opacity: 1;
+    z-index: 1;
 }
 .video-details .player-skelton .background{
     inline-size: 100%;
     block-size: 100%;
-    /* transition: all ease-in-out .3s; */
+
     background: linear-gradient(90deg, var(--gray-3), var(--gray-6), var(--gray-3));
     animation: player-skelton infinite 1s linear;
     background-size: 200%;
