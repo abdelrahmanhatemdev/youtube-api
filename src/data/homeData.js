@@ -27,7 +27,6 @@ export  async function getIntialData() {
 
 export  async function getRandomLimited() {
     let data = await getIntialData();
-    
     if (data) {
         return data.slice(0,50)   
     }

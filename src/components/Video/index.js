@@ -33,6 +33,5 @@ export default function Video() {
         console.log("videos videos", videos);
     }
     
-    
     return <VideoDetails video={video} id={id} videos={videos}/>
 }

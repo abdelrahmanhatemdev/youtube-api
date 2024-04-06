@@ -1,8 +1,6 @@
 import React from 'react';
 import {Outlet} from "react-router-dom";
 import {Aside, NavBar} from "..";
-import useTitle from "../../hooks/useTitle";
-import Modal from "./Modal";
 import "./root.css";
 
 
@@ -11,8 +9,6 @@ export async function loader(){
 }
 
 export default function Root() {
-
-    useTitle("Home")
 
     return (
         <div className='root'>

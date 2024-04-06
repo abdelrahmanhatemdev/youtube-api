@@ -16,19 +16,13 @@ function VideoDetails({video, id, videos}) {
     useTitle(title)
 
     useEffect(() => {
-        
         detailsRef.current && detailsRef.current.scrollIntoView()
     }, [])
 
-    console.log("id=> ", id);
     
     if (video) {
         channel = getChannel(video.channelID);
     }
-
-    console.log("videos", videos);
-
-   
 
     return video &&  <section className="video-page">
         <div className="video-details" ref={detailsRef}>
