@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState, Suspense } from 'react';
+import { useEffect, useRef, useState} from 'react';
 import { getChannel } from "../../data/videoData";
 import { numberFormat, dateFormat } from "../../helpers/format";
 import likeIcon from "../../assets/icons/like.png";
 import RelatedVideos from "./RelatedVideos";
 import useTitle from "../../hooks/useTitle";
-
 import "./videoDetails.css";
+
 function VideoDetails({video, id, videos}) {
     const[isLoading, setIsLoading] = useState(true);
     const detailsRef = useRef();
@@ -27,8 +27,12 @@ function VideoDetails({video, id, videos}) {
     return video &&  <section className="video-page">
         <div className="video-details" ref={detailsRef}>
             <div className="player">
-                <div className='laoding-player'></div>
-                {isLoading && "Loading ..."}
+                {
+                isLoading && 
+                <div className='player-skelton'>
+                    <div className='background'></div>
+                </div>
+                }
                 <iframe width="100%" height="500px" src={videoSrc+ "?autoplay=1&enable_js=1"} title="Video Player" autoplay={1} onLoad = {() => setIsLoading(true)}
                 // allow="accelerometer; autoplay *; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen"
                 ></iframe>
