@@ -1,15 +1,21 @@
 import {getVideo} from "./videoData";
 
-export function getHistory() {
+export async function getHistory() {
     let historyObject = localStorage.getItem("history");
     if (historyObject) {
         let historyArray= JSON.parse(localStorage.getItem("history"));
-          let videos =  historyArray.map(v => {
-                    const historyVideo = v;
-                    const video = getVideo(historyVideo.id)
-                    const date = historyVideo.date
-                    return {video, date}
+          let videos =  await Promise.all(
+            historyArray.map(async v => {
+              const historyVideo = v;
+              const date = historyVideo.date
+              const video = await getVideo(historyVideo.id)
+              
+              return {video, date}
             })
+          )
+          
+          
+          
             videos = videos.sort().reverse()
             return [...videos]
     }   

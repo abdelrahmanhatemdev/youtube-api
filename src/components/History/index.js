@@ -26,6 +26,7 @@ export default function History() {
         setVideos(historyArray)
     }
 
+    console.log("videos", videos);
     return (
         <>
             <section className="history">
