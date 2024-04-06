@@ -10,7 +10,10 @@ function SearchBar({getSearch}) {
 
     function onSubmit(e) {
         e.preventDefault()
-        const url = "/search/" + search;
+        const searchFormat =search.replaceAll("/", "%2F")
+        console.log(searchFormat);
+         
+        const url = "/search/" + searchFormat;
         navigate(url)
     }
 

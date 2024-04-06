@@ -5,7 +5,7 @@ import SearchResults from "./SearchResults";
 import { Categories } from "../";
 
 export async function loader({params, request}) {
-    const search = params.search;
+    let search = params.search;
     const videos = await getData(search);
     isRequestLimit(videos)
     return {search, videos}
