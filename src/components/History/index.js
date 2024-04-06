@@ -22,11 +22,17 @@ export default function History() {
     
 
     function deleteHistoryVideo(id) {
-        let historyArray = videos.filter(data => data.video.id !== id);
+        console.log(id);
+        let historyArray = videos.filter(data => {
+            if (data.video) {
+                if (data.video.id !== id) {
+                    return true
+                }
+            }
+            return false
+        });
         setVideos(historyArray)
     }
-
-    console.log("videos", videos);
     return (
         <>
             <section className="history">

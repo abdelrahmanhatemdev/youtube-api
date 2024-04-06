@@ -13,11 +13,8 @@ export async function getHistory() {
               return {video, date}
             })
           )
-          
-          
-          
-            videos = videos.sort().reverse()
-            return [...videos]
+          videos = videos.sort().reverse()
+          return [...videos]
     }   
     return "";
 }
