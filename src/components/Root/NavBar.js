@@ -1,7 +1,7 @@
 // import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { SearchBar } from "..";
-import logo from "../../assets/icons/logo.png"
+import logo from "../../assets/icons/logo-light.png"
 
 export default function NavBar() {
 

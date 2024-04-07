@@ -17,7 +17,10 @@ export default function Shorts(props) {
 
     if (data) {
         const shorts = data.filter( v => isShort(v));
-        content = shorts.map(video => <ShortDetails video={video}/>)
+        if (shorts) {
+            content =<ShortDetails video={shorts[0]} videos={shorts}/>
+        }
+        
         console.log("shorts", shorts);
     }
     
@@ -25,7 +28,6 @@ export default function Shorts(props) {
     return (
         <section className='shorts-page'>
             {content}
-
         </section>
     )
 }

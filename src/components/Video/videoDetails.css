@@ -9,9 +9,10 @@
 .video-details .player {
     position: relative;
     display: flex;
-}
-.video-details .player-skelton {
     block-size: 500px;
+}
+.player-skelton {
+    block-size: 100%;
     inset-block-start: 0;
     inset-inline-start: 0;
     position: absolute;
@@ -23,11 +24,11 @@
     overflow: hidden;
     transition: all ease-in-out .3s;
 }
-.video-details .player-skelton.active {
+.player-skelton.active {
     opacity: 1;
     z-index: 1;
 }
-.video-details .player-skelton .background{
+.player-skelton .background{
     inline-size: 100%;
     block-size: 100%;
 
@@ -43,7 +44,7 @@
         background-position: 100% 0;
     }
 }
-.video-details .player iframe{
+.player iframe{
     border: none;
     border-radius: 1.5rem;
 }
