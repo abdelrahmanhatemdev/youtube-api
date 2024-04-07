@@ -1,0 +1,40 @@
+.shorts-page .items {
+    display: flex;
+    overflow-x: scroll;
+    inline-size: 100%;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.shorts-page .items .item {
+    flex: 0 0 203px;
+    width: 203px;
+}
+.shorts-page .items .item .img-holder {
+    inline-size: 100%;
+    block-size: 362px;
+    overflow: hidden;
+    border-radius: .7rem;
+}
+.shorts-page .items .item .img-holder img{
+    margin-inline-start: -139px;
+}
+.shorts-page .items .item .details{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: .2rem;
+    padding-block: 0.5rem;
+}
+.shorts-page .items .item .details .title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: var(--white-1);
+    line-height: 1.4;
+}
+.shorts-page .items .item .details .views{
+    color: var(--gray-5);
+    font-size: .9rem;
+}

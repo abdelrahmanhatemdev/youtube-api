@@ -15,5 +15,5 @@ export {default as VideoItem} from "./Category/VideoItem";
 
 export {default as SearchResults} from "./Search/SearchResults";
 
-export {default as Short} from "./Short";
+export {default as Short} from "./Shorts";
 
