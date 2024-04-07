@@ -43,17 +43,9 @@ export  function getChannel(id) {
 
         channelInfo(id)
         .then(channel=> {
-                 localStorage.setItem("channels", JSON.stringify([...channelsObject, channel]))
-                 if (channel) {
-                    
-                 }else{
-                    // console.log("channel", channel);
-                 }
-                
+                 localStorage.setItem("channels", JSON.stringify([...channelsObject, channel]))               
                     return channel;
             });
-
-            // console.log("response", reponse);
 
     }else{
         channelInfo(id)
