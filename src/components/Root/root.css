@@ -42,7 +42,6 @@ a{
     inline-size: 97%;
     padding: 2rem;
     display: flex;
-    flex-wrap: wrap;
     gap: 1.5rem;
     block-size: 94svh;
     box-sizing: border-box;

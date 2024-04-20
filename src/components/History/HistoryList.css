@@ -15,10 +15,12 @@
     block-size: 100%;
     display: block;
     margin: 0;
+    inline-size: 800px;
 }
-.list {
+.history .list {
     overflow-y: auto;
     block-size: 100%;
+    inline-size: 100%;
 }
 .history .page-title {
     color: var(--white-1);
@@ -38,8 +40,9 @@
     gap: 1rem;
     block-size: fit-content;
 }
-.results .item{
+.history .results .item {
     background: transparent;
+    inline-size: 100%;
 }
 .history .item:hover .close{
     opacity: 1;
@@ -50,7 +53,10 @@
 .history .item .details .title {
     inline-size: calc(100% - 3rem);
 }
-.history .item .history-date{
+.history .results .item .description {
+    inline-size: 455px;
+}
+.history .item .history-date {
     position: absolute;
     inset-block-end: 0;
     inset-inline-end: 0;
