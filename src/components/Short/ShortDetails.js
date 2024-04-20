@@ -4,6 +4,7 @@ import { numberFormat} from "../../helpers/format";
 import likeIcon from "../../assets/icons/short-like-light.png";
 import viewsIcon from "../../assets/icons/views-light.png";
 import useTitle from "../../hooks/useTitle";
+import { addHistory } from "../../data/historyData";
 import "./ShortDetails.css";
 
 export default function ShortDetails({video}) {
@@ -13,6 +14,7 @@ export default function ShortDetails({video}) {
     useTitle(title)
 
     if (video) {
+        addHistory(video.id)
         const videoSrc = "https://www.youtube.com/embed/" + video.id;
 
     return (
