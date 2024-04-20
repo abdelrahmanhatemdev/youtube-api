@@ -7,6 +7,7 @@ import "./home.css";
 
 export async function loader({params}) {
     const data = await getRandomData();
+    
     isRequestLimit(data)
     return {data}
     

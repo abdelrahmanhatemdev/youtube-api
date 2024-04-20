@@ -26,7 +26,7 @@ export  async function getInitialData() {
 } 
 
 export  async function getRandomData() {
-    let data = getInitialData();
+    let data = await getInitialData();
     if(data){
         data = data.sort(() => (Math.random() > 0.5) ? 1 : -1);
         return filterVideos(data);

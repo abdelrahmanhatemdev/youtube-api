@@ -31,8 +31,7 @@ export default function Short(props) {
             navigate("/shorts/" + nextVideo.id)
         }, 60000);
     }
-
-
+    
     if (video) {
         content =<ShortDetails video={video} videos={videos}/>
     }
