@@ -1,4 +1,4 @@
-import {useMemo} from 'react';
+import {useMemo, useEffect} from 'react';
 import {useLoaderData, useNavigate } from "react-router-dom";
 import { getShorts} from "../../data/homeData";
 import { getVideo } from "../../data/videoData";
@@ -26,12 +26,16 @@ export default function Short(props) {
     let nextIndex = (shortIndex +1) !== videos.length ? (shortIndex +1) : 0;
     const nextVideo = videos[nextIndex];
 
-    if (nextVideo) {
-        setInterval(() => {
-            navigate("/shorts/" + nextVideo.id)
-        }, 60000);
-    }
-    
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (nextVideo) {
+                navigate("/shorts/" + nextVideo.id);
+            } 
+        }, 1000 * 60);
+        
+        return () => clearInterval(interval)
+    }, [nextVideo, navigate]);
+
     if (video) {
         content =<ShortDetails video={video} videos={videos}/>
     }

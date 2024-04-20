@@ -16,7 +16,7 @@ export default function Shorts(props) {
     let content;
 
     if (shorts) {
-        content = shorts.map(video => <ShortItem video={video} videos={shorts}/>)
+        content = shorts.map((video, index) => <ShortItem video={video} videos={shorts} key={index}/>)
     }
     return (
         <section className='shorts-page'>
