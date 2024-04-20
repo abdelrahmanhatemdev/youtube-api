@@ -3,7 +3,7 @@
 }
 .shorts-page .short {
     inline-size: 100%;
-    block-size: 100%;
+    block-size: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
