@@ -9,6 +9,8 @@ import "./ShortDetails.css";
 export default function ShortDetails({video}) {
     const[isLoading, setIsLoading] = useState(true);
 
+    console.log("video",video);
+
     if (video) {
         const videoSrc = "https://www.youtube.com/embed/" + video.id;
 

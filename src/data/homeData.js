@@ -1,7 +1,8 @@
 import {createData} from "./apiData";
 import {filterVideos} from "./videoData";
+import { isShort } from "../helpers/check";
 
-export  async function getIntialData() {
+export  async function getInitialData() {
 
     let searchObject = localStorage.getItem("search");
     let keywords = ["Food", "Music", "React"];
@@ -21,13 +22,26 @@ export  async function getIntialData() {
     }else{
         return await createData(keywords, searchObject)
     }
-    data = data.sort(() => (Math.random() > 0.5) ? 1 : -1);
     return filterVideos(data);
 } 
 
+export  async function getRandomData() {
+    let data = getInitialData();
+    if(data){
+        data = data.sort(() => (Math.random() > 0.5) ? 1 : -1);
+        return filterVideos(data);
+    }
+} 
+
 export  async function getRandomLimited() {
-    let data = await getIntialData();
+    let data = await getRandomData();
     if (data) {
         return data.slice(0,50)   
+    }
+} 
+export  async function getShorts() {
+    let data = await getInitialData();
+    if (data) {
+        return data.filter( v => isShort(v));
     }
 } 

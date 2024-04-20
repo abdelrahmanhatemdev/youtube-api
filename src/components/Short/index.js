@@ -1,33 +1,37 @@
-import React from 'react';
-import {useLoaderData, useLocation } from "react-router-dom";
-import { getIntialData} from "../../data/homeData";
+import {useMemo} from 'react';
+import {useLoaderData, useNavigate } from "react-router-dom";
+import { getShorts} from "../../data/homeData";
+import { getVideo } from "../../data/videoData";
 import { isRequestLimit } from "../../data/apiData";
-import { isShort } from "../../helpers/check";
 import ShortDetails from "./ShortDetails";
 
 export async function loader({params}) {
     const shortId = params.short;
-    console.log(params);
-    const shorts = await getIntialData();
-    isRequestLimit(shorts);
-    return {shortId, shorts}
+    const video = await getVideo(shortId);
+    const videos = await getShorts();
+    isRequestLimit(videos);
+    return {video, videos}
 }
 
 export default function Short(props) {
-    let video, videos;
-    let {shortId, shorts} = useLoaderData();
-    const{state} = useLocation();
-    if (state) {
-        video = state.video;
-        videos = state.videos;
-    }else{
-        shorts = shorts.filter( v => isShort(v));
-        video = shorts.filter(v => v.id === shortId);
-        videos = shorts;
-    }
-    let content;
+    let content, shortIndex;
+    let navigate = useNavigate();
+    let {video, videos} = useLoaderData();
 
-    console.log(video);
+    videos = useMemo(() => videos, [videos]);
+
+    const newShorts = videos.slice();
+    shortIndex = newShorts.map(v => v.id).indexOf(video.id);   
+    
+    let nextIndex = (shortIndex +1) !== videos.length ? (shortIndex +1) : 0;
+    const nextVideo = videos[nextIndex];
+
+    if (nextVideo) {
+        setInterval(() => {
+            navigate("/shorts/" + nextVideo.id)
+        }, 60000);
+    }
+
 
     if (video) {
         content =<ShortDetails video={video} videos={videos}/>

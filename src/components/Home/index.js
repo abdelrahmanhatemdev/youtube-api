@@ -1,12 +1,12 @@
 import { useLoaderData, useNavigation } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
-import { getIntialData } from "../../data/homeData";
+import { getRandomData } from "../../data/homeData";
 import { isRequestLimit } from "../../data/apiData";
 import {Categories, VideoItem} from "../";
 import "./home.css";
 
 export async function loader({params}) {
-    const data = await getIntialData();
+    const data = await getRandomData();
     isRequestLimit(data)
     return {data}
     
