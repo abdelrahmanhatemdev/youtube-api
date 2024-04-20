@@ -20,7 +20,7 @@ export default function SearchResults({search, videos}) {
                 let channel = getChannel(video.channelID);
               return <Link to={"/v/" + video.id} className="item" key ={index} state={{video: video, videos:videos}}>
                         <div className="img-holder">
-                            <img src={video.thumbnails} alt={video.title} />
+                            <img src={video.thumbnails} alt={video.title} loading="lazy"/>
                             <span className="duration">{durationFormat(video.duration)}</span>
                         </div>
                         <div className="details">

@@ -23,7 +23,7 @@ const HistoryList = memo(function HistoryList({search, videos, deleteHistoryVide
                 if (video) {
                     link = <Link to={"/v/" + video.id} className="item" key ={index}>
                         <div className="img-holder">
-                            <img src={video.thumbnails} alt={video.title} />
+                            <img src={video.thumbnails} alt={video.title} loading="lazy"/>
                             <span className="duration">{durationFormat(video.duration)}</span>
                         </div>
                         <div className="details">

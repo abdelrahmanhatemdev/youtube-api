@@ -14,7 +14,7 @@ export default function VideoItem({video, index, videos}) {
             }else{
                 videoItem =  <Link to={"/v/" + video.id} className="item" key ={index} state={{video: video, videos:videos}}>
                 <div className="img-holder">
-                    <img src={video.thumbnails} alt={video.title} />
+                    <img src={video.thumbnails} alt={video.title} loading="lazy"/>
                     <span className="duration">{durationFormat(video.duration)}</span>
                 </div>
                 <div className="details">

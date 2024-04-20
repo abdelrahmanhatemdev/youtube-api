@@ -43,7 +43,7 @@ export default function History() {
                     <div className="results">
                         <HistoryList videos={videos} deleteHistoryVideo={deleteHistoryVideo} className={navigation.state === "loading" ? "loading": ""}/>
                     </div>
-                    <HistoryOptions setVideos={setVideos}/>
+                    <HistoryOptions/>
                 </div>
             </section>
         </>
