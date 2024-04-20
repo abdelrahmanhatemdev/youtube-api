@@ -1,4 +1,5 @@
-import { useState, useCallback } from 'react'
+import { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import { searchHistory, clearHistory, getHistory } from "../../data/historyData";
 import Modal from "../Root/Modal";
 
@@ -6,6 +7,7 @@ export default function HistoryOptions({setVideos}) {
     const [search, setSearch] = useState("");  
     const [showModal, setShowModal] = useState(false);   
     const videos = getHistory("");
+    const navigte = useNavigate();
 
     async function handleSearch(term) {
         return await searchHistory(term)
@@ -50,10 +52,10 @@ export default function HistoryOptions({setVideos}) {
                         </div>
                         <div className='footer'>
                             <button onClick={() => setShowModal(false)}>Cancel</button>
-                            <button className='active' onClick={() => {
+                            <button className='active' onClick={ () => {
                                 clearHistory();
-                                setShowModal(false)
-                                setVideos(() => getHistory())
+                                setShowModal(false);
+                                navigte(0)
                                 }}>Ok</button>
                         </div>
                 </Modal>

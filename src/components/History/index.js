@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useLoaderData, useNavigation } from "react-router-dom";
+import { useLoaderData, useNavigation, Link } from "react-router-dom";
 import { getHistory } from "../../data/historyData";
 import HistoryList from "./HistoryList";
 import HistoryOptions from "./HistoryOptions";
@@ -39,7 +39,7 @@ export default function History() {
                 <h1 className="page-title">Watch History</h1>
                 <div className='content'>
                     {!videos && 
-                    <NoData title="No History List Found!" details={<><strong className='active'>Watch Videos</strong> to see history watch List!</>}/>}
+                    <NoData title="No History List Found!" details={<><Link to="/"><strong className='active'>Watch Videos</strong></Link> to see history watch List!</>}/>}
                     <div className="results">
                         <HistoryList videos={videos} deleteHistoryVideo={deleteHistoryVideo} className={navigation.state === "loading" ? "loading": ""}/>
                     </div>
