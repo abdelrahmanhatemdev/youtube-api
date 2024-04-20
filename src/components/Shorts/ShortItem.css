@@ -4,6 +4,7 @@
     inline-size: 100%;
     flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center;
 }
 .shorts-page .items .item {
     flex: 0 0 203px;
