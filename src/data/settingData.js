@@ -4,7 +4,7 @@ export async function getTheme() {
           return themeObject;
     }   
     localStorage.setItem("theme", "light");
-    return "light";
+    return "dark";
 }
 
 export async function updateTheme(theme) {  
