@@ -3,7 +3,7 @@ export async function getTheme() {
     if (themeObject) {
           return themeObject;
     }   
-    localStorage.setItem("theme", "light");
+    localStorage.setItem("theme", "dark");
     return "dark";
 }
 

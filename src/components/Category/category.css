@@ -27,7 +27,7 @@
     color: var(--secondary-3);
 }
 .categories a.active {
-    background: var(--secondary-1);
+    background: var(--secondary-3);
     color: var(--primary-4);
 }
 .category-content {

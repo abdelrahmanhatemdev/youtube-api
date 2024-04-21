@@ -25,7 +25,7 @@
     cursor: pointer;
 }
 .setting .list li:hover, .setting .list li.active{
-    background-color: var(--primary-5);
+    background-color: var(--primary-2);
     color: var(--primary-7);
 }
 .setting .details {
@@ -54,11 +54,13 @@
     align-items: center;
     padding: .5rem;
     cursor: pointer;
+    opacity: .5;
 }
 .setting .details .options .option.active{
-    background: var(--primary-5);
+    background: var(--primary-2);
     color: var(--secondary-2);
     font-weight: 500;
+    opacity: 1;
 }
 .setting .details .icon {
     inline-size: 1.5rem;

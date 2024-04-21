@@ -7,12 +7,12 @@ body.light {
     --primary-2: #f6f6f6;
     --primary-3: #ffffff;
     --primary-4: #ffffff;
-    --primary-5: #f1f1f1;
+    --primary-5: #fdfdfd;
     --primary-6: #a6a6a6;
     --primary-7: #616161;
     --secondary-1: #000;
     --secondary-2: #2d2d2d;
-    --secondary-3: #4b4b4b;
+    --secondary-3: #535353;
     --red-1: #c55757;
     --red-2: #d56363;
     --red-3: #ff8989;
@@ -89,7 +89,7 @@ aside a {
 }
 aside a.active {
     color: var(--secondary-3);
-    background: var(--primary-5);
+    background: var(--primary-2);
 }
 aside a:hover {
     color: var(--secondary-3);
