@@ -10,6 +10,7 @@ import Video, {loader as videoLoader} from "./components/Video";
 import Shorts, {loader as shortsLoader} from "./components/Shorts";
 import Short, {loader as shortLoader} from "./components/Short";
 import History, {loader as historyLoader} from "./components/History";
+import Setting, {loader as settingLoader} from "./components/Setting";
 
 let router = createBrowserRouter([
     {
@@ -52,7 +53,13 @@ let router = createBrowserRouter([
                 path: "history", 
                 element: <History/>, 
                 loader: historyLoader
+            },
+            {
+                path: "/setting", 
+                element: <Setting/>, 
+                loader: settingLoader
             }
+            
            
         ]
     }
