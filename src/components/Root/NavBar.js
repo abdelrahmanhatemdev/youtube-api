@@ -1,22 +1,15 @@
-// import React, { useState } from 'react';
+
 import { Link } from "react-router-dom";
 import { SearchBar } from "..";
-import logo from "../../assets/icons/logo-light.png"
+import logo from "../../assets/icons/logo-light.png";
+import darkLogo from "../../assets/icons/logo.png"
 
-export default function NavBar() {
-
-    // const [search, setSearch] = useState("")
-
-
-    // function handlesubmit(e){
-    //     e.preventDefault();
-    //     // getSearch(search)
-    // }
+export default function NavBar({theme}) {
 
     return (
         <nav className='navbar'>
             <Link to="/" className='logo'>
-                <img src={logo}  alt="Youtube Logo"/>
+                <img src={theme=== "dark" ? logo : darkLogo}  alt="Youtube Logo"/>
             </Link>
            <SearchBar/>
             <div className='side-menus'>

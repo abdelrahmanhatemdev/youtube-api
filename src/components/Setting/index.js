@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { getTheme, updateTheme } from "../../data/settingData";
 import "./setting.css";
 
@@ -11,6 +11,7 @@ export async function loader() {
 export default function Setting() {
     const {dataTheme} = useLoaderData();
     const [theme, setTheme] = useState(dataTheme);
+    const navigate = useNavigate();
 
     useEffect(() => {
         document.body.setAttribute("class", theme)
@@ -19,7 +20,8 @@ export default function Setting() {
 
     function update(newTheme) {
         setTheme(newTheme);
-        updateTheme(newTheme)
+        updateTheme(newTheme);
+        navigate('#')
     }
 
     return (
