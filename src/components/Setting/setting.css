@@ -1,7 +1,6 @@
 .setting{
     display: flex;
     gap: 1rem;
-    color: var(--gray-5);
 }
 .setting > *{
     background-color: var(--gray-3);
@@ -12,19 +11,65 @@
     flex: 0 0 15%;
     margin: 0;
     list-style: none;
-    font-weight: 800;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    color: var(--gray-5);
 }
 .setting .list li{
-    background-color: var(--gray-6);
-    transition: all ease-in-out .3s;
+    background-color: var(--gray-4);
+    transition: all ease-in-out .5s;
+    padding: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
 }
-.setting .list li:hover{
-    background-color: var(--gray-7);
-    color: var(--white-1);
+.setting .list li:hover, .setting .list li.active{
+    background-color: var(--gray-6);
+    color: var(--white-3);
 }
 .setting .details {
     flex: 1 0 auto;
+    color: var(--gray-5);
 }
-.setting .details h3{
+.setting .details h1, .setting .details p{
     margin: 0;
 }
+.setting .details h1{
+    color: var(--white-3);
+    font-weight: 600;
+}
+.setting .details .options{
+    display: flex;
+    border-radius: .5rem;
+    overflow: hidden;
+    margin-block-start: 1rem;
+    border: 1px solid var(--gray-6);
+    inline-size: fit-content;
+}
+.setting .details .options .option {
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    cursor: pointer;
+}
+.setting .details .options .option.active{
+    background: var(--gray-6);
+    color: var(--white-2);
+    font-weight: 500;
+}
+.setting .details .icon {
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+}
+.setting .details svg, .setting .details svg g{
+    fill: var(--white-3);
+    inline-size: 100%;
+    block-size: 100%;
+}
+.setting .details .options .option.active svg{
+    fill: var(--white-1);
+}
+
