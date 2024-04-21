@@ -1,0 +1,30 @@
+.setting{
+    display: flex;
+    gap: 1rem;
+    color: var(--gray-5);
+}
+.setting > *{
+    background-color: var(--gray-3);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.setting .list {
+    flex: 0 0 15%;
+    margin: 0;
+    list-style: none;
+    font-weight: 800;
+}
+.setting .list li{
+    background-color: var(--gray-6);
+    transition: all ease-in-out .3s;
+}
+.setting .list li:hover{
+    background-color: var(--gray-7);
+    color: var(--white-1);
+}
+.setting .details {
+    flex: 1 0 auto;
+}
+.setting .details h3{
+    margin: 0;
+}
