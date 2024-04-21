@@ -17,7 +17,7 @@
     inset-inline-start: 0;
     position: absolute;
     inline-size: 100%;
-    background: var(--gray-3);
+    background: var(--primary-3);
     z-index: -1;
     border-radius: 1.5rem;
     opacity: 0;
@@ -32,7 +32,7 @@
     inline-size: 100%;
     block-size: 100%;
 
-    background: linear-gradient(90deg, var(--gray-3), var(--gray-6), var(--gray-3));
+    background: linear-gradient(90deg, var(--primary-3), var(--primary-7), var(--primary-3));
     animation: player-skelton infinite 1s linear;
     background-size: 200%;
 }
@@ -51,7 +51,7 @@
 .video-details .video-title {
     font-size: 1.5rem;
     margin-block: .5rem;
-    color: var(--white-2);
+    color: var(--secondary-2);
 }
 .video-details .info {
     display: flex;
@@ -62,7 +62,7 @@
 .video-details .channel a {
     display: flex;
     gap: .5rem;
-    color: var(--white-2);
+    color: var(--secondary-2);
 }
 .video-details .channel img {
     inline-size: 2.5rem;
@@ -78,11 +78,11 @@
 }
 .video-details .channel .subscribers {
     font-size: .8rem;
-    color: var(--gray-5);
+    color: var(--primary-7);
     font-weight: 200;
 }
 .video-details .likes {
-    color: var(--white-2);
+    color: var(--secondary-2);
     display: flex;
 }
 .video-details .likes > * {
@@ -93,18 +93,18 @@
     font-size: .9rem;
     gap: .3rem;
     cursor: pointer;
-    background: var(--gray-6);
+    background: var(--primary-5);
     transition: all ease-in-out .3s;
 }
 .video-details .likes > *:hover {
-   background-color: var(--gray-7);
+   background-color: var(--primary-6);
 }
 .video-details .likes .like{
     border-radius: 2rem 0 0 2rem;
     padding-inline-end: 0;
 }
 .video-details .likes .like .count{
-    border-inline-end: 1px solid var(--gray-5);
+    border-inline-end: 1px solid var(--primary-7);
     padding-inline-end: .8rem;
 }
 .video-details .likes .dislike{
@@ -121,8 +121,8 @@
 }
 .video-details .description {
     margin-block: 1rem;
-    background: var(--gray-3);
-    color: var(--white-3);
+    background: var(--primary-3);
+    color: var(--secondary-3);
     padding: .8rem;
     line-height: 1.5rem;
 }
@@ -132,6 +132,6 @@
     font-weight: 600;
     display: flex;
     gap: .5rem;
-    color: var(--white-2);
+    color: var(--secondary-2);
     letter-spacing: .05rem;
 }

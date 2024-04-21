@@ -9,12 +9,12 @@
 .panel{
     inline-size: auto;
     block-size: auto;
-    border: 1px solid var(--gray-3);
+    border: 1px solid var(--primary-3);
     border-radius: 1rem;
     overflow: hidden;
 }
 .error-page .header{
-    background: var(--gray-1);
+    background: var(--primary-1);
     padding: 1rem ;
     color: var(--red-1);
 }
@@ -22,17 +22,17 @@
     margin: 0;
 }
 .error-page .body {
-    background: var(--gray-3);
+    background: var(--primary-3);
     padding: 1rem;
     display: flex;
     gap: 1rem;
 }
 .error-page .body .details {
-    color: var(--white-1);
-    background: var(--gray-2);
+    color: var(--secondary-1);
+    background: var(--primary-2);
     padding: 1rem;
     border-radius: 1rem;
-    color: var(--white-3);
+    color: var(--secondary-3);
     flex: 0 0 75%;
     max-width: 500px;
 }
@@ -47,13 +47,13 @@
     color: var(--red-1);
 }
 .error-page .body .details .bold{
-    color: var(--white-1);
+    color: var(--secondary-1);
 }
 .error-page .body .details .more{
     margin-block-start: .5rem;
 }
 .error-page .body .details .more > span{
-    color: var(--gray-5);
+    color: var(--primary-7);
     font-size: .8rem;
     cursor: pointer;
 }
@@ -70,7 +70,7 @@
 }
 .error-page .body .details .info p {
     padding: .5rem;
-    background: var(--gray-1);
+    background: var(--primary-1);
     border-radius: .5rem;
     margin-block: .5rem;
 }
@@ -82,7 +82,7 @@
     inline-size: 100%;
 }
 .error-page  .icon svg .labtop{
-    fill: var(--gray-5);
+    fill: var(--primary-7);
 }
 .error-page  .icon svg .contrast{
     fill: var(--red-1);

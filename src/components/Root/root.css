@@ -1,38 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-body.light{
-    --gray-1: #181818;
-    --gray-2: #212121;
-    --gray-3: #272727;
-    --gray-4: #3c3c3c;
-    --gray-5: #8f8d8d;
-    --gray-6: #373737;
-    --gray-7: #464646;
-    --gray-8: #242424;
-    --white-3: #ddd;
-    --white-2: #eee;
-    --white-1: #fff;
-    --red-1: #c55757;
-    --red-2: #d56363;
-    --red-3: #ff8989;
+:root{
     --primary-font: "Almarai", sans-serif;
 }
-body.dark{
-    --gray-1: #181818;
-    --gray-2: #212121;
-    --gray-3: #272727;
-    --gray-4: #3c3c3c;
-    --gray-5: #8f8d8d;
-    --gray-6: #373737;
-    --gray-7: #464646;
-    --gray-8: #242424;
-    --white-3: #ddd;
-    --white-2: #eee;
-    --white-1: #fff;
+body.light {
+    --primary-1: #ffffff;
+    --primary-2: #f6f6f6;
+    --primary-3: #ffffff;
+    --primary-4: #ffffff;
+    --primary-5: #f1f1f1;
+    --primary-6: #a6a6a6;
+    --primary-7: #616161;
+    --secondary-1: #000;
+    --secondary-2: #2d2d2d;
+    --secondary-3: #4b4b4b;
     --red-1: #c55757;
     --red-2: #d56363;
     --red-3: #ff8989;
-     
-    --primary-font: "Almarai", sans-serif;
+}
+body.dark{
+    --primary-1: #181818;
+    --primary-2: #212121;
+    --primary-3: #272727;
+    --primary-4: #3c3c3c;
+    --primary-5: #373737;
+    --primary-6: #464646;
+    --primary-7: #8f8d8d;
+    --secondary-1: #fff;
+    --secondary-2: #eee;
+    --secondary-3: #ddd;
+    --red-1: #c55757;
+    --red-2: #d56363;
+    --red-3: #ff8989;
 }
 body {
     margin: 0;
@@ -46,7 +44,7 @@ a{
     block-size: 100%;
 }
 .root {
-    background-color: var(--gray-1);
+    background-color: var(--primary-1);
     display: flex;
     font-family: var(--primary-font);
     align-items: center;
@@ -54,7 +52,7 @@ a{
     position: relative;
 }
 .container {
-    background: var(--gray-2);
+    background: var(--primary-2);
     border-radius: 2.5rem;
     inline-size: 97%;
     padding: 2rem;
@@ -70,7 +68,7 @@ a{
     gap: 1rem;
 }
 aside, nav {
-    background: var(--gray-3);
+    background: var(--primary-3);
     border-radius: 1rem;
 }
 aside{
@@ -84,17 +82,17 @@ aside a {
     margin-block: .5rem;
     display: flex;
     align-items: center;
-    color: var(--gray-5);
+    color: var(--primary-7);
     font-size: .8rem;
     padding: .5rem;
     border-radius: .5rem;
 }
 aside a.active {
-    color: var(--white-3);
-    background: var(--gray-6);
+    color: var(--secondary-3);
+    background: var(--primary-5);
 }
 aside a:hover {
-    color: var(--white-3);
+    color: var(--secondary-3);
 }
 aside .toggle{
     justify-content: center;
@@ -119,7 +117,7 @@ aside .separator {
     display: block;
     inline-size: 100%;
     block-size: 1px;
-    background: var(--gray-5);
+    background: var(--primary-5);
     margin-block: .8rem;
 }
 main {
@@ -156,7 +154,7 @@ nav search button{
 nav search input, search button {
     border: none;
     outline: none;
-    color: var(--white-1);
+    color: var(--secondary-1);
     padding: .5rem 1rem;
 }
 nav search input {
@@ -167,17 +165,17 @@ nav search input::placeholder {
     font-weight: 700;
 }
 nav search button {
-    background: var(--gray-4);
+    background: var(--primary-4);
     border: none;
     outline: none;
-    color: var(--white-1);
+    color: var(--secondary-1);
     block-size: 100%;
     display: flex;
     inline-size: auto;
     cursor: pointer;
 }
 nav search button svg {
-    fill: var(--white-3);
+    fill: var(--secondary-3);
     inline-size: 24px;
     block-size: 24px;
     display: block;
@@ -185,7 +183,7 @@ nav search button svg {
 nav .profile {
     width: 30px;
     height: 30px;
-    border: 1px solid var(--gray-4);
+    border: 1px solid var(--primary-4);
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -195,7 +193,7 @@ nav .profile {
 nav .side-menus svg {
     block-size: 100%;
     inline-size: 100%;
-    fill: var(--gray-5);
+    fill: var(--primary-7);
 }
 main > .content {
     overflow-y: auto;
@@ -220,7 +218,7 @@ main > .content {
 }
 .no-data .details{
     text-align: center;
-    color: var(--white-3);
+    color: var(--secondary-3);
 }
 .no-data .details .title{
     margin-block: .5rem;

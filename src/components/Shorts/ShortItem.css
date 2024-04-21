@@ -32,10 +32,10 @@
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     overflow: hidden;
-    color: var(--white-1);
+    color: var(--secondary-1);
     line-height: 1.4;
 }
 .shorts-page .items .item .details .views{
-    color: var(--gray-5);
+    color: var(--primary-7);
     font-size: .9rem;
 }

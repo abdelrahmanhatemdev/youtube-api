@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-basis: 30%;
-    background: var(--gray-3);
+    background: var(--primary-3);
     border-radius: 1rem;
     padding: 1rem;
     gap: .5rem;
@@ -13,13 +13,13 @@
     flex-basis: 100%;
     gap: .5rem;
     align-items: center;
-    background: var(--gray-3);
+    background: var(--primary-3);
     border-radius: 1rem;
     padding: 0 .5rem;
     transition: all ease-in-out .5s;
 }
 .related .item:hover {
-    background: var(--gray-4);
+    background: var(--primary-4);
 }
 .related .item:hover img{
     scale: 1.1 1.25;
@@ -39,7 +39,7 @@
     background-color: rgb(0 0 0 /50%);
     border-radius: .3rem;
     font-size: .9rem;
-    color: var(--white-2);
+    color: var(--secondary-2);
     padding: .2rem;
 }
 .related .item .img-holder .duration .live{
@@ -58,7 +58,7 @@
     display: block;
 }
 .related .item .details .title {
-    color: var(--white-1);
+    color: var(--secondary-1);
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
@@ -68,7 +68,7 @@
 .related .item .details .tips {
     display: flex;
     flex-direction: column;
-    color: var(--gray-5);
+    color: var(--primary-7);
     padding-block: .5rem;
     gap: .4rem;
 }

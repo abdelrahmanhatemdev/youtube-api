@@ -9,13 +9,13 @@
 .results .item {
     display: flex;
     gap: .5rem;
-    background: var(--gray-3);
+    background: var(--primary-3);
     border-radius: 1rem;
     padding: 1rem;
     transition: all ease-in-out .5s;
 }
 .results.item:hover {
-    background: var(--gray-4);
+    background: var(--primary-4);
 }
 .results .item:hover .img-holder img {
     scale: 1.1005 1.1005;
@@ -35,7 +35,7 @@
     background-color: rgb(0 0 0 /50%);
     border-radius: .3rem;
     font-size: .9rem;
-    color: var(--white-2);
+    color: var(--secondary-2);
     padding: .2rem;
 }
 .results .item .img-holder .duration .live{
@@ -56,7 +56,7 @@
     display: block;
 }
 .results .item .details .title {
-    color: var(--white-1);
+    color: var(--secondary-1);
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
@@ -67,13 +67,13 @@
 .results .item .details .tips {
     display: flex;
     flex-direction: column;
-    color: var(--gray-5);
+    color: var(--primary-7);
     padding-block: .5rem;
     gap: .4rem;
 }
 .results .item .date {
     font-size: .9rem;
-    color: var(--gray-5);
+    color: var(--primary-7);
     padding-block: .1rem;
 }
 .results .channel {
@@ -83,7 +83,7 @@
 }
 .results .item .channel .title{
     font-size: .9rem;
-    color: var(--gray-5);
+    color: var(--primary-7);
     font-weight: 400;
 }
 .results .channel img {
@@ -93,7 +93,7 @@
 }
 .results .channel .subscribers {
     font-size: .8rem;
-    color: var(--gray-5);
+    color: var(--primary-7);
     font-weight: 200;
 }
 .results .item .description{
@@ -107,7 +107,7 @@
     gap: .5rem;
 }
 .results .item .badge {
-    background: var(--gray-6);
+    background: var(--primary-5);
     inline-size: fit-content;
     padding: .2rem .3rem;
     border-radius: .3rem;
