@@ -6,13 +6,11 @@ import { getTheme } from "../../data/settingData";
 export default function Base({children}) {
 
     useEffect(() => {
-         async function dataLoader(){
+        (async function (){
             const dataTheme = await getTheme();
             document.body.setAttribute("class", dataTheme)
             return {dataTheme};
-        }
-        dataLoader()
-
+        })()
     }, )
 
     return (

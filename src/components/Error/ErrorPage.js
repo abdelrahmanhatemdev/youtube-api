@@ -57,6 +57,5 @@ export default function ErrorPage({type}) {
 
     return (
         <Base children={content}/>
-        
     )
 }
