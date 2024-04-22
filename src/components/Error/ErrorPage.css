@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    box-sizing: border-box;
 }
 .panel{
     inline-size: auto;
@@ -33,7 +34,7 @@
     padding: 1rem;
     border-radius: 1rem;
     color: var(--secondary-3);
-    flex: 0 0 75%;
+    flex: 0 1 75%;
     max-width: 500px;
 }
 .error-page .body .details p {
