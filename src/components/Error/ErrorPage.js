@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useRouteError } from "react-router-dom";
-import {Aside, NavBar} from "..";
-import Categories from "../Category/Categories";
+import Base from "../partials/Base";
 import ErrorIcon from "../Error/ErrorIcon";
 import "./ErrorPage.css";
 
@@ -14,7 +13,6 @@ export default function ErrorPage({type}) {
     let header, details, more;
     const [infoShow, setInfoShow] = useState(false);
 
-    console.log(error);
 
     if (error==="requestLimit") {
         header = <h1>Youtube API Quota</h1>;
@@ -40,18 +38,7 @@ export default function ErrorPage({type}) {
         details= <p> <strong>Error: </strong>{error ? error.replace("Error:", "") : <span>Something went <strong className='bold'>wrong</strong>!</span>}</p>
     }
 
-    return (
-        <>
-         <div className='root'>
-            <div className='container'>
-                <aside className='no-sm'>
-                    <Aside/>
-                </aside>
-                <main>
-                    <NavBar/>
-                    <section className='content'>
-                        <Categories/>
-                        <div className='error-page'>
+    const content = <div className='error-page'>
                             <div className='panel'>
                                 <div className='header'>
                                     {header}
@@ -67,15 +54,9 @@ export default function ErrorPage({type}) {
                                 </div>
                             </div>
                         </div>
-                    </section>
-                    <aside className='no-lg'>
-                    <Aside/>
-                </aside>
-                </main>
-            </div>
-        </div>
-        
-        </>
+
+    return (
+        <Base children={content}/>
         
     )
 }

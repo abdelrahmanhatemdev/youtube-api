@@ -4,12 +4,12 @@ import { SearchBar } from "..";
 import logo from "../../assets/icons/logo-light.png";
 import darkLogo from "../../assets/icons/logo.png"
 
-export default function NavBar({theme}) {
-
+export default function NavBar() {
     return (
         <nav className='navbar'>
             <Link to="/" className='logo'>
-                <img src={theme=== "dark" ? logo : darkLogo}  alt="Youtube Logo"/>
+                <img src={logo}  alt="Youtube Logo" className="dark"/>
+                <img src={darkLogo}  alt="Youtube Logo" className="light"/>
             </Link>
            <SearchBar/>
             <div className='side-menus'>

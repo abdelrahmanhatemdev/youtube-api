@@ -141,6 +141,12 @@ nav .logo img {
     inline-size: 100%;
     block-size: 100%;
 }
+.dark nav .logo img.light {
+    display: none;
+}
+.light nav .logo img.dark {
+    display: none;
+}
 nav search form {
     display: flex;
     border: 1px solid #3d3d3d;
