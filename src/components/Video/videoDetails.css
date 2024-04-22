@@ -125,6 +125,8 @@
     color: var(--secondary-3);
     padding: .8rem;
     line-height: 1.5rem;
+    border-radius: 1rem;
+    word-break: break-word;
 }
 .video-details .description .stats {
     margin-block-end: .5rem;
@@ -136,14 +138,26 @@
     letter-spacing: .05rem;
 }
 @media (max-width: 1200px) {
-   
+    .video-page {
+        flex-direction: column;
+    }
+    .video-details {
+        max-inline-size: 100%;
+    }
+    .related .item {
+        flex-basis: 47%;
+    }
 }
 @media (max-width: 920px) {
-   
-}
-@media (max-width: 768px) {
-  
+    .related .item {
+        flex-basis: 100%;
+    }
 }
 @media (max-width: 500px) {
-   
+    .related .item {
+        flex-direction: column;
+    }
+    .related .item .details {
+        inline-size: 100%;
+    }
 }
