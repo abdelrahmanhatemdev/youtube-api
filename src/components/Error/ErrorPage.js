@@ -44,7 +44,7 @@ export default function ErrorPage({type}) {
         <>
          <div className='root'>
             <div className='container'>
-            <aside>
+                <aside className='no-sm'>
                     <Aside/>
                 </aside>
                 <main>
@@ -68,6 +68,9 @@ export default function ErrorPage({type}) {
                             </div>
                         </div>
                     </section>
+                    <aside className='no-lg'>
+                    <Aside/>
+                </aside>
                 </main>
             </div>
         </div>

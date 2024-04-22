@@ -1,10 +1,10 @@
-export {default as Aside} from "./Root/Aside";
+export {default as Aside} from "./partials/Aside";
 
 export {default as Home} from "./Home";
 
 export {default as Categories} from "./Category/Categories";
 
-export {default as NavBar} from "./Root/NavBar";
+export {default as NavBar} from "./partials/NavBar";
 export {default as SearchBar} from "./Root/SearchBar";
 
 export {default as ErrorPage} from "./Error/ErrorPage";

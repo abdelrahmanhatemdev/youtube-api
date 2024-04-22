@@ -51,9 +51,12 @@ export async function createData(keywords, searchObject) {
 
 export function checkQuota(res) {
     const error = res?.response?.data?.error.message;
-    if (error?.includes("The request cannot be completed because you have exceeded your")) {
-        return false;
+    if (error) {
+        if (error.includes("The request cannot be completed because you have exceeded your")) {
+            return false;
+        }
     }
+    
     return true;
 }
 

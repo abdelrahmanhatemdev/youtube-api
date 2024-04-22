@@ -15,7 +15,7 @@
     block-size: 100%;
     display: block;
     margin: 0;
-    inline-size: 800px;
+    flex: 1 0 auto;
 }
 .history .list {
     overflow-y: auto;
@@ -54,7 +54,8 @@
     inline-size: calc(100% - 3rem);
 }
 .history .results .item .description {
-    inline-size: 455px;
+    max-inline-size: 630px;
+    inline-size: 500px;
 }
 .history .item .history-date {
     position: absolute;

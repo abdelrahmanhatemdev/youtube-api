@@ -93,3 +93,41 @@
 .category-content .item .details .tips .date{
     font-size: .9rem;
 }
+
+@media (max-width: 1200px) {
+    .category-content {
+        grid-template-columns: repeat(5, calc(20% - 0.84rem));
+    }
+    .categories > a:nth-child(n+15){
+        display: none;
+    }
+}
+@media (max-width: 920px) {
+    .category-content {
+        grid-template-columns: repeat(3, calc(33% - 0.6rem));
+    }
+}
+@media (max-width: 768px) {
+    .categories > a:nth-child(n+8){
+        display: none;
+    }
+    .category-content {
+        grid-template-columns: repeat(2, calc(50% - 0.5rem));
+    }
+}
+@media (max-width: 600px) {
+    .categories > a:nth-child(n+8){
+        display: none;
+    }
+    .category-content {
+        grid-template-columns: repeat(1, 100%);
+    }
+}
+@media (max-width: 500px) {
+    .categories > a:nth-child(n+5){
+        display: none;
+    }
+    .category-content {
+        grid-template-columns: repeat(1, 100%);
+    }
+}

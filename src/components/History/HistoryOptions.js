@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { searchHistory, clearHistory, getHistory } from "../../data/historyData";
-import Modal from "../Root/Modal";
+import Modal from "../partials/Modal";
 
 export default function HistoryOptions({setVideos}) {
     const [search, setSearch] = useState("");  
