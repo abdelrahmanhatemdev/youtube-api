@@ -1,5 +1,5 @@
 .results {
-    max-inline-size: 1000px;
+    max-inline-size: 70vw;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -96,11 +96,11 @@
     color: var(--primary-7);
     font-weight: 200;
 }
-.results .item .description{
+.results .item .description {
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    inline-size: 650px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
 }
 .results .item .badges{
     display: flex;
@@ -124,4 +124,37 @@
 }
 .results .item .badge .icon img{
     block-size: 100%;
+}
+
+@media (max-width: 1200px) {
+   
+}
+@media (max-width: 920px) {
+    .results .item .img-holder {
+        block-size: 18vw;
+        inline-size: 23vw;
+    }
+    .results .item .description {
+        -webkit-line-clamp: 1;
+        inline-size: 40vw;
+    }
+}
+@media (max-width: 768px) {
+    .results .item {
+        flex-direction: column;
+    }
+    .results .item .img-holder {
+        block-size: 45vw;
+        inline-size: 100%;
+    }
+    .results .item .description {
+        -webkit-line-clamp: 3;
+        inline-size: 100%;
+    }
+  
+}
+@media (max-width: 500px) {
+    .results {
+        max-inline-size: 84vw;
+    }
 }

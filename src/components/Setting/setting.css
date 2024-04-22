@@ -74,4 +74,15 @@
 .setting .details .options .option.active svg{
     fill: var(--secondary-1);
 }
-
+@media (max-width: 1200px) {
+   
+}
+@media (max-width: 920px) {
+   
+}
+@media (max-width: 768px) {
+  
+}
+@media (max-width: 500px) {
+   
+}

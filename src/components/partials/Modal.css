@@ -76,3 +76,15 @@
 .modal .footer button.active:hover {
     background: var(--red-2);
 }
+@media (max-width: 1200px) {
+   
+}
+@media (max-width: 920px) {
+   
+}
+@media (max-width: 768px) {
+  
+}
+@media (max-width: 500px) {
+   
+}
