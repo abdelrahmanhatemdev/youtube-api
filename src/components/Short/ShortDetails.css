@@ -8,6 +8,7 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    position: relative;
 }
 .shorts-page .short .player {
     block-size: 43rem;
@@ -61,8 +62,36 @@
    
 }
 @media (max-width: 768px) {
-  
+    .shorts-page .short {
+        inline-size: 50vw;
+        margin: auto;
+    }
+    .shorts-page .short .player {
+        inline-size: 100%;
+    }
+    .shorts-page .short .info {
+        position: absolute;
+        inset-inline-end: .5rem;
+    }
+    .shorts-page .short .info>* .icon {
+        padding: .5rem;
+        opacity: .7;
+    }
+    .shorts-page .short .info>* .icon img {
+        block-size: 1.5rem;
+    }
+    .shorts-page .short .player {
+        block-size: 118vw;
+        min-block-size: 70svh;
+    }
+}
+@media (max-width: 600px) {
+    .shorts-page .short {
+        inline-size: 67vw;
+    }
 }
 @media (max-width: 500px) {
-   
+    .shorts-page .short {
+        inline-size: 84vw;
+    }
 }

@@ -1,5 +1,5 @@
 .history {
-    inline-size: 100%;
+    inline-size: 85vw;
     block-size: 100%;
 }
 .history > .content {
@@ -13,9 +13,10 @@
 }
 .history .results {
     block-size: 100%;
+    inline-size: 60vw;
     display: block;
     margin: 0;
-    flex: 1 0 auto;
+    flex: 0 1 65%;
 }
 .history .list {
     overflow-y: auto;
@@ -47,15 +48,15 @@
 .history .item:hover .close{
     opacity: 1;
 }
-.history .item .details{
+.history .item .details {
     position: relative;
+    inline-size: 31vw;
 }
 .history .item .details .title {
     inline-size: calc(100% - 3rem);
 }
 .history .results .item .description {
-    max-inline-size: 630px;
-    inline-size: 500px;
+    inline-size: 100%;
 }
 .history .item .history-date {
     position: absolute;
@@ -141,7 +142,7 @@
     fill: var(--primary-7);
 }
 @media (max-width: 1200px) {
-   
+
 }
 @media (max-width: 920px) {
    
