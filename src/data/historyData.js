@@ -56,19 +56,3 @@ export function clearHistory() {
     let historyArray= localStorage.getItem("history");
     historyArray && localStorage.setItem("history", [])
 }
-
-export async function searchHistory(term) {
-    let historyArray = await getHistory();
-    if (historyArray) {
-
-        if (term) {
-            const filtered = historyArray.filter(data => {
-              if (data.video) {
-                return data.video.title.toLowerCase().includes(term)
-              }
-            })
-            return filtered;
-        }
-        return historyArray;
-    }
-}
