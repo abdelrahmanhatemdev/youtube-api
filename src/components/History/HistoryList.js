@@ -11,7 +11,6 @@ const HistoryList = memo(function HistoryList({search, videos, deleteHistoryVide
 
     let content;
     if (videos) {
-        console.log("history videos", videos);
         content = videos.map((data, index) => {
             let link;
             if (data) {
