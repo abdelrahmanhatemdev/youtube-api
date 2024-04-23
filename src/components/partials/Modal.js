@@ -17,6 +17,5 @@ export default function Modal({ children, show, setShow}) {
               {children}
             </div>
         </div>
-        
     )
 }

@@ -1,11 +1,10 @@
 .history {
-    inline-size: 85vw;
+    inline-size: 100%;
     block-size: 100%;
 }
 .history > .content {
     display: flex;
     margin-block: 0;
-    position: static;
     inline-size: 100%;
     block-size: calc(100% - 3rem);
     overflow-y: hidden;
@@ -13,10 +12,8 @@
 }
 .history .results {
     block-size: 100%;
-    inline-size: 60vw;
     display: block;
     margin: 0;
-    flex: 0 1 65%;
 }
 .history .list {
     overflow-y: auto;
@@ -44,19 +41,17 @@
 .history .results .item {
     background: transparent;
     inline-size: 100%;
+    box-sizing: border-box;
 }
 .history .item:hover .close{
     opacity: 1;
 }
 .history .item .details {
     position: relative;
-    inline-size: 31vw;
+    flex: 1 0;
 }
 .history .item .details .title {
     inline-size: calc(100% - 3rem);
-}
-.history .results .item .description {
-    inline-size: 100%;
 }
 .history .item .history-date {
     position: absolute;
@@ -142,14 +137,48 @@
     fill: var(--primary-7);
 }
 @media (max-width: 1200px) {
-
+    .history > .content {
+        flex-direction: column-reverse;
+        justify-content: start;
+        block-size: auto;
+        gap: 1rem;
+    }
+    .history .results {
+        max-inline-size: 100%;
+    }
+    .history >  .content > .options {
+        flex: 0 0;
+        inline-size: 26vw;
+    }
+    .results .item .description {
+        inline-size: 40vw;
+    }
 }
 @media (max-width: 920px) {
-   
+    .history >  .content > .options {
+        inline-size: 30vw;
+    }
+    .results .item .img-holder {
+        inline-size: 27vw;
+    }
 }
 @media (max-width: 768px) {
+    .results .item .img-holder {
+        inline-size: 100%;
+    }
+    .history .item .history-date {
+        position: static;
+        inline-size: fit-content;
+        float: right;
+        clear: both;
+    }
+    .history >  .content > .options, .results .item .description {
+        inline-size: 77vw;
+    }
   
 }
 @media (max-width: 500px) {
-   
+    .history >  .content > .options, .results .item .description {
+        inline-size: 60vw;
+    }
 }

@@ -36,11 +36,12 @@ export default function History() {
     return (
         <>
             <section className="history">
-                <h1 className="page-title">Watch History</h1>
+                
                 <div className='content'>
                     {!videos && 
                     <NoData title="No History List Found!" details={<><Link to="/"><strong className='active'>Watch Videos</strong></Link> to see history watch List!</>}/>}
                     <div className="results">
+                        <h1 className="page-title">Watch History</h1>
                         <HistoryList videos={videos} deleteHistoryVideo={deleteHistoryVideo} className={navigation.state === "loading" ? "loading": ""}/>
                     </div>
                     <HistoryOptions/>

@@ -43,7 +43,7 @@ export default function HistoryOptions({setVideos}) {
                 
                 
             </div>}
-            <Modal show={showModal} setShow = {setShowModal}>
+            {<Modal show={showModal} setShow = {setShowModal}>
                         <div className='header'>
                             <h4 className='title'>Clear all watch history?</h4>
                         </div>
@@ -58,7 +58,7 @@ export default function HistoryOptions({setVideos}) {
                                 navigte(0)
                                 }}>Ok</button>
                         </div>
-                </Modal>
+                </Modal>}
         </>
         
     )
