@@ -173,12 +173,13 @@
         clear: both;
     }
     .history >  .content > .options, .results .item .description {
-        inline-size: 77vw;
+        inline-size: 60vw;
+        align-self: center;
     }
   
 }
 @media (max-width: 500px) {
     .history >  .content > .options, .results .item .description {
-        inline-size: 60vw;
+        inline-size: 75vw;
     }
 }

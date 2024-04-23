@@ -76,15 +76,16 @@
 .related .item .details .tips .date{
     font-size: .9rem;
 }
-@media (max-width: 1200px) {
-    
-}
 @media (max-width: 920px) {
-   
-}
-@media (max-width: 768px) {
-  
+    .related .item {
+        flex-basis: 100%;
+    }
 }
 @media (max-width: 500px) {
-   
+    .related .item {
+        flex-direction: column;
+    }
+    .related .item .details {
+        inline-size: 100%;
+    }
 }

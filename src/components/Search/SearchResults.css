@@ -125,10 +125,6 @@
 .results .item .badge .icon img{
     block-size: 100%;
 }
-
-@media (max-width: 1200px) {
-   
-}
 @media (max-width: 920px) {
     .results .item .img-holder {
         block-size: 18vw;
