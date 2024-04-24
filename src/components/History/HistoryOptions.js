@@ -33,8 +33,6 @@ export default function HistoryOptions({setVideos}) {
                     </svg>
                     </span>
                     <input name="search" type="text" placeholder="Search watch history" value={search} onChange={(e) => handleSearch(e)}/>
-                        
-                        
                 </div>
 
                  <div className="option" onClick={() => setShowModal(true)}>
