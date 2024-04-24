@@ -63,7 +63,9 @@ let router = createBrowserRouter([
            
         ]
     }
-])
+], {
+    basename: "/youtube-api"
+})
 
 let root = ReactDOM.createRoot(document.querySelector("#root"));
 
