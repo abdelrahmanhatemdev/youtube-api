@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 :root{
     --primary-font: "Almarai", sans-serif;
+    color-scheme: only light;
 }
 body.light {
     --primary-1: #ffffff;
