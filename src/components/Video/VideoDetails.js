@@ -13,11 +13,11 @@ function VideoDetails({video, id, videos}) {
     let channel;
     const title = video ? video.title : "";
 
-    useTitle(title)
+    useTitle(title);
 
     useEffect(() => {
         detailsRef.current && detailsRef.current.scrollIntoView()
-    }, [])
+    })
 
     
     if (video) {
