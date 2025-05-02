@@ -145,6 +145,6 @@
         max-inline-size: 100%;
     }
     .related .item {
-        flex-basis: 47%;
+        flex-basis: 100%;
     }
 }
