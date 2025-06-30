@@ -15,7 +15,7 @@ This project was created to explore the integration of the YouTube API and provi
 [![Axios](https://abdelrahmanhatemdev.github.io/images/images/stack_frames/axios.webp)](https://axios-http.com/) &ensp; 
 [![React Icons](https://abdelrahmanhatemdev.github.io/images/images/stack_frames/react-icons.webp)](https://react-icons.github.io/react-icons/)
 
-## ![Modules](https://abdelrahmanhatemdev.github.io/images/icons/markdown/modules.webp) Modules  
+## ![Modules](https://abdelrahmanhatemdev.github.io/images/icons/markdown/modules.png) Modules  
 YouTube API Clone is designed to give users the ability to interact with various features:
 
 1. **Trending**: View a list of trending videos.
